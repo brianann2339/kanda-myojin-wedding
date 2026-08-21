@@ -45,10 +45,7 @@ export function Ceremony() {
       </div>
 
       <div className="stack" style={{ marginTop: 24 }}>
-        <div className="row-between">
-          <div className="group-title">{t.ceremony.ritualTitle}</div>
-          <span className="tag tag-draft">{t.common.draftShrine}</span>
-        </div>
+        <div className="group-title">{t.ceremony.ritualTitle}</div>
         {t.ceremony.rituals.map((ritual, i) => {
           const Icon = ritualIcons[i]
           return (
@@ -61,6 +58,19 @@ export function Ceremony() {
             </div>
           )
         })}
+      </div>
+
+      <div className="stack" style={{ marginTop: 24 }}>
+        <div className="group-title">{t.ceremony.orderTitle}</div>
+        <ol className="order">
+          {t.ceremony.order.map((step) => (
+            <li key={step}>{step}</li>
+          ))}
+        </ol>
+        <div className="card stack-sm">
+          <div className="fact-sub">{t.ceremony.capacity}</div>
+        </div>
+        <div className="small-note">{t.ceremony.ritualSource}</div>
       </div>
 
       <div className="card row-between" style={{ marginTop: 24 }}>

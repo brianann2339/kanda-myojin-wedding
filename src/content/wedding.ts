@@ -199,6 +199,17 @@ export const wedding = {
       } as Localized,
     },
     {
+      area: 'ochanomizu' as const,
+      name: 'アパホテル〈御茶ノ水駅北〉',
+      romaji: 'APA Hotel Ochanomizu-Ekikita',
+      url: 'https://www.apahotel.com/hotel/syutoken/tokyo/ochanomizu-kita/',
+      access: {
+        zh: 'JR 御茶ノ水站 聖橋口 徒步 6 分／末廣町站 4 番出口 徒步 5 分',
+        ja: 'JR御茶ノ水駅 聖橋口より徒歩6分／末広町駅 4番出口より徒歩5分',
+        en: '6 min from JR Ochanomizu Stn. (Hijiribashi Exit) · 5 min from Suehirocho Stn. (Exit 4)',
+      } as Localized,
+    },
+    {
       area: 'akihabara' as const,
       name: '秋葉原ワシントンホテル',
       romaji: 'Akihabara Washington Hotel',
@@ -229,6 +240,28 @@ export const wedding = {
         zh: 'JR 秋葉原站 徒步 6 分',
         ja: 'JR秋葉原駅より徒歩6分',
         en: '6 min walk from JR Akihabara Stn.',
+      } as Localized,
+    },
+    {
+      area: 'akihabara' as const,
+      name: 'すえひろの湯 ドーミーイン秋葉原',
+      romaji: 'Dormy Inn Akihabara',
+      url: 'https://dormy-hotels.com/dormyinn/hotels/akihabara/',
+      access: {
+        zh: '末廣町站 徒步約 1 分／JR 秋葉原站 徒步約 5 分（地址與神社同為外神田）',
+        ja: '末広町駅より徒歩約1分／JR秋葉原駅より徒歩約5分（住所は神社と同じ外神田）',
+        en: 'About 1 min from Suehirocho Stn. · 5 min from JR Akihabara Stn. (same Sotokanda district as the shrine)',
+      } as Localized,
+    },
+    {
+      area: 'kanda' as const,
+      name: '明神の湯 ドーミーインPREMIUM神田',
+      romaji: 'Dormy Inn Premium Kanda',
+      url: 'https://dormy-hotels.com/dormyinn/hotels/kanda/',
+      access: {
+        zh: '東京 Metro 新御茶ノ水站 徒步約 5 分／JR 秋葉原站 電氣街口 徒步約 6 分',
+        ja: '東京メトロ新御茶ノ水駅より徒歩約5分／JR秋葉原駅 電気街口より徒歩約6分',
+        en: 'About 5 min from Shin-Ochanomizu Stn. · 6 min from JR Akihabara Stn. (Electric Town Exit)',
       } as Localized,
     },
     {
