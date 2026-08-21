@@ -39,6 +39,7 @@ export function Hero() {
   const { t } = useLang()
   const names = useCoupleNames()
   const left = useCountdown()
+  const photo = wedding.photos.hero
 
   const cells = [
     { unit: t.hero.days, value: left ? String(left.days) : '──' },
@@ -65,15 +66,22 @@ export function Hero() {
         <div className="hero-romaji">{wedding.couple.romaji}</div>
       </div>
 
-      <div className="hero-photo">
-        {wedding.heroPhoto ? (
-          <img src={wedding.heroPhoto} alt="" />
-        ) : (
-          <>
-            <Torii size={64} />
-            <div className="hero-photo-note">{t.hero.photoPlaceholder}</div>
-            <span className="tag tag-tbd">{t.hero.photoTag}</span>
-          </>
+      <div className="hero-figure">
+        <div className="hero-photo">
+          {photo ? (
+            <img src={photo.src} alt={t.hero.photoAlt} />
+          ) : (
+            <>
+              <Torii size={64} />
+              <div className="hero-photo-note">{t.hero.photoPlaceholder}</div>
+            </>
+          )}
+        </div>
+        {photo?.isPlaceholder && <span className="tag tag-tbd">{t.hero.photoTag}</span>}
+        {photo && (
+          <a className="credit" href={photo.creditUrl} target="_blank" rel="noreferrer">
+            {photo.credit}
+          </a>
         )}
       </div>
 

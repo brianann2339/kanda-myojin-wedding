@@ -2,6 +2,9 @@ export type Lang = 'zh' | 'ja' | 'en'
 
 export type Localized = Record<Lang, string>
 
+/** GitHub Pages 是子路徑部署，public/ 底下的檔案要帶 base 才抓得到 */
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`
+
 /**
  * 婚禮資料的單一來源。改日期、加照片、填上表單連結都只需要改這個檔案。
  * 尚未確定的資料一律留 null，畫面會自動顯示「待確認」佔位，不要填假值。
@@ -136,9 +139,169 @@ export const wedding = {
     email: null as string | null,
   },
 
-  /** 主視覺照片：放進 public/images/ 後把檔名填進來，例：'/images/hero.jpg' */
-  heroPhoto: null as string | null,
+  /**
+   * 圖片。換成你們自己的照片時：檔案放進 public/images/，
+   * 把 src 改成 asset('images/檔名.jpg')，credit 整段刪掉即可。
+   */
+  photos: {
+    hero: {
+      src: asset('images/kanda-myojin-ukiyoe.jpg'),
+      /** 二代歌川広重「東都三十六景 神田明神」，國立國會圖書館藏，公有領域 */
+      credit: '歌川広重「東都三十六景・神田明神」／国立国会図書館 · Public domain',
+      creditUrl: 'https://commons.wikimedia.org/wiki/File:NDL1303573_%E7%A5%9E%E7%94%B0%E6%98%8E%E7%A5%9E.jpg',
+      isPlaceholder: true,
+    },
+    venue: {
+      src: asset('images/kanda-myojin-hall.jpg'),
+      /** CC BY-SA 4.0：使用時必須標示作者與授權 */
+      credit: 'Photo: Hyppolyte de Saint-Rambert / Wikimedia Commons · CC BY-SA 4.0',
+      creditUrl: 'https://commons.wikimedia.org/wiki/File:Kanda-Myojin_grand_hall.jpg',
+      isPlaceholder: false,
+    },
+  },
+
+  /**
+   * 住宿候選。名稱與官網網址、車站徒步分鐘皆取自各飯店官方網站；
+   * 官網自己標示不一致或未標示分鐘數的，只寫車站不寫分鐘（不猜）。
+   */
+  hotels: [
+    {
+      area: 'ochanomizu' as const,
+      name: 'お茶の水ホテルジュラク',
+      romaji: 'Ochanomizu Hotel Juraku',
+      url: 'https://www.hotel-juraku.co.jp/ocha/',
+      access: {
+        zh: 'JR 御茶ノ水站 聖橋口 徒步 2 分',
+        ja: 'JR御茶ノ水駅 聖橋口より徒歩2分',
+        en: '2 min walk from JR Ochanomizu Stn. (Hijiribashi Exit)',
+      } as Localized,
+    },
+    {
+      area: 'ochanomizu' as const,
+      name: 'お茶の水ホテル昇龍館',
+      romaji: 'Ochanomizu Hotel Shoryukan',
+      url: 'https://www.familyhotel.jp/',
+      access: {
+        zh: '東京 Metro 新御茶ノ水站 徒步 3 分',
+        ja: '東京メトロ新御茶ノ水駅より徒歩3分',
+        en: '3 min walk from Shin-Ochanomizu Stn. (Tokyo Metro)',
+      } as Localized,
+    },
+    {
+      area: 'ochanomizu' as const,
+      name: 'ホテル東京ガーデンパレス',
+      romaji: 'Hotel Tokyo Garden Palace',
+      url: 'https://www.hotelgp-tokyo.com/',
+      access: {
+        zh: '御茶ノ水站 徒步 5 分',
+        ja: '御茶ノ水駅より徒歩5分',
+        en: '5 min walk from Ochanomizu Stn.',
+      } as Localized,
+    },
+    {
+      area: 'akihabara' as const,
+      name: '秋葉原ワシントンホテル',
+      romaji: 'Akihabara Washington Hotel',
+      url: 'https://washington-hotels.jp/akihabara/',
+      access: {
+        zh: 'JR 秋葉原站 中央改札口 徒步 1 分',
+        ja: 'JR秋葉原駅 中央改札口より徒歩1分',
+        en: '1 min walk from JR Akihabara Stn. (Central Gate)',
+      } as Localized,
+    },
+    {
+      area: 'akihabara' as const,
+      name: 'JR東日本ホテルメッツ プレミア 秋葉原',
+      romaji: 'JR-East Hotel Mets Premier Akihabara',
+      url: 'https://www.hotelmets.jp/en/akihabara/',
+      access: {
+        zh: 'JR 秋葉原站 南口 徒步 1 分',
+        ja: 'JR秋葉原駅 南口より徒歩1分',
+        en: '1 min walk from JR Akihabara Stn. (South Exit)',
+      } as Localized,
+    },
+    {
+      area: 'akihabara' as const,
+      name: 'ノーガホテル秋葉原東京',
+      romaji: 'NOHGA Hotel Akihabara Tokyo',
+      url: 'https://www.nohgahotel.com/akihabara/',
+      access: {
+        zh: 'JR 秋葉原站 徒步 6 分',
+        ja: 'JR秋葉原駅より徒歩6分',
+        en: '6 min walk from JR Akihabara Stn.',
+      } as Localized,
+    },
+    {
+      area: 'kanda' as const,
+      name: '相鉄フレッサイン東京神田',
+      romaji: 'Sotetsu Fresa Inn Tokyo Kanda',
+      url: 'https://sotetsu-hotels.com/fresa-inn/kanda/',
+      access: {
+        zh: 'JR 神田站 南口 徒步 4 分',
+        ja: 'JR神田駅 南口より徒歩4分',
+        en: '4 min walk from JR Kanda Stn. (South Exit)',
+      } as Localized,
+    },
+    {
+      area: 'kanda' as const,
+      name: '神田ステーションホテル',
+      romaji: 'Kanda Station Hotel',
+      url: 'https://www.kandasth.com/',
+      access: {
+        zh: 'JR 神田站 南口 徒步 1 分',
+        ja: 'JR神田駅 南口より徒歩1分',
+        en: '1 min walk from JR Kanda Stn. (South Exit)',
+      } as Localized,
+    },
+    {
+      area: 'kanda' as const,
+      name: 'ホテルSUI神田 by ABEST',
+      romaji: 'Hotel Sui Kanda by ABEST',
+      url: 'https://hotelsui-kanda.com/',
+      access: {
+        zh: 'JR 神田站 徒步 4 分',
+        ja: 'JR神田駅より徒歩4分',
+        en: '4 min walk from JR Kanda Stn.',
+      } as Localized,
+    },
+    {
+      area: 'tokyo-station' as const,
+      name: '東京ステーションホテル',
+      romaji: 'The Tokyo Station Hotel',
+      url: 'https://www.tokyostationhotel.jp/',
+      access: {
+        zh: '東京站（官網未標示步行時間）',
+        ja: '東京駅（公式サイトに徒歩分数の記載なし）',
+        en: 'Tokyo Stn. (walk time not stated on the official site)',
+      } as Localized,
+    },
+    {
+      area: 'tokyo-station' as const,
+      name: 'シャングリ・ラ 東京',
+      romaji: 'Shangri-La Tokyo',
+      url: 'https://www.shangri-la.com/jp/tokyo/shangrila/',
+      access: {
+        zh: '東京站（官網步行時間標示不一）',
+        ja: '東京駅（公式サイト内で徒歩分数の記載が一致せず）',
+        en: 'Tokyo Stn. (official site gives conflicting walk times)',
+      } as Localized,
+    },
+    {
+      area: 'tokyo-station' as const,
+      name: '丸ノ内ホテル',
+      romaji: 'Marunouchi Hotel',
+      url: 'https://www.marunouchi-hotel.co.jp/',
+      access: {
+        zh: '東京站 丸之內北口 徒步約 1 分',
+        ja: 'JR東京駅 丸の内北口より徒歩約1分',
+        en: 'About 1 min walk from Tokyo Stn. (Marunouchi North Exit)',
+      } as Localized,
+    },
+  ],
 }
+
+export type Hotel = (typeof wedding.hotels)[number]
+export type HotelArea = Hotel['area']
 
 export type Station = (typeof wedding.stations)[number]
 export type Departure = (typeof wedding.departures)[number]

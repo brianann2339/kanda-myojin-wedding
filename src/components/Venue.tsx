@@ -7,15 +7,31 @@ const noticeIcons = [Jacket, Crowd]
 
 export function Venue() {
   const { t, l } = useLang()
+  const photo = wedding.photos.venue
 
   return (
     <section className="section" id="venue">
       <SectionHead num="肆" kicker={t.venue.kicker} title={t.venue.title} />
 
-      <div className="photo-frame">
-        <Torii size={88} />
-        <span>{t.venue.photoPlaceholder}</span>
-      </div>
+      <figure className="venue-figure">
+        <div className="photo-frame">
+          {photo ? (
+            <img src={photo.src} alt={t.venue.photoAlt} loading="lazy" />
+          ) : (
+            <>
+              <Torii size={88} />
+              <span>{t.venue.photoPlaceholder}</span>
+            </>
+          )}
+        </div>
+        {photo && (
+          <figcaption>
+            <a className="credit" href={photo.creditUrl} target="_blank" rel="noreferrer">
+              {photo.credit}
+            </a>
+          </figcaption>
+        )}
+      </figure>
 
       <div className="stack" style={{ marginTop: 24 }}>
         <div className="group-title">{t.venue.aboutTitle}</div>
