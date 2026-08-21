@@ -5,35 +5,41 @@
   --panel: #efe7d6;
 
   --ink: #2b2622;
-  --ink-soft: #4a443c;
-  --muted: #6b6155;
-  --muted-2: #8a7e6c;
-  --faint: #a99e8c;
-  --ghost: #b9ae9a;
+  --ink-soft: #453f37;
+  --muted: #635a4e;
+  --muted-2: #776c5c;
+  --faint: #8b8070;
+  --ghost: #a2977f;
 
   --line: #e4dbc8;
   --line-2: #d9cdb4;
 
   --shu: #b23e2f;
-  --gold: #a98b4f;
+  --gold: #9a7d43;
 
   --dark: #2b2622;
   --dark-gold: #c9a96a;
   --dark-cream: #f1eadb;
-  --dark-muted: #8f8574;
+  --dark-muted: #a19683;
 
   --serif-tc: 'Noto Serif TC', 'Songti TC', 'Source Han Serif TC', serif;
   --serif-jp: 'Shippori Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
   --serif-en: 'Cormorant Garamond', 'Times New Roman', serif;
 
-  --page: 640px;
+  /* 版心與字級都以 rem 表示，隨下方的根字級一起縮放 */
+  --page: 40rem;
 }
 
 * {
   box-sizing: border-box;
 }
 
+/*
+ * 流體字級：手機 16px、桌機放大到 20px，中間連續變化。
+ * 以 rem 起算，使用者在瀏覽器調整的預設字級依然有效。
+ */
 html {
+  font-size: clamp(1rem, 0.907rem + 0.381vw, 1.25rem);
   scroll-behavior: smooth;
 }
 
@@ -65,19 +71,19 @@ button {
 .page {
   margin: 0 auto;
   max-width: var(--page);
-  padding: 0 26px;
+  padding: 0 1.625rem;
 }
 
 /* ---------- language switch ---------- */
 
 .langs {
   display: flex;
-  gap: 14px;
+  gap: 0.875rem;
   align-items: center;
 }
 
 .langs button {
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   color: var(--faint);
   padding: 2px 0;
@@ -110,17 +116,17 @@ button {
 .topbar-inner {
   margin: 0 auto;
   max-width: var(--page);
-  padding: 0 22px;
-  height: 52px;
+  padding: 0 1.375rem;
+  min-height: 3.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .topbar-name {
   font-family: var(--serif-en);
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.28em;
   color: var(--ink);
   white-space: nowrap;
@@ -128,12 +134,12 @@ button {
 
 .topbar-links {
   display: none;
-  gap: 16px;
+  gap: 1rem;
   overflow-x: auto;
 }
 
 .topbar-links a {
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
   color: var(--muted);
   white-space: nowrap;
@@ -158,20 +164,20 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-  padding: 76px 32px 96px;
+  gap: 1.5rem;
+  padding: 4.75rem 2rem 6rem;
   text-align: center;
 }
 
 .hero-langs {
   position: absolute;
-  top: 22px;
-  right: 24px;
+  top: 1.375rem;
+  right: 1.5rem;
 }
 
 .hero-kicker {
   font-family: var(--serif-en);
-  font-size: 10px;
+  font-size: 0.625rem;
   letter-spacing: 0.5em;
   color: var(--muted-2);
   text-indent: 0.5em;
@@ -179,7 +185,7 @@ button {
 
 .hero-stroke {
   width: 1px;
-  height: 58px;
+  height: 3.625rem;
   background: var(--shu);
 }
 
@@ -187,12 +193,12 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .hero-names h1 {
   margin: 0;
-  font-size: clamp(21px, 6vw, 26px);
+  font-size: clamp(1.3125rem, 1.05rem + 1.1vw, 1.75rem);
   font-weight: 400;
   letter-spacing: 0.3em;
   text-indent: 0.3em;
@@ -201,19 +207,19 @@ button {
 
 .hero-names .amp {
   color: var(--shu);
-  padding: 0 6px;
+  padding: 0 0.375rem;
 }
 
 .hero-romaji {
   font-family: var(--serif-en);
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.42em;
   text-indent: 0.42em;
   color: var(--muted-2);
 }
 
 .hero-photo {
-  width: min(206px, 58vw);
+  width: min(12.875rem, 62vw);
   aspect-ratio: 206 / 264;
   border: 1px solid #e0d6c2;
   background: var(--panel);
@@ -221,7 +227,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 0.75rem;
   overflow: hidden;
 }
 
@@ -232,7 +238,7 @@ button {
 }
 
 .hero-photo-note {
-  font-size: 10px;
+  font-size: 0.625rem;
   letter-spacing: 0.24em;
   color: var(--faint);
   line-height: 1.8;
@@ -242,12 +248,12 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 9px;
+  gap: 0.5625rem;
 }
 
 .hero-shrine {
   font-family: var(--serif-jp);
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.4em;
   text-indent: 0.4em;
   color: var(--muted);
@@ -255,26 +261,26 @@ button {
 
 .hero-date {
   font-family: var(--serif-en);
-  font-size: clamp(16px, 4.4vw, 19px);
+  font-size: clamp(1rem, 0.85rem + 0.6vw, 1.375rem);
   letter-spacing: 0.34em;
   text-indent: 0.34em;
   color: var(--ink);
 }
 
 .hero-note {
-  font-size: 10px;
+  font-size: 0.625rem;
   letter-spacing: 0.16em;
   color: var(--faint);
 }
 
 .hero-scroll {
   position: absolute;
-  bottom: 36px;
+  bottom: 2.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  font-size: 10px;
+  gap: 0.5rem;
+  font-size: 0.625rem;
   letter-spacing: 0.32em;
   text-indent: 0.32em;
   color: var(--faint);
@@ -284,23 +290,23 @@ button {
 
 .countdown {
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .countdown > div {
-  width: 66px;
-  padding: 10px 0;
+  width: 4.125rem;
+  padding: 0.625rem 0;
   background: var(--card);
   border: 1px solid var(--line);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
+  gap: 0.1875rem;
 }
 
 .countdown .value {
   font-family: var(--serif-en);
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var(--ghost);
   font-variant-numeric: tabular-nums;
 }
@@ -311,7 +317,7 @@ button {
 
 .countdown .unit {
   font-family: var(--serif-en);
-  font-size: 9px;
+  font-size: 0.5625rem;
   letter-spacing: 0.3em;
   text-indent: 0.3em;
   color: var(--gold);
@@ -320,31 +326,31 @@ button {
 /* ---------- section shell ---------- */
 
 .section {
-  padding: 56px 0 8px;
-  scroll-margin-top: 64px;
+  padding: 3.5rem 0 0.5rem;
+  scroll-margin-top: 4rem;
 }
 
 .section:last-of-type {
-  padding-bottom: 48px;
+  padding-bottom: 3rem;
 }
 
 .sec-head {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .sec-rule {
   width: 2px;
-  height: 32px;
+  height: 2rem;
   background: var(--shu);
   flex-shrink: 0;
 }
 
 .sec-num {
   font-family: var(--serif-jp);
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--shu);
   flex-shrink: 0;
 }
@@ -352,12 +358,12 @@ button {
 .sec-titles {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 0.1875rem;
 }
 
 .sec-kicker {
   font-family: var(--serif-en);
-  font-size: 10px;
+  font-size: 0.625rem;
   letter-spacing: 0.38em;
   text-indent: 0.38em;
   color: var(--gold);
@@ -365,7 +371,7 @@ button {
 
 .sec-titles h2 {
   margin: 0;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   color: var(--ink);
@@ -376,36 +382,36 @@ button {
 .card {
   background: var(--card);
   border: 1px solid var(--line);
-  padding: 18px 16px;
+  padding: 1.125rem 1rem;
 }
 
 .stack {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .stack-sm {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .group-title {
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--ink);
   letter-spacing: 0.14em;
 }
 
 .body-text {
-  font-size: 12.5px;
+  font-size: 0.78125rem;
   color: var(--muted);
   line-height: 1.9;
 }
 
 .small-note {
-  font-size: 10px;
+  font-size: 0.625rem;
   color: var(--faint);
   letter-spacing: 0.06em;
   line-height: 1.7;
@@ -413,7 +419,7 @@ button {
 
 .tag {
   display: inline-block;
-  font-size: 10px;
+  font-size: 0.625rem;
   letter-spacing: 0.16em;
   padding: 2px 8px;
   white-space: nowrap;
@@ -442,21 +448,21 @@ button {
 }
 
 .placeholder {
-  border: 1px dashed #c9bea6;
+  border: 1px dashed #c1b69d;
   background: var(--card);
-  padding: 16px;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 0.375rem;
 }
 
 .hint {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 0.625rem;
   background: var(--card);
   border: 1px dashed var(--shu);
-  padding: 12px 14px;
+  padding: 0.75rem 0.875rem;
 }
 
 .hint span[aria-hidden] {
@@ -464,12 +470,12 @@ button {
   height: 6px;
   background: var(--shu);
   flex-shrink: 0;
-  margin-top: 6px;
+  margin-top: 0.4375rem;
 }
 
 .hint p {
   margin: 0;
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: var(--muted-2);
   line-height: 1.7;
 }
@@ -478,18 +484,18 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  min-height: 48px;
+  gap: 0.5rem;
+  min-height: 3rem;
   background: var(--shu);
   color: var(--paper);
-  font-size: 13px;
+  font-size: 0.8125rem;
   letter-spacing: 0.2em;
   text-indent: 0.2em;
   width: 100%;
@@ -510,11 +516,11 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 2.75rem;
   border: 1px solid var(--line);
   background: var(--card-inner);
   color: var(--muted);
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.14em;
 }
 
@@ -528,11 +534,11 @@ button {
 .envelope {
   background: var(--card);
   border: 1px solid var(--line);
-  padding: 32px 22px;
+  padding: 2rem 1.375rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
+  gap: 1.125rem;
 }
 
 .letter {
@@ -540,17 +546,17 @@ button {
   background: var(--card-inner);
   border: 1px solid var(--line);
   box-shadow: 0 1px 0 var(--line);
-  padding: 28px 20px;
+  padding: 1.75rem 1.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
   text-align: center;
 }
 
 .letter-eyebrow {
   font-family: var(--serif-en);
-  font-size: 10px;
+  font-size: 0.625rem;
   letter-spacing: 0.4em;
   text-indent: 0.4em;
   color: var(--gold);
@@ -558,21 +564,21 @@ button {
 
 .letter h3 {
   margin: 0;
-  font-size: 19px;
+  font-size: 1.1875rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   color: var(--ink);
 }
 
 .letter-divider {
-  width: 34px;
+  width: 2.125rem;
   height: 1px;
   background: var(--shu);
 }
 
 .letter p {
   margin: 0;
-  font-size: 12.5px;
+  font-size: 0.78125rem;
   color: var(--ink-soft);
   line-height: 2.15;
 }
@@ -580,18 +586,18 @@ button {
 .letter-body {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 1.125rem;
 }
 
 .letter-sign {
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.26em;
   text-indent: 0.26em;
   color: var(--muted);
 }
 
 .envelope-note {
-  font-size: 10px;
+  font-size: 0.625rem;
   letter-spacing: 0.26em;
   color: var(--faint);
 }
@@ -601,29 +607,29 @@ button {
 .fact {
   background: var(--card);
   border: 1px solid var(--line);
-  padding: 18px;
+  padding: 1.125rem;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .fact-label {
   font-family: var(--serif-en);
-  font-size: 10px;
+  font-size: 0.625rem;
   letter-spacing: 0.34em;
   color: var(--gold);
-  width: 52px;
+  width: 3.25rem;
   flex-shrink: 0;
 }
 
 .fact-body {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0.25rem;
 }
 
 .fact-main {
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 600;
   color: var(--ink);
   letter-spacing: 0.08em;
@@ -631,22 +637,23 @@ button {
 
 .fact-main-placeholder {
   font-family: var(--serif-en);
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var(--ghost);
   letter-spacing: 0.14em;
 }
 
 .fact-sub {
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: var(--muted-2);
+  line-height: 1.7;
 }
 
 .ritual {
   background: var(--card);
   border: 1px solid var(--line);
-  padding: 16px;
+  padding: 1rem;
   display: flex;
-  gap: 14px;
+  gap: 0.875rem;
   align-items: flex-start;
 }
 
@@ -656,8 +663,8 @@ button {
 }
 
 .ritual h4 {
-  margin: 0 0 4px;
-  font-size: 14px;
+  margin: 0 0 0.25rem;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   color: var(--ink);
@@ -665,7 +672,7 @@ button {
 
 .ritual p {
   margin: 0;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--muted);
   line-height: 1.8;
 }
@@ -679,7 +686,7 @@ button {
 
 .tl-item {
   display: flex;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .tl-marker {
@@ -694,7 +701,7 @@ button {
   height: 9px;
   border: 1.5px solid var(--shu);
   background: var(--paper);
-  margin-top: 4px;
+  margin-top: 0.375rem;
 }
 
 .tl-item[data-key='true'] .tl-dot {
@@ -710,19 +717,19 @@ button {
 .tl-body {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding-bottom: 26px;
+  gap: 0.25rem;
+  padding-bottom: 1.625rem;
 }
 
 .tl-time {
   font-family: var(--serif-en);
-  font-size: 15px;
+  font-size: 0.9375rem;
   letter-spacing: 0.12em;
   color: var(--ghost);
 }
 
 .tl-name {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
   color: var(--ink);
   letter-spacing: 0.1em;
@@ -733,7 +740,7 @@ button {
 }
 
 .tl-desc {
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: var(--muted-2);
   line-height: 1.7;
 }
@@ -749,7 +756,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 0.75rem;
   overflow: hidden;
 }
 
@@ -760,13 +767,13 @@ button {
 }
 
 .photo-frame span {
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.3em;
   color: var(--faint);
 }
 
 .address {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--ink);
   line-height: 1.8;
 }
@@ -774,9 +781,9 @@ button {
 .notice {
   background: var(--card);
   border: 1px solid var(--line);
-  padding: 14px 16px;
+  padding: 0.875rem 1rem;
   display: flex;
-  gap: 12px;
+  gap: 0.75rem;
   align-items: flex-start;
 }
 
@@ -787,7 +794,7 @@ button {
 
 .notice p {
   margin: 0;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--muted);
   line-height: 1.8;
 }
@@ -802,10 +809,10 @@ button {
 .station {
   background: var(--card);
   border: 1px solid var(--line);
-  padding: 14px 16px;
+  padding: 0.875rem 1rem;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 .station svg {
@@ -821,26 +828,26 @@ button {
 }
 
 .station-name {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--ink);
 }
 
 .station-name small {
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 400;
   color: var(--muted-2);
-  margin-left: 4px;
+  margin-left: 0.25rem;
 }
 
 .station-lines {
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: var(--muted-2);
   line-height: 1.5;
 }
 
 .station-walk {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--shu);
   letter-spacing: 0.06em;
   flex-shrink: 0;
@@ -851,28 +858,28 @@ button {
 .route {
   background: var(--card);
   border: 1px solid var(--line);
-  padding: 18px;
+  padding: 1.125rem;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 0.875rem;
 }
 
 .route-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .route-code {
   font-family: var(--serif-en);
-  font-size: 22px;
+  font-size: 1.375rem;
   letter-spacing: 0.14em;
   color: var(--ink);
 }
 
 .route-place {
-  font-size: 10px;
+  font-size: 0.625rem;
   color: var(--muted-2);
 }
 
@@ -882,11 +889,11 @@ button {
 
 .route-foot {
   border-top: 1px dashed var(--line-2);
-  padding-top: 12px;
+  padding-top: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 0.625rem;
   flex-wrap: wrap;
 }
 
@@ -895,15 +902,15 @@ button {
 .area {
   background: var(--card);
   border: 1px solid var(--line);
-  padding: 18px;
+  padding: 1.125rem;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .area h3 {
   margin: 0;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   color: var(--ink);
@@ -911,17 +918,17 @@ button {
 
 .area p {
   margin: 0;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--muted);
   line-height: 1.8;
 }
 
 .area-tbd {
-  border: 1px dashed #c9bea6;
+  border: 1px dashed #c1b69d;
   color: var(--faint);
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
-  padding: 8px 12px;
+  padding: 0.5rem 0.75rem;
   text-align: center;
 }
 
@@ -945,14 +952,14 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  padding: 15px 16px;
-  min-height: 48px;
+  gap: 0.625rem;
+  padding: 0.9375rem 1rem;
+  min-height: 3rem;
   text-align: left;
 }
 
 .faq-q span:first-child {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--ink);
   letter-spacing: 0.08em;
 }
@@ -965,7 +972,7 @@ button {
 .faq-meta {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   flex-shrink: 0;
 }
 
@@ -978,8 +985,8 @@ button {
 }
 
 .faq-a {
-  padding: 0 16px 16px;
-  font-size: 12px;
+  padding: 0 1rem 1rem;
+  font-size: 0.75rem;
   color: var(--muted);
   line-height: 1.9;
 }
@@ -989,37 +996,37 @@ button {
 .gift {
   background: var(--card);
   border: 1px solid var(--line);
-  padding: 30px 24px;
+  padding: 1.875rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
+  gap: 1.125rem;
   text-align: center;
 }
 
 .gift-brand {
   font-family: var(--serif-en);
-  font-size: clamp(20px, 5.6vw, 24px);
+  font-size: clamp(1.25rem, 1.05rem + 0.85vw, 1.625rem);
   letter-spacing: 0.16em;
   color: var(--ink);
 }
 
 .gift-local {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--muted);
   letter-spacing: 0.2em;
   text-indent: 0.2em;
 }
 
 .gift-desc {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--muted);
   line-height: 2;
 }
 
 .gift-site {
   font-family: var(--serif-en);
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.2em;
   color: var(--gold);
 }
@@ -1033,28 +1040,28 @@ button {
 .field {
   border: 1px solid var(--line);
   background: var(--card-inner);
-  padding: 12px 14px;
+  padding: 0.75rem 0.875rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  font-size: 12px;
+  gap: 0.625rem;
+  font-size: 0.75rem;
   color: var(--ink);
 }
 
 .channel {
   border: 1px solid var(--line);
   background: var(--card-inner);
-  padding: 12px 14px;
+  padding: 0.75rem 0.875rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .channel-name {
   font-family: var(--serif-en);
-  font-size: 13px;
+  font-size: 0.8125rem;
   letter-spacing: 0.16em;
   color: var(--ink);
 }
@@ -1062,18 +1069,18 @@ button {
 /* ---------- footer ---------- */
 
 .footer {
-  margin-top: 40px;
+  margin-top: 2.5rem;
   background: var(--dark);
-  padding: 40px 26px 36px;
+  padding: 2.5rem 1.625rem 2.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
   text-align: center;
 }
 
 .footer-names {
-  font-size: 14px;
+  font-size: 0.875rem;
   letter-spacing: 0.3em;
   text-indent: 0.3em;
   color: var(--dark-cream);
@@ -1081,7 +1088,7 @@ button {
 
 .footer-romaji {
   font-family: var(--serif-en);
-  font-size: 10px;
+  font-size: 0.625rem;
   letter-spacing: 0.42em;
   text-indent: 0.42em;
   color: var(--dark-muted);
@@ -1089,14 +1096,14 @@ button {
 
 .footer-date {
   font-family: var(--serif-en);
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.34em;
   text-indent: 0.34em;
   color: var(--dark-gold);
 }
 
 .footer-tagline {
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.2em;
   color: var(--dark-muted);
   line-height: 1.8;
