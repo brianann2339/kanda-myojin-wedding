@@ -773,6 +773,57 @@ button {
   color: var(--faint);
 }
 
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.prose p {
+  margin: 0;
+  font-size: 0.78125rem;
+  color: var(--muted);
+  line-height: 2;
+  text-wrap: pretty;
+}
+
+.deity {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--shu);
+  padding: 0.875rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.deity-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.deity-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.08em;
+}
+
+.deity-alias {
+  font-family: var(--serif-jp);
+  font-size: 0.6875rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+}
+
+.deity-role {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
 .address {
   font-size: 0.8125rem;
   color: var(--ink);

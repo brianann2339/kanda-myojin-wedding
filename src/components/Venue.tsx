@@ -35,10 +35,25 @@ export function Venue() {
 
       <div className="stack" style={{ marginTop: 24 }}>
         <div className="group-title">{t.venue.aboutTitle}</div>
-        <div className="placeholder">
-          <div className="body-text">{t.venue.aboutDraft}</div>
-          <div className="small-note">{t.venue.aboutDraftSub}</div>
+        <div className="prose">
+          {t.venue.about.map((para) => (
+            <p key={para}>{para}</p>
+          ))}
         </div>
+      </div>
+
+      <div className="stack" style={{ marginTop: 24 }}>
+        <div className="group-title">{t.venue.deitiesTitle}</div>
+        {t.venue.deities.map((deity) => (
+          <div className="deity" key={deity.name}>
+            <div className="deity-head">
+              <span className="deity-name">{deity.name}</span>
+              <span className="deity-alias">{deity.alias}</span>
+            </div>
+            <div className="deity-role">{deity.role}</div>
+          </div>
+        ))}
+        <div className="small-note">{t.venue.aboutSource}</div>
       </div>
 
       <div className="stack" style={{ marginTop: 24 }}>
