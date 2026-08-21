@@ -47,6 +47,19 @@ export function Flights() {
         </div>
       </div>
 
+      <div className="stack" style={{ marginTop: 24 }}>
+        <div className="group-title">{t.flights.bookTitle}</div>
+        <div className="airlines">
+          {wedding.airlines.map((airline) => (
+            <a className="airline" key={airline.url} href={airline.url} target="_blank" rel="noreferrer">
+              {l(airline.name)}
+              <span aria-hidden>↗</span>
+            </a>
+          ))}
+        </div>
+        <div className="small-note">{t.flights.bookNote}</div>
+      </div>
+
       <div className="card stack-sm" style={{ marginTop: 12 }}>
         <div className="group-title">{t.flights.japanTitle}</div>
         <div className="fact-sub">{t.flights.japanDesc}</div>

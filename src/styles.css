@@ -980,6 +980,36 @@ button {
   flex-wrap: wrap;
 }
 
+.airlines {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.airline {
+  border: 1px solid var(--line);
+  background: var(--card-inner);
+  padding: 0.75rem 0.875rem;
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--ink);
+  letter-spacing: 0.06em;
+}
+
+.airline span {
+  color: var(--shu);
+  font-size: 0.625rem;
+}
+
+.airline:hover {
+  border-color: var(--shu);
+  color: var(--shu);
+}
+
 /* ---------- stay ---------- */
 
 .area {

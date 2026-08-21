@@ -119,6 +119,20 @@ export const wedding = {
     },
   ],
 
+  /**
+   * 訂票用的航空公司官網。網址皆經逐一開啟確認（2026-08-22）。
+   * 這裡不宣稱哪家飛哪條航線——航線與班次請以各官網公告為準。
+   */
+  airlines: [
+    { name: { zh: '長榮航空', ja: 'エバー航空', en: 'EVA Air' } as Localized, url: 'https://www.evaair.com/zh-tw/index.html' },
+    { name: { zh: '中華航空', ja: 'チャイナエアライン', en: 'China Airlines' } as Localized, url: 'https://www.china-airlines.com/tw/zh' },
+    { name: { zh: '星宇航空', ja: 'スターラックス航空', en: 'STARLUX Airlines' } as Localized, url: 'https://www.starlux-airlines.com/zh-TW' },
+    { name: { zh: '台灣虎航', ja: 'タイガーエア台湾', en: 'Tigerair Taiwan' } as Localized, url: 'https://www.tigerairtw.com/zh-tw' },
+    { name: { zh: '日本航空', ja: '日本航空', en: 'Japan Airlines' } as Localized, url: 'https://www.jal.co.jp/tw/zhtw/' },
+    { name: { zh: '全日空', ja: '全日空', en: 'ANA' } as Localized, url: 'https://www.ana.co.jp/zh/tw/' },
+    { name: { zh: '樂桃航空', ja: 'ピーチ', en: 'Peach' } as Localized, url: 'https://www.flypeach.com/tw' },
+  ],
+
   /** 儀式後不設會食（已定案） */
   reception: { happening: false },
 
