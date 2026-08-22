@@ -31,7 +31,10 @@ export function Flights() {
             </div>
             <div className="route-foot">
               <span className="fact-sub">{l(route.note)}</span>
-              <span className="tag tag-tbd">{t.flights.flightTbd}</span>
+            </div>
+            <div className="carriers">
+              <span className="carriers-label">{t.flights.carriersLabel}</span>
+              <span className="carriers-list">{l(route.carriers)}</span>
             </div>
           </div>
         ))}
@@ -39,11 +42,8 @@ export function Flights() {
 
       <div className="stack" style={{ marginTop: 24 }}>
         <div className="group-title">{t.flights.compareTitle}</div>
-        <div className="placeholder">
+        <div className="card">
           <div className="body-text">{t.flights.compareDesc}</div>
-          <span className="tag tag-tbd" style={{ alignSelf: 'flex-start' }}>
-            {t.flights.compareTbd}
-          </span>
         </div>
       </div>
 

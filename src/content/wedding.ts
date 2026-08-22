@@ -94,28 +94,114 @@ export const wedding = {
     },
   ],
 
+  /**
+   * 機場往會場的路線。時間為各鐵道業者官網標示的最短時間，
+   * 票價只在業者官網自己公布時才寫（羽田兩線的官網未列票價，因此留 null）。
+   */
+  airportRoutes: [
+    {
+      id: 'haneda' as const,
+      airport: { zh: '羽田機場', ja: '羽田空港', en: 'Haneda Airport' } as Localized,
+      routes: [
+        {
+          label: { zh: '單軌電車　轉乘最少', ja: 'モノレール　乗り換え最少', en: 'Monorail · fewest changes' } as Localized,
+          legs: [
+            { zh: '第 3 航廈搭東京單軌電車「機場快速」', ja: '第3ターミナルから東京モノレール「空港快速」', en: 'Tokyo Monorail Haneda Express from Terminal 3' } as Localized,
+            { zh: '浜松町轉 JR 山手線／京濱東北線', ja: '浜松町でJR山手線・京浜東北線に乗り換え', en: 'Change at Hamamatsucho for the JR Yamanote / Keihin-Tohoku Line' } as Localized,
+            { zh: '秋葉原下車，電氣街口徒步 7 分', ja: '秋葉原下車、電気街口から徒歩7分', en: 'Get off at Akihabara — 7 min walk from the Electric Town Exit' } as Localized,
+          ],
+          duration: { zh: '單軌 13 分＋JR 10 分（不含轉乘時間）', ja: 'モノレール13分＋JR10分（乗換時間を除く）', en: '13 min monorail + 10 min JR (excluding transfer)' } as Localized,
+          fare: null as Localized | null,
+          operator: { name: '東京モノレール', url: 'https://www.tokyo-monorail.co.jp/' },
+        },
+        {
+          label: { zh: '京急線　另一個選擇', ja: '京急線　もうひとつの選択肢', en: 'Keikyu Line · the alternative' } as Localized,
+          legs: [
+            { zh: '第 3 航廈搭京急線「機場快特」', ja: '第3ターミナルから京急線「エアポート快特」', en: 'Keikyu Airport Limited Express from Terminal 3' } as Localized,
+            { zh: '品川轉 JR 山手線／京濱東北線', ja: '品川でJR山手線・京浜東北線に乗り換え', en: 'Change at Shinagawa for the JR Yamanote / Keihin-Tohoku Line' } as Localized,
+            { zh: '秋葉原下車，電氣街口徒步 7 分', ja: '秋葉原下車、電気街口から徒歩7分', en: 'Get off at Akihabara — 7 min walk from the Electric Town Exit' } as Localized,
+          ],
+          duration: { zh: '京急 13 分＋JR 17 分（不含轉乘時間）', ja: '京急13分＋JR17分（乗換時間を除く）', en: '13 min Keikyu + 17 min JR (excluding transfer)' } as Localized,
+          fare: null as Localized | null,
+          operator: { name: '京急電鉄', url: 'https://www.keikyu.co.jp/' },
+        },
+      ],
+    },
+    {
+      id: 'narita' as const,
+      airport: { zh: '成田機場', ja: '成田空港', en: 'Narita Airport' } as Localized,
+      routes: [
+        {
+          label: { zh: 'Skyliner　最快', ja: 'スカイライナー　最速', en: 'Skyliner · fastest' } as Localized,
+          legs: [
+            { zh: '成田機場搭京成「Skyliner」', ja: '成田空港から京成「スカイライナー」', en: 'Keisei Skyliner from Narita Airport' } as Localized,
+            { zh: '日暮里轉 JR 山手線', ja: '日暮里でJR山手線に乗り換え', en: 'Change at Nippori for the JR Yamanote Line' } as Localized,
+            { zh: '秋葉原下車，電氣街口徒步 7 分', ja: '秋葉原下車、電気街口から徒歩7分', en: 'Get off at Akihabara — 7 min walk from the Electric Town Exit' } as Localized,
+          ],
+          duration: { zh: 'Skyliner 最短 36 分（第 2・3 航廈起）＋JR', ja: 'スカイライナー最短36分（第2・3ターミナル発）＋JR', en: 'Skyliner from 36 min (Terminal 2·3) + JR' } as Localized,
+          fare: {
+            zh: '京成官網標示 Skyliner＋JR 至秋葉原 2,630 日圓（IC 2,619 日圓）',
+            ja: '京成公式：スカイライナー＋JRで秋葉原まで2,630円（IC 2,619円）',
+            en: 'Keisei lists Skyliner + JR to Akihabara at ¥2,630 (¥2,619 with IC)',
+          } as Localized | null,
+          operator: { name: '京成電鉄 Skyliner', url: 'https://www.keisei.co.jp/keisei/tetudou/skyliner/us/skyliner/index.php' },
+        },
+        {
+          label: { zh: '成田特快 N’EX　直達東京站', ja: '成田エクスプレス　東京駅まで直通', en: 'N’EX · direct to Tokyo Station' } as Localized,
+          legs: [
+            { zh: '成田機場搭 JR「成田特快 N’EX」', ja: '成田空港からJR「成田エクスプレス」', en: 'JR Narita Express from Narita Airport' } as Localized,
+            { zh: '東京站轉 JR 中央線快速', ja: '東京駅でJR中央線快速に乗り換え', en: 'Change at Tokyo Station for the JR Chuo Line Rapid' } as Localized,
+            { zh: '御茶ノ水下車，聖橋口徒步 5 分', ja: '御茶ノ水下車、聖橋口から徒歩5分', en: 'Get off at Ochanomizu — 5 min walk from the Hijiribashi Exit' } as Localized,
+          ],
+          duration: { zh: 'N’EX 最快 53 分＋JR 4 分', ja: '成田エクスプレス最速53分＋JR4分', en: 'N’EX from 53 min + 4 min JR' } as Localized,
+          fare: {
+            zh: 'JR 官網標示普通車指定席 3,140 日圓；另有 14 天有效的來回票 5,200 日圓',
+            ja: 'JR公式：普通車指定席3,140円。14日間有効の往復きっぷ5,200円もあり',
+            en: 'JR lists ¥3,140 for a reserved seat; a 14-day round trip ticket is ¥5,200',
+          } as Localized | null,
+          operator: { name: 'JR東日本 N’EX', url: 'https://www.jreast.co.jp/e/nex/' },
+        },
+      ],
+    },
+  ],
+
   /** 台灣出發的機場；刻意不放班次，班表會變動 */
   departures: [
     {
       code: 'TPE',
       from: { zh: '台北・桃園', ja: '台北・桃園', en: 'Taipei Taoyuan' } as Localized,
-      to: { zh: '東京・羽田／成田', ja: '東京・羽田／成田', en: 'Tokyo Haneda / Narita' } as Localized,
-      toCode: 'HND / NRT',
-      note: { zh: '北部出發選項', ja: '北部発', en: 'From northern Taiwan' } as Localized,
+      to: { zh: '東京・成田／羽田', ja: '東京・成田／羽田', en: 'Tokyo Narita / Haneda' } as Localized,
+      toCode: 'NRT / HND',
+      note: { zh: '兩個機場都有航班', ja: '両空港とも就航', en: 'Both airports served' } as Localized,
+      carriers: {
+        zh: '長榮、中華、日航、星宇、台灣虎航、樂桃、捷星日本',
+        ja: 'エバー航空、チャイナエアライン、JAL、スターラックス、タイガーエア台湾、ピーチ、ジェットスター・ジャパン',
+        en: 'EVA Air, China Airlines, JAL, STARLUX, Tigerair Taiwan, Peach, Jetstar Japan',
+      } as Localized,
     },
     {
       code: 'TSA',
       from: { zh: '台北・松山', ja: '台北・松山', en: 'Taipei Songshan' } as Localized,
       to: { zh: '東京・羽田', ja: '東京・羽田', en: 'Tokyo Haneda' } as Localized,
       toCode: 'HND',
-      note: { zh: '市區機場出發選項', ja: '市街地の空港発', en: 'City airport to city airport' } as Localized,
+      note: { zh: '市區機場對飛，只飛羽田', ja: '市街地の空港どうし、羽田のみ', en: 'City airport to city airport — Haneda only' } as Localized,
+      carriers: {
+        zh: '長榮、中華、日航、全日空',
+        ja: 'エバー航空、チャイナエアライン、JAL、ANA',
+        en: 'EVA Air, China Airlines, JAL, ANA',
+      } as Localized,
     },
     {
       code: 'KHH',
       from: { zh: '高雄・小港', ja: '高雄・小港', en: 'Kaohsiung' } as Localized,
-      to: { zh: '東京・羽田／成田', ja: '東京・羽田／成田', en: 'Tokyo Haneda / Narita' } as Localized,
-      toCode: 'HND / NRT',
-      note: { zh: '南部出發選項', ja: '南部発', en: 'From southern Taiwan' } as Localized,
+      to: { zh: '東京・成田', ja: '東京・成田', en: 'Tokyo Narita' } as Localized,
+      toCode: 'NRT',
+      note: { zh: '目前只飛成田，部分航空公司非每日', ja: '成田のみ就航、毎日運航でない会社もあり', en: 'Narita only; some carriers do not fly daily' } as Localized,
+      carriers: {
+        zh: '長榮、中華、捷星日本、台灣虎航、泰國亞洲航空',
+        ja: 'エバー航空、チャイナエアライン、ジェットスター・ジャパン、タイガーエア台湾、タイ・エアアジア',
+        en: 'EVA Air, China Airlines, Jetstar Japan, Tigerair Taiwan, Thai AirAsia',
+      } as Localized,
     },
   ],
 
