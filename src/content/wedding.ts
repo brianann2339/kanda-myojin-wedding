@@ -110,8 +110,8 @@ export const wedding = {
             { zh: '浜松町轉 JR 山手線／京濱東北線', ja: '浜松町でJR山手線・京浜東北線に乗り換え', en: 'Change at Hamamatsucho for the JR Yamanote / Keihin-Tohoku Line' } as Localized,
             { zh: '秋葉原下車，電氣街口徒步 7 分', ja: '秋葉原下車、電気街口から徒歩7分', en: 'Get off at Akihabara — 7 min walk from the Electric Town Exit' } as Localized,
           ],
-          duration: { zh: '單軌 13 分＋JR 10 分（不含轉乘時間）', ja: 'モノレール13分＋JR10分（乗換時間を除く）', en: '13 min monorail + 10 min JR (excluding transfer)' } as Localized,
-          fare: null as Localized | null,
+          duration: { zh: '約 29 分（含轉乘）', ja: '約29分（乗換含む）', en: 'About 29 min including the change' } as Localized,
+          fare: { zh: '約 720 日圓', ja: '約720円', en: 'About ¥720' } as Localized | null,
           operator: { name: '東京モノレール', url: 'https://www.tokyo-monorail.co.jp/' },
         },
         {
@@ -121,8 +121,8 @@ export const wedding = {
             { zh: '品川轉 JR 山手線／京濱東北線', ja: '品川でJR山手線・京浜東北線に乗り換え', en: 'Change at Shinagawa for the JR Yamanote / Keihin-Tohoku Line' } as Localized,
             { zh: '秋葉原下車，電氣街口徒步 7 分', ja: '秋葉原下車、電気街口から徒歩7分', en: 'Get off at Akihabara — 7 min walk from the Electric Town Exit' } as Localized,
           ],
-          duration: { zh: '京急 13 分＋JR 17 分（不含轉乘時間）', ja: '京急13分＋JR17分（乗換時間を除く）', en: '13 min Keikyu + 17 min JR (excluding transfer)' } as Localized,
-          fare: null as Localized | null,
+          duration: { zh: '約 31 分（含轉乘）', ja: '約31分（乗換含む）', en: 'About 31 min including the change' } as Localized,
+          fare: { zh: '約 540 日圓　四條路線中最便宜', ja: '約540円　4ルート中いちばん安い', en: 'About ¥540 — the cheapest of the four' } as Localized | null,
           operator: { name: '京急電鉄', url: 'https://www.keikyu.co.jp/' },
         },
       ],
@@ -138,12 +138,8 @@ export const wedding = {
             { zh: '日暮里轉 JR 山手線', ja: '日暮里でJR山手線に乗り換え', en: 'Change at Nippori for the JR Yamanote Line' } as Localized,
             { zh: '秋葉原下車，電氣街口徒步 7 分', ja: '秋葉原下車、電気街口から徒歩7分', en: 'Get off at Akihabara — 7 min walk from the Electric Town Exit' } as Localized,
           ],
-          duration: { zh: 'Skyliner 最短 36 分（第 2・3 航廈起）＋JR', ja: 'スカイライナー最短36分（第2・3ターミナル発）＋JR', en: 'Skyliner from 36 min (Terminal 2·3) + JR' } as Localized,
-          fare: {
-            zh: '京成官網標示 Skyliner＋JR 至秋葉原 2,630 日圓（IC 2,619 日圓）',
-            ja: '京成公式：スカイライナー＋JRで秋葉原まで2,630円（IC 2,619円）',
-            en: 'Keisei lists Skyliner + JR to Akihabara at ¥2,630 (¥2,619 with IC)',
-          } as Localized | null,
+          duration: { zh: '約 56 分（含轉乘）', ja: '約56分（乗換含む）', en: 'About 56 min including the change' } as Localized,
+          fare: { zh: '約 2,780 日圓', ja: '約2,780円', en: 'About ¥2,780' } as Localized | null,
           operator: { name: '京成電鉄 Skyliner', url: 'https://www.keisei.co.jp/keisei/tetudou/skyliner/us/skyliner/index.php' },
         },
         {
@@ -153,11 +149,11 @@ export const wedding = {
             { zh: '東京站轉 JR 中央線快速', ja: '東京駅でJR中央線快速に乗り換え', en: 'Change at Tokyo Station for the JR Chuo Line Rapid' } as Localized,
             { zh: '御茶ノ水下車，聖橋口徒步 5 分', ja: '御茶ノ水下車、聖橋口から徒歩5分', en: 'Get off at Ochanomizu — 5 min walk from the Hijiribashi Exit' } as Localized,
           ],
-          duration: { zh: 'N’EX 最快 53 分＋JR 4 分', ja: '成田エクスプレス最速53分＋JR4分', en: 'N’EX from 53 min + 4 min JR' } as Localized,
+          duration: { zh: '約 60 分（N’EX 56 分＋中央線 4 分）', ja: '約60分（成田エクスプレス56分＋中央線4分）', en: 'About 60 min (56 min N’EX + 4 min Chuo Line)' } as Localized,
           fare: {
-            zh: 'JR 官網標示普通車指定席 3,140 日圓；另有 14 天有效的來回票 5,200 日圓',
-            ja: 'JR公式：普通車指定席3,140円。14日間有効の往復きっぷ5,200円もあり',
-            en: 'JR lists ¥3,140 for a reserved seat; a 14-day round trip ticket is ¥5,200',
+            zh: '約 3,300 日圓　已含東京站→御茶ノ水這段（N’EX 3,140＋中央線 160）。JR 另有 14 天有效的 N’EX 來回票 5,200 日圓',
+            ja: '約3,300円　東京駅→御茶ノ水の区間も込み（N\'EX 3,140＋中央線160）。JRには14日間有効の往復きっぷ5,200円もあり',
+            en: 'About ¥3,300 — includes the Tokyo → Ochanomizu leg (¥3,140 N’EX + ¥160 Chuo Line). JR also sells a 14-day round trip for ¥5,200',
           } as Localized | null,
           operator: { name: 'JR東日本 N’EX', url: 'https://www.jreast.co.jp/e/nex/' },
         },
@@ -264,177 +260,76 @@ export const wedding = {
    * 住宿候選。名稱與官網網址、車站徒步分鐘皆取自各飯店官方網站；
    * 官網自己標示不一致或未標示分鐘數的，只寫車站不寫分鐘（不猜）。
    */
+  /**
+   * 住宿候選。收錄條件（使用者訂）：步行到會場 10 分鐘內，且離最近車站 10 分鐘內。
+   * walkMin／walkMeters 為地圖步行路線估算（OpenStreetMap 路網，2026-08-22），
+   * station 的分鐘數則是各飯店官網自己標示的。
+   */
   hotels: [
     {
-      area: 'ochanomizu' as const,
-      name: 'お茶の水ホテルジュラク',
-      romaji: 'Ochanomizu Hotel Juraku',
-      url: 'https://www.hotel-juraku.co.jp/ocha/',
-      access: {
-        zh: 'JR 御茶ノ水站 聖橋口 徒步 2 分',
-        ja: 'JR御茶ノ水駅 聖橋口より徒歩2分',
-        en: '2 min walk from JR Ochanomizu Stn. (Hijiribashi Exit)',
-      } as Localized,
-    },
-    {
-      area: 'ochanomizu' as const,
-      name: 'お茶の水ホテル昇龍館',
-      romaji: 'Ochanomizu Hotel Shoryukan',
-      url: 'https://www.familyhotel.jp/',
-      access: {
-        zh: '東京 Metro 新御茶ノ水站 徒步 3 分',
-        ja: '東京メトロ新御茶ノ水駅より徒歩3分',
-        en: '3 min walk from Shin-Ochanomizu Stn. (Tokyo Metro)',
-      } as Localized,
-    },
-    {
-      area: 'ochanomizu' as const,
-      name: 'ホテル東京ガーデンパレス',
-      romaji: 'Hotel Tokyo Garden Palace',
-      url: 'https://www.hotelgp-tokyo.com/',
-      access: {
-        zh: '御茶ノ水站 徒步 5 分',
-        ja: '御茶ノ水駅より徒歩5分',
-        en: '5 min walk from Ochanomizu Stn.',
-      } as Localized,
-    },
-    {
-      area: 'ochanomizu' as const,
       name: 'アパホテル〈御茶ノ水駅北〉',
       romaji: 'APA Hotel Ochanomizu-Ekikita',
       url: 'https://www.apahotel.com/hotel/syutoken/tokyo/ochanomizu-kita/',
-      access: {
-        zh: 'JR 御茶ノ水站 聖橋口 徒步 6 分／末廣町站 4 番出口 徒步 5 分',
-        ja: 'JR御茶ノ水駅 聖橋口より徒歩6分／末広町駅 4番出口より徒歩5分',
-        en: '6 min from JR Ochanomizu Stn. (Hijiribashi Exit) · 5 min from Suehirocho Stn. (Exit 4)',
+      walkMin: 4,
+      walkMeters: 280,
+      station: {
+        zh: '末廣町站 4 番出口 5 分／JR 御茶ノ水站 聖橋口 6 分',
+        ja: '末広町駅 4番出口 徒歩5分／JR御茶ノ水駅 聖橋口 徒歩6分',
+        en: '5 min from Suehirocho Stn. (Exit 4) · 6 min from JR Ochanomizu Stn.',
       } as Localized,
     },
     {
-      area: 'akihabara' as const,
-      name: '秋葉原ワシントンホテル',
-      romaji: 'Akihabara Washington Hotel',
-      url: 'https://washington-hotels.jp/akihabara/',
-      access: {
-        zh: 'JR 秋葉原站 中央改札口 徒步 1 分',
-        ja: 'JR秋葉原駅 中央改札口より徒歩1分',
-        en: '1 min walk from JR Akihabara Stn. (Central Gate)',
+      name: 'ホテル東京ガーデンパレス',
+      romaji: 'Hotel Tokyo Garden Palace',
+      url: 'https://www.hotelgp-tokyo.com/',
+      walkMin: 5,
+      walkMeters: 370,
+      station: {
+        zh: 'JR 御茶ノ水站 徒步 5 分',
+        ja: 'JR御茶ノ水駅より徒歩5分',
+        en: '5 min from JR Ochanomizu Stn.',
       } as Localized,
     },
     {
-      area: 'akihabara' as const,
-      name: 'JR東日本ホテルメッツ プレミア 秋葉原',
-      romaji: 'JR-East Hotel Mets Premier Akihabara',
-      url: 'https://www.hotelmets.jp/en/akihabara/',
-      access: {
-        zh: 'JR 秋葉原站 南口 徒步 1 分',
-        ja: 'JR秋葉原駅 南口より徒歩1分',
-        en: '1 min walk from JR Akihabara Stn. (South Exit)',
-      } as Localized,
-    },
-    {
-      area: 'akihabara' as const,
       name: 'ノーガホテル秋葉原東京',
       romaji: 'NOHGA Hotel Akihabara Tokyo',
       url: 'https://www.nohgahotel.com/akihabara/',
-      access: {
-        zh: 'JR 秋葉原站 徒步 6 分',
-        ja: 'JR秋葉原駅より徒歩6分',
-        en: '6 min walk from JR Akihabara Stn.',
+      walkMin: 5,
+      walkMeters: 400,
+      station: {
+        zh: '末廣町站 徒步 4 分／JR 秋葉原站 徒步 6 分',
+        ja: '末広町駅より徒歩4分／JR秋葉原駅より徒歩6分',
+        en: '4 min from Suehirocho Stn. · 6 min from JR Akihabara Stn.',
       } as Localized,
     },
     {
-      area: 'akihabara' as const,
+      name: 'お茶の水ホテルジュラク',
+      romaji: 'Ochanomizu Hotel Juraku',
+      url: 'https://www.hotel-juraku.co.jp/ocha/',
+      walkMin: 8,
+      walkMeters: 560,
+      station: {
+        zh: 'JR 御茶ノ水站 聖橋口 徒步 2 分',
+        ja: 'JR御茶ノ水駅 聖橋口より徒歩2分',
+        en: '2 min from JR Ochanomizu Stn. (Hijiribashi Exit)',
+      } as Localized,
+    },
+    {
       name: 'すえひろの湯 ドーミーイン秋葉原',
       romaji: 'Dormy Inn Akihabara',
       url: 'https://dormy-hotels.com/dormyinn/hotels/akihabara/',
-      access: {
-        zh: '末廣町站 徒步約 1 分／JR 秋葉原站 徒步約 5 分（地址與神社同為外神田）',
-        ja: '末広町駅より徒歩約1分／JR秋葉原駅より徒歩約5分（住所は神社と同じ外神田）',
-        en: 'About 1 min from Suehirocho Stn. · 5 min from JR Akihabara Stn. (same Sotokanda district as the shrine)',
-      } as Localized,
-    },
-    {
-      area: 'kanda' as const,
-      name: '明神の湯 ドーミーインPREMIUM神田',
-      romaji: 'Dormy Inn Premium Kanda',
-      url: 'https://dormy-hotels.com/dormyinn/hotels/kanda/',
-      access: {
-        zh: '東京 Metro 新御茶ノ水站 徒步約 5 分／JR 秋葉原站 電氣街口 徒步約 6 分',
-        ja: '東京メトロ新御茶ノ水駅より徒歩約5分／JR秋葉原駅 電気街口より徒歩約6分',
-        en: 'About 5 min from Shin-Ochanomizu Stn. · 6 min from JR Akihabara Stn. (Electric Town Exit)',
-      } as Localized,
-    },
-    {
-      area: 'kanda' as const,
-      name: '相鉄フレッサイン東京神田',
-      romaji: 'Sotetsu Fresa Inn Tokyo Kanda',
-      url: 'https://sotetsu-hotels.com/fresa-inn/kanda/',
-      access: {
-        zh: 'JR 神田站 南口 徒步 4 分',
-        ja: 'JR神田駅 南口より徒歩4分',
-        en: '4 min walk from JR Kanda Stn. (South Exit)',
-      } as Localized,
-    },
-    {
-      area: 'kanda' as const,
-      name: '神田ステーションホテル',
-      romaji: 'Kanda Station Hotel',
-      url: 'https://www.kandasth.com/',
-      access: {
-        zh: 'JR 神田站 南口 徒步 1 分',
-        ja: 'JR神田駅 南口より徒歩1分',
-        en: '1 min walk from JR Kanda Stn. (South Exit)',
-      } as Localized,
-    },
-    {
-      area: 'kanda' as const,
-      name: 'ホテルSUI神田 by ABEST',
-      romaji: 'Hotel Sui Kanda by ABEST',
-      url: 'https://hotelsui-kanda.com/',
-      access: {
-        zh: 'JR 神田站 徒步 4 分',
-        ja: 'JR神田駅より徒歩4分',
-        en: '4 min walk from JR Kanda Stn.',
-      } as Localized,
-    },
-    {
-      area: 'tokyo-station' as const,
-      name: '東京ステーションホテル',
-      romaji: 'The Tokyo Station Hotel',
-      url: 'https://www.tokyostationhotel.jp/',
-      access: {
-        zh: '東京站（官網未標示步行時間）',
-        ja: '東京駅（公式サイトに徒歩分数の記載なし）',
-        en: 'Tokyo Stn. (walk time not stated on the official site)',
-      } as Localized,
-    },
-    {
-      area: 'tokyo-station' as const,
-      name: 'シャングリ・ラ 東京',
-      romaji: 'Shangri-La Tokyo',
-      url: 'https://www.shangri-la.com/jp/tokyo/shangrila/',
-      access: {
-        zh: '東京站（官網步行時間標示不一）',
-        ja: '東京駅（公式サイト内で徒歩分数の記載が一致せず）',
-        en: 'Tokyo Stn. (official site gives conflicting walk times)',
-      } as Localized,
-    },
-    {
-      area: 'tokyo-station' as const,
-      name: '丸ノ内ホテル',
-      romaji: 'Marunouchi Hotel',
-      url: 'https://www.marunouchi-hotel.co.jp/',
-      access: {
-        zh: '東京站 丸之內北口 徒步約 1 分',
-        ja: 'JR東京駅 丸の内北口より徒歩約1分',
-        en: 'About 1 min walk from Tokyo Stn. (Marunouchi North Exit)',
+      walkMin: 9,
+      walkMeters: 700,
+      station: {
+        zh: '末廣町站 徒步約 1 分／JR 秋葉原站 徒步約 5 分',
+        ja: '末広町駅より徒歩約1分／JR秋葉原駅より徒歩約5分',
+        en: 'About 1 min from Suehirocho Stn. · 5 min from JR Akihabara Stn.',
       } as Localized,
     },
   ],
 }
 
 export type Hotel = (typeof wedding.hotels)[number]
-export type HotelArea = Hotel['area']
 
 export type Station = (typeof wedding.stations)[number]
 export type Departure = (typeof wedding.departures)[number]

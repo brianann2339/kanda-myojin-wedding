@@ -1211,12 +1211,34 @@ button {
   line-height: 1.6;
 }
 
-.hotel-link {
-  font-size: 0.625rem;
-  letter-spacing: 0.12em;
-  color: var(--shu);
-  white-space: nowrap;
+.hotel-walk {
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  border-left: 1px solid var(--line);
+  padding-left: 0.875rem;
+  min-width: 4.5rem;
+}
+
+.hotel-walk-label {
+  font-size: 0.5625rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+}
+
+.hotel-walk-min {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--shu);
+  letter-spacing: 0.04em;
+}
+
+.hotel-walk-m {
+  font-family: var(--serif-en);
+  font-size: 0.5625rem;
+  color: var(--faint);
 }
 
 /* ---------- image credits ---------- */
