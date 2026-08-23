@@ -81,22 +81,36 @@ export const wedding = {
       walk: 5,
     },
     {
-      id: 'akihabara',
+      id: 'akihabara-jr',
       kind: 'jr' as const,
       name: { zh: '秋葉原站', ja: '秋葉原駅', en: 'Akihabara Station' } as Localized,
       exit: { zh: '電氣街口', ja: '電気街口', en: 'Electric Town Exit' } as Localized,
       lines: {
-        zh: 'JR 山手線・京濱東北線／Metro 日比谷線',
-        ja: 'JR山手線・京浜東北線／メトロ日比谷線',
-        en: 'JR Yamanote & Keihin-Tohoku Lines / Metro Hibiya Line',
+        zh: 'JR 山手線・京濱東北線',
+        ja: 'JR山手線・京浜東北線',
+        en: 'JR Yamanote & Keihin-Tohoku Lines',
+      } as Localized,
+      walk: 7,
+    },
+    {
+      // 日比谷線的秋葉原與 JR 是不同站體，官網那一列沒有標出口，因此這裡也不寫
+      id: 'akihabara-hibiya',
+      kind: 'metro' as const,
+      name: { zh: '秋葉原站', ja: '秋葉原駅', en: 'Akihabara Station' } as Localized,
+      exit: null,
+      lines: {
+        zh: '東京 Metro 日比谷線',
+        ja: '東京メトロ日比谷線',
+        en: 'Tokyo Metro Hibiya Line',
       } as Localized,
       walk: 7,
     },
   ],
 
   /**
-   * 機場往會場的路線。時間為各鐵道業者官網標示的最短時間，
-   * 票價只在業者官網自己公布時才寫（羽田兩線的官網未列票價，因此留 null）。
+   * 機場往會場的路線。所需時間與票價皆為 2026-08-22 以 Google 地圖
+   * 路線查詢取得的參考值（含轉乘），與畫面上標示的來源一致。
+   * fare 可為 null；若某條路線查不到可靠票價，就留 null 不要填估算值。
    */
   airportRoutes: [
     {
@@ -243,7 +257,7 @@ export const wedding = {
     hero: {
       src: asset('images/kanda-myojin-ukiyoe.jpg'),
       /** 二代歌川広重「東都三十六景 神田明神」，國立國會圖書館藏，公有領域 */
-      credit: '歌川広重「東都三十六景・神田明神」／国立国会図書館 · Public domain',
+      credit: '二代歌川広重「東都三十六景・神田明神」／国立国会図書館 · Public domain',
       creditUrl: 'https://commons.wikimedia.org/wiki/File:NDL1303573_%E7%A5%9E%E7%94%B0%E6%98%8E%E7%A5%9E.jpg',
       isPlaceholder: true,
     },

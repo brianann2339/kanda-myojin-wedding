@@ -61,7 +61,7 @@ const zh = {
     timeSub: '神前式開始時間',
     ritualTitle: '儀式內容',
     rituals: [
-      { name: '參進之儀', desc: '在神職奏起的雅樂聲中，新人與親族列隊步向總朱漆塗的社殿。' },
+      { name: '參進之儀', desc: '在神職奏起的雅樂聲中，新人與列席的各位一同列隊，步向總朱漆塗的社殿。' },
       { name: '雅樂生演奏', desc: '儀式全程由樂人現場演奏雅樂相伴。' },
       { name: '巫女舞（豐榮之舞）', desc: '巫女隨樂人的演奏奉納祝舞，為兩人與在場親友祈福。' },
     ],
@@ -159,7 +159,7 @@ const zh = {
     walkToVenue: '到會場',
     minUnit: '分',
     stationLabel: '最近車站',
-    walkSource: '到會場的步行時間為地圖路線估算；離車站的分鐘數為各飯店官網標示。房價與空房請直接至各飯店官網查詢。',
+    walkSource: '到會場的步行時間與距離皆為地圖路線估算；離車站的分鐘數為各飯店官網標示。房價與空房請直接至各飯店官網查詢。',
   },
   faq: {
     kicker: 'GUIDE · FAQ',
@@ -198,7 +198,7 @@ const zh = {
     kicker: 'RSVP · CONTACT',
     title: '出席回覆',
     formIntro: '為了統計人數與安排細節，屆時請透過表單告訴我們：',
-    fields: ['是否出席', '同行人數', '飲食禁忌', '住宿需求'],
+    fields: ['是否出席', '同行人數', '住宿需求'],
     rsvpButton: '回覆出席・RSVP',
     formTbd: 'Google 表單・連結待補',
     contactTitle: '聯絡我們',
@@ -269,7 +269,7 @@ const ja: Copy = {
     timeSub: '挙式開始時刻',
     ritualTitle: '儀式の内容',
     rituals: [
-      { name: '参進の儀', desc: '神職の奏でる雅楽の音色とともに、新郎新婦と親族が列をなして総朱塗りの社殿へ進みます。' },
+      { name: '参進の儀', desc: '神職の奏でる雅楽の音色とともに、新郎新婦とご列席の皆様の想いを込めて、総朱塗りの社殿へ進みます。' },
       { name: '雅楽生演奏', desc: '式は雅楽の生演奏とともに執り行われます。' },
       { name: '巫女舞（豊栄の舞）', desc: '楽人の演奏により、巫女がお祝いの舞を奉奏します。' },
     ],
@@ -367,7 +367,7 @@ const ja: Copy = {
     walkToVenue: '会場まで',
     minUnit: '分',
     stationLabel: '最寄り駅',
-    walkSource: '会場までの徒歩時間は地図の徒歩ルートによる目安、駅からの分数は各ホテル公式サイトの表記です。料金・空室は各公式サイトでご確認ください。',
+    walkSource: '会場までの徒歩時間と距離は地図の徒歩ルートによる目安、駅からの分数は各ホテル公式サイトの表記です。料金・空室は各公式サイトでご確認ください。',
   },
   faq: {
     kicker: 'GUIDE · FAQ',
@@ -406,7 +406,7 @@ const ja: Copy = {
     kicker: 'RSVP · CONTACT',
     title: 'ご出欠のご返信',
     formIntro: '人数と当日の手配のため、フォームからお知らせください：',
-    fields: ['ご出欠', 'お連れ様の人数', '食物アレルギー等', '宿泊のご希望'],
+    fields: ['ご出欠', 'お連れ様の人数', '宿泊のご希望'],
     rsvpButton: 'ご出欠を送る・RSVP',
     formTbd: 'Google フォーム・リンクは後日',
     contactTitle: 'ご連絡先',
@@ -436,7 +436,7 @@ const en: Copy = {
     flights: 'Flights',
     stay: 'Stay',
     faq: 'Guide',
-    gift: 'Gift',
+    gift: 'Favour',
     contact: 'RSVP',
     menu: 'Menu',
   },
@@ -475,7 +475,7 @@ const en: Copy = {
     timeSub: 'Ceremony start time',
     ritualTitle: 'What happens',
     rituals: [
-      { name: 'Sanshin no gi — the procession', desc: 'To gagaku played by the priests, the couple and their families walk in procession to the vermilion-lacquered hall.' },
+      { name: 'Sanshin no gi — the procession', desc: 'To gagaku played by the priests, the couple and everyone attending walk in procession to the vermilion-lacquered hall.' },
       { name: 'Live gagaku', desc: 'The ceremony unfolds to gagaku, Japanese court music, played live.' },
       { name: 'Miko mai — Toyosaka no Mai', desc: 'A shrine maiden dances a blessing for the couple and everyone present, accompanied by the musicians.' },
     ],
@@ -573,7 +573,7 @@ const en: Copy = {
     walkToVenue: 'To the venue',
     minUnit: 'min',
     stationLabel: 'Nearest station',
-    walkSource: 'Walking times to the venue are map estimates; times to the station are as stated by each hotel. Check rates and availability on each hotel\'s own site.',
+    walkSource: 'Walking times and distances to the venue are map estimates; times to the station are as stated by each hotel. Check rates and availability on each hotel\'s own site.',
   },
   faq: {
     kicker: 'GUIDE · FAQ',
@@ -597,7 +597,7 @@ const en: Copy = {
   },
   gift: {
     kicker: 'WEDDING GIFT',
-    title: 'Wedding gift',
+    title: 'Our gift to you',
     chosen: 'C H O S E N',
     desc: [
       'A Tokyo confectionery brand built on the idea of a sweet-scented flower shop.',
@@ -612,7 +612,7 @@ const en: Copy = {
     kicker: 'RSVP · CONTACT',
     title: 'RSVP',
     formIntro: 'So we can plan numbers and details, the form will ask you for:',
-    fields: ['Whether you can come', 'How many with you', 'Dietary needs', 'Accommodation needs'],
+    fields: ['Whether you can come', 'How many with you', 'Accommodation needs'],
     rsvpButton: 'RSVP',
     formTbd: 'Google Form · link coming',
     contactTitle: 'Contact us',

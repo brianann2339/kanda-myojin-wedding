@@ -116,7 +116,8 @@ button {
 
 .topbar-inner {
   margin: 0 auto;
-  max-width: var(--page);
+  /* 比內文版心寬一些：十個區塊連結＋姓名＋語言鈕在 40rem 內會被擠到需要捲動 */
+  max-width: min(48rem, 100%);
   padding: 0 1.375rem;
   min-height: 3.25rem;
   display: flex;
@@ -134,9 +135,16 @@ button {
 }
 
 .topbar-links {
-  display: none;
+  display: flex;
   gap: 1rem;
   overflow-x: auto;
+  min-width: 0;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.topbar-links::-webkit-scrollbar {
+  display: none;
 }
 
 .topbar-links a {
@@ -150,9 +158,17 @@ button {
   color: var(--shu);
 }
 
-@media (min-width: 720px) {
+/* 窄螢幕沒有空間同時擺姓名與導覽，導覽優先——否則十個段落只能一路捲 */
+@media (max-width: 859px) {
+  .topbar-name {
+    display: none;
+  }
+
+  /* 右緣淡出，讓「還可以往右捲」看起來是刻意的，而不是字被切掉 */
   .topbar-links {
-    display: flex;
+    flex: 1;
+    padding-right: 0.5rem;
+    mask-image: linear-gradient(to right, #000 82%, transparent);
   }
 }
 
