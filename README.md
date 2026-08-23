@@ -9,7 +9,7 @@
 
 | 想做的事 | 改哪裡 |
 | --- | --- |
-| 婚禮日期定案、啟用倒數計時 | `wedding.date`：`confirmed` 改 `true`，填 `iso`（例 `'2027-04-13'`）與 `time`（例 `'14:30'`） |
+| 婚禮日期定案、啟用倒數計時 | `wedding.date`：`confirmed` 改 `true`，填 `iso`（例 `'2027-03-27'`）與 `time`（例 `'14:30'`） |
 | 換成你們自己的照片 | 圖片放進 `public/images/`，把 `wedding.photos.hero.src` 改成 `asset('images/檔名.jpg')`，並把該張的 `credit` / `creditUrl` 整段刪掉、`isPlaceholder` 改 `false` |
 | 開放 RSVP 表單 | `wedding.rsvp.formUrl` 填 Google 表單網址，按鈕會自動啟用；`lineUrl`、`email` 同理 |
 | 改任何一種語言的文字 | `copy.ts` 裡的 `zh` / `ja` / `en`，三者 key 必須一致，少一個 TypeScript 會報錯 |
