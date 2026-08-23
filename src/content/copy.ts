@@ -122,7 +122,7 @@ const zh = {
     addressSource: '地址與交通資訊依神田明神官方網站',
     noticeTitle: '參列提醒',
     notices: [
-      '部分流程可能於戶外進行，建議準備一件薄外套。',
+      '部分流程可能於戶外進行，建議準備一件外套。',
       '春季境內的參拜人潮與動線注意事項，待與神社確認後補充。',
     ],
     noticeTags: ['當日氣候與細節待確認', '待確認'],
@@ -142,7 +142,7 @@ const zh = {
   flights: {
     kicker: 'FLIGHTS',
     title: '台灣前往東京',
-    note: '2027 年 4 月已可訂位，但航空公司通常要更接近日期才會公布確切班表。以下是 2026 年 8 月查得的航線與航空公司，訂票時請以各官網當時公布的班表為準。',
+    note: '2027 年 3 月已可訂位，但航空公司通常要更接近日期才會公布確切班表。以下是 2026 年 8 月查得的航線與航空公司，訂票時請以各官網當時公布的班表為準。',
     carriersLabel: '目前飛這條航線的航空公司',
     compareTitle: '羽田 vs 成田',
     compareDesc: '羽田離市中心近，到會場約 23–30 分鐘車程（不含轉乘）；成田較遠，Skyliner 到日暮里最短 36 分再轉 JR，N’EX 到東京站最快 53 分再轉 4 分。行李多又不想多走路的話，N’EX 轉中央線在御茶ノ水下車，是離神社最近的一站。',
@@ -168,7 +168,7 @@ const zh = {
     items: [
       {
         q: '服裝建議',
-        a: '以正式服裝為主；部分流程可能於戶外進行，建議準備一件薄外套。詳細建議（含女士鞋履、和裝租借等）之後補上。',
+        a: '以正式服裝為主；部分流程可能於戶外進行，建議準備一件外套。詳細建議（含女士鞋履、和裝租借等）之後補上。',
         status: 'draft' as const,
       },
       { q: '需要準備禮金嗎', a: '不需要。我們不收禮金，也不必準備禮物——你願意出席，就是最大的禮物。', status: 'answered' as const },
@@ -350,7 +350,7 @@ const ja: Copy = {
   flights: {
     kicker: 'FLIGHTS',
     title: '台湾から東京へ',
-    note: '2027年4月の予約はすでに可能ですが、確定したダイヤは日程が近づいてから発表されるのが通例です。以下は2026年8月時点の就航路線と航空会社です。ご予約の際は各公式サイトの最新ダイヤをご確認ください。',
+    note: '2027年3月の予約はすでに可能ですが、確定したダイヤは日程が近づいてから発表されるのが通例です。以下は2026年8月時点の就航路線と航空会社です。ご予約の際は各公式サイトの最新ダイヤをご確認ください。',
     carriersLabel: '現在この路線に就航している航空会社',
     compareTitle: '羽田 と 成田',
     compareDesc: '羽田は都心に近く、会場までおよそ23〜30分（乗換時間を除く）。成田は遠く、スカイライナーで日暮里まで最短36分＋JR、成田エクスプレスなら東京駅まで最速53分＋JR4分です。荷物が多く歩きたくない方は、成田エクスプレスから中央線に乗り換えて御茶ノ水で降りるのが、神社にいちばん近い駅です。',
@@ -536,7 +536,7 @@ const en: Copy = {
     addressSource: 'Address and access per the official Kanda Myojin website',
     noticeTitle: 'Before you come',
     notices: [
-      'Parts of the day may take place outdoors — a light jacket is worth packing.',
+      'Parts of the day may take place outdoors — a jacket is worth packing.',
       'Notes on spring crowds and moving around the grounds will follow, once the shrine confirms.',
     ],
     noticeTags: ['Weather and details TBC', 'TBC'],
@@ -556,7 +556,7 @@ const en: Copy = {
   flights: {
     kicker: 'FLIGHTS',
     title: 'Taiwan to Tokyo',
-    note: 'April 2027 is already bookable, but airlines usually publish firm timetables closer to the date. Below are the routes and carriers as of August 2026 — check each airline\'s own timetable when you book.',
+    note: 'March 2027 is already bookable, but airlines usually publish firm timetables closer to the date. Below are the routes and carriers as of August 2026 — check each airline\'s own timetable when you book.',
     carriersLabel: 'Airlines currently flying this route',
     compareTitle: 'Haneda or Narita',
     compareDesc: 'Haneda is close to the centre — roughly 23–30 minutes to the venue, transfers aside. Narita is further out: the Skyliner reaches Nippori in 36 minutes at best, and the N\'EX reaches Tokyo Station in 53, plus 4 more on the Chuo Line. With heavy bags, the N\'EX and then the Chuo Line to Ochanomizu puts you at the closest station to the shrine.',
@@ -582,7 +582,7 @@ const en: Copy = {
     items: [
       {
         q: 'What should I wear?',
-        a: 'Formal dress. Parts of the day may be outdoors, so bring a light jacket. More detail — shoes, kimono rental — to follow.',
+        a: 'Formal dress. Parts of the day may be outdoors, so bring a jacket. More detail — shoes, kimono rental — to follow.',
         status: 'draft' as const,
       },
       { q: 'Should I bring a gift?', a: 'No. No cash gifts, nothing to buy — you being there is the gift.', status: 'answered' as const },

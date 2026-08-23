@@ -118,7 +118,7 @@ export function Chevron({ className }: { className?: string }) {
   )
 }
 
-/** 薄外套：戶外流程的保暖提醒 */
+/** 外套：戶外流程的保暖提醒 */
 export function Jacket() {
   return (
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style={gold} aria-hidden="true">
