@@ -347,11 +347,11 @@ export const wedding = {
    */
   photos: {
     hero: {
-      src: asset('images/kanda-myojin-ukiyoe.jpg'),
-      /** 二代歌川広重「東都三十六景 神田明神」，國立國會圖書館藏，公有領域 */
-      credit: '二代歌川広重「東都三十六景・神田明神」／国立国会図書館 · Public domain',
-      creditUrl: 'https://commons.wikimedia.org/wiki/File:NDL1303573_%E7%A5%9E%E7%94%B0%E6%98%8E%E7%A5%9E.jpg',
-      isPlaceholder: true,
+      /** 新人自備的浮世繪風畫像（2026-08-31 提供），自有圖片、無需出處標示 */
+      src: asset('images/hero-ukiyoe-couple.jpg'),
+      credit: null as string | null,
+      creditUrl: null as string | null,
+      isPlaceholder: false,
     },
     venue: {
       src: asset('images/kanda-myojin-hall.jpg'),

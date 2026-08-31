@@ -78,7 +78,7 @@ export function Hero() {
           )}
         </div>
         {photo?.isPlaceholder && <span className="tag tag-tbd">{t.hero.photoTag}</span>}
-        {photo && (
+        {photo?.credit && photo.creditUrl && (
           <a className="credit" href={photo.creditUrl} target="_blank" rel="noreferrer">
             {photo.credit}
           </a>

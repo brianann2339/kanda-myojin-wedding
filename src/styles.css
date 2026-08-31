@@ -236,8 +236,8 @@ button {
 }
 
 .hero-photo {
-  width: min(12.875rem, 62vw);
-  aspect-ratio: 206 / 264;
+  width: min(24rem, 86vw);
+  aspect-ratio: 1535 / 1024;
   border: 1px solid #e0d6c2;
   background: var(--panel);
   display: flex;
