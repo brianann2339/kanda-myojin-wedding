@@ -18,18 +18,17 @@ export const wedding = {
 
   date: {
     /** 日期敲定後改成 true，並填入 iso 與 time，倒數計時會自動啟用 */
-    confirmed: false,
-    /** 例：'2027-03-27'。未定為 null */
-    iso: null as string | null,
-    /** 儀式開始時間，例：'14:30'。未定為 null */
-    time: null as string | null,
+    confirmed: true,
+    iso: '2027-03-25' as string | null,
+    /** 儀式開始時間 */
+    time: '11:00' as string | null,
     /** Hero 的大字 */
-    display: '2027 · 03',
+    display: '2027 · 03 · 25',
     year: 2027,
     month: 3,
-    /** 目前規劃的區間說明 */
-    estimate: { zh: '預計 3 月下旬', ja: '3月下旬を予定', en: 'Late March' } as Localized,
-    main: { zh: '2027 年 3 月', ja: '2027年3月', en: 'March 2027' } as Localized,
+    /** 星期幾（2027-03-25 為星期四，已查證） */
+    estimate: { zh: '星期四', ja: '木曜日', en: 'Thursday' } as Localized,
+    main: { zh: '2027 年 3 月 25 日', ja: '2027年3月25日', en: 'March 25, 2027' } as Localized,
   },
 
   venue: {
