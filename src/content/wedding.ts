@@ -315,8 +315,8 @@ export const wedding = {
 
 
   rsvp: {
-    /** Google 表單建好後填入，按鈕會自動啟用（表單記得包含飲食禁忌／過敏題） */
-    formUrl: null as string | null,
+    /** Google 表單（2026-08-31 由 Claude 以新人帳號建立；含姓名／聯絡方式／出席／人數／同行者／飲食禁忌／留言七題） */
+    formUrl: 'https://forms.gle/psXrTDeXAcR4J1TS9' as string | null,
   },
 
   /** 兩人的私訊管道（2026-08-31 由新人提供並同意公開於網站） */
