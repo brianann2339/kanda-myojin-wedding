@@ -201,6 +201,18 @@ export const wedding = {
       } as Localized,
     },
     {
+      code: 'RMQ',
+      from: { zh: '台中・清泉崗', ja: '台中・清泉崗', en: 'Taichung' } as Localized,
+      to: { zh: '東京・成田', ja: '東京・成田', en: 'Tokyo Narita' } as Localized,
+      toCode: 'NRT',
+      note: {
+        zh: '2026 年 3 月才開航的新航線，只飛成田',
+        ja: '2026年3月就航の新路線。成田のみ',
+        en: 'A new route since March 2026 — Narita only',
+      } as Localized,
+      carriers: { zh: '星宇', ja: 'スターラックス', en: 'STARLUX' } as Localized,
+    },
+    {
       code: 'KHH',
       from: { zh: '高雄・小港', ja: '高雄・小港', en: 'Kaohsiung' } as Localized,
       to: { zh: '東京・成田', ja: '東京・成田', en: 'Tokyo Narita' } as Localized,
