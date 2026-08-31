@@ -181,11 +181,15 @@ export const wedding = {
       from: { zh: '台北・桃園', ja: '台北・桃園', en: 'Taipei Taoyuan' } as Localized,
       to: { zh: '東京・成田／羽田', ja: '東京・成田／羽田', en: 'Tokyo Narita / Haneda' } as Localized,
       toCode: 'NRT / HND',
-      note: { zh: '兩個機場都有航班', ja: '両空港とも就航', en: 'Both airports served' } as Localized,
+      note: {
+        zh: '兩個機場都有航班；飛羽田的目前只有台灣虎航與樂桃，其餘都是成田',
+        ja: '両空港とも就航。羽田便は現在タイガーエア台湾とピーチのみ、ほかは成田',
+        en: 'Both airports served — only Tigerair and Peach fly to Haneda; the rest go to Narita',
+      } as Localized,
       carriers: {
-        zh: '長榮、中華、日航、星宇、台灣虎航、樂桃、捷星日本',
-        ja: 'エバー航空、チャイナエアライン、JAL、スターラックス、タイガーエア台湾、ピーチ、ジェットスター・ジャパン',
-        en: 'EVA Air, China Airlines, JAL, STARLUX, Tigerair Taiwan, Peach, Jetstar Japan',
+        zh: '長榮、中華、日航、星宇、台灣虎航、樂桃、捷星日本、酷航、泰獅航空、國泰',
+        ja: 'エバー航空、チャイナエアライン、JAL、スターラックス、タイガーエア台湾、ピーチ、ジェットスター・ジャパン、スクート、タイ・ライオン・エア、キャセイパシフィック',
+        en: 'EVA Air, China Airlines, JAL, STARLUX, Tigerair Taiwan, Peach, Jetstar Japan, Scoot, Thai Lion Air, Cathay Pacific',
       } as Localized,
     },
     {
@@ -238,6 +242,11 @@ export const wedding = {
     { name: { zh: '日本航空', ja: '日本航空', en: 'Japan Airlines' } as Localized, url: 'https://www.jal.co.jp/tw/zhtw/' },
     { name: { zh: '全日空', ja: '全日空', en: 'ANA' } as Localized, url: 'https://www.ana.co.jp/zh/tw/' },
     { name: { zh: '樂桃航空', ja: 'ピーチ', en: 'Peach' } as Localized, url: 'https://www.flypeach.com/tw' },
+    { name: { zh: '捷星日本', ja: 'ジェットスター・ジャパン', en: 'Jetstar Japan' } as Localized, url: 'https://www.jetstar.com/tw/zh/home' },
+    { name: { zh: '酷航', ja: 'スクート', en: 'Scoot' } as Localized, url: 'https://www.flyscoot.com/zhtw' },
+    { name: { zh: '泰獅航空', ja: 'タイ・ライオン・エア', en: 'Thai Lion Air' } as Localized, url: 'https://www.lionairthai.com/' },
+    { name: { zh: '泰國亞洲航空', ja: 'タイ・エアアジア', en: 'Thai AirAsia' } as Localized, url: 'https://www.airasia.com/zh/tw' },
+    { name: { zh: '國泰航空', ja: 'キャセイパシフィック航空', en: 'Cathay Pacific' } as Localized, url: 'https://www.cathaypacific.com/cx/zh_TW.html' },
   ],
 
   /**
