@@ -360,6 +360,18 @@ export const wedding = {
    */
   hotels: [
     {
+      name: 'お茶の水イン',
+      romaji: 'Hotel Ochanomizu Inn',
+      url: 'https://www.o-inn.co.jp/',
+      walkMin: 2,
+      walkMeters: 180,
+      station: {
+        zh: 'JR／丸之內線 御茶ノ水站、千代田線 新御茶ノ水站 皆徒步 3 分',
+        ja: 'JR・丸ノ内線 御茶ノ水駅、千代田線 新御茶ノ水駅いずれも徒歩3分',
+        en: '3 min from Ochanomizu Stn. (JR / Marunouchi) and Shin-Ochanomizu Stn. (Chiyoda)',
+      } as Localized,
+    },
+    {
       name: 'アパホテル〈御茶ノ水駅北〉',
       romaji: 'APA Hotel Ochanomizu-Ekikita',
       url: 'https://www.apahotel.com/hotel/syutoken/tokyo/ochanomizu-kita/',
