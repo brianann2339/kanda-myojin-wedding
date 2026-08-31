@@ -1,5 +1,5 @@
+import { useEffect } from 'react'
 import { Access } from './components/Access'
-import { Ceremony } from './components/Ceremony'
 import { Contact } from './components/Contact'
 import { FAQ } from './components/FAQ'
 import { Flights } from './components/Flights'
@@ -13,13 +13,31 @@ import { Venue } from './components/Venue'
 import { LangProvider } from './i18n'
 
 export default function App() {
+  // 區塊進入視窗時淡入；使用者偏好減少動態時不啟用
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const sections = document.querySelectorAll('.section')
+    sections.forEach((el) => el.classList.add('will-reveal'))
+    const io = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed')
+            io.unobserve(entry.target)
+          }
+        }),
+      { rootMargin: '0px 0px -8% 0px' },
+    )
+    sections.forEach((el) => io.observe(el))
+    return () => io.disconnect()
+  }, [])
+
   return (
     <LangProvider>
       <TopBar />
       <Hero />
       <main className="page">
         <Invitation />
-        <Ceremony />
         <Timeline />
         <Venue />
         <Access />

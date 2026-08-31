@@ -8,7 +8,7 @@ export function Access() {
 
   return (
     <section className="section" id="access">
-      <SectionHead num="伍" kicker={t.access.kicker} title={t.access.title} />
+      <SectionHead num="肆" kicker={t.access.kicker} title={t.access.title} />
 
       <div className="stack">
         <div className="group-title">{t.access.stationsTitle}</div>

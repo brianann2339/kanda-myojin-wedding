@@ -12,7 +12,7 @@ export function FAQ() {
 
   return (
     <section className="section" id="faq">
-      <SectionHead num="捌" kicker={t.faq.kicker} title={t.faq.title} />
+      <SectionHead num="柒" kicker={t.faq.kicker} title={t.faq.title} />
 
       <div className="stack-sm">
         {t.faq.items.map((item, i) => {
@@ -29,18 +29,27 @@ export function FAQ() {
 
           return (
             <div className="faq" key={item.q} data-open={isOpen} data-answered={answered} data-draft={draft}>
-              <button
-                type="button"
-                className="faq-q"
-                aria-expanded={isOpen}
-                onClick={() => setOpen(open === i ? null : i)}
-              >
-                <span>{item.q}</span>
-                <span className="faq-meta">
-                  <span className={answered ? 'tag tag-fixed' : 'tag tag-tbd'}>{tag}</span>
-                  <Chevron className="faq-chevron" />
-                </span>
-              </button>
+              {item.a !== null ? (
+                <button
+                  type="button"
+                  className="faq-q"
+                  aria-expanded={isOpen}
+                  onClick={() => setOpen(open === i ? null : i)}
+                >
+                  <span>{item.q}</span>
+                  <span className="faq-meta">
+                    <span className={answered ? 'tag tag-fixed' : 'tag tag-tbd'}>{tag}</span>
+                    <Chevron className="faq-chevron" />
+                  </span>
+                </button>
+              ) : (
+                <div className="faq-q faq-q--static">
+                  <span>{item.q}</span>
+                  <span className="faq-meta">
+                    <span className="tag tag-tbd">{tag}</span>
+                  </span>
+                </div>
+              )}
               {isOpen && <div className="faq-a">{item.a}</div>}
             </div>
           )

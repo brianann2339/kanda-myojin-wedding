@@ -3,10 +3,9 @@ import { wedding } from '../content/wedding'
 import { useLang } from '../i18n'
 import { LangSwitch } from './LangSwitch'
 
-/** 與頁面上的十個 section 一一對應 */
+/** 與頁面上的八個 section 一一對應 */
 const LINKS = [
   { id: 'invitation', key: 'invitation' },
-  { id: 'ceremony', key: 'ceremony' },
   { id: 'timeline', key: 'timeline' },
   { id: 'venue', key: 'venue' },
   { id: 'access', key: 'access' },

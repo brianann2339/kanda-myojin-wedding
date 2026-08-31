@@ -7,7 +7,7 @@ export function Stay() {
 
   return (
     <section className="section" id="stay">
-      <SectionHead num="柒" kicker={t.stay.kicker} title={t.stay.title} />
+      <SectionHead num="陸" kicker={t.stay.kicker} title={t.stay.title} />
 
       <div className="hint" style={{ marginBottom: 20 }}>
         <span aria-hidden />

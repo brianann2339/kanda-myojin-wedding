@@ -11,7 +11,7 @@ export function Venue() {
 
   return (
     <section className="section" id="venue">
-      <SectionHead num="肆" kicker={t.venue.kicker} title={t.venue.title} />
+      <SectionHead num="參" kicker={t.venue.kicker} title={t.venue.title} />
 
       <figure className="venue-figure">
         <div className="photo-frame">

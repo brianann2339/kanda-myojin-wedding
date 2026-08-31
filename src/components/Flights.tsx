@@ -8,7 +8,7 @@ export function Flights() {
 
   return (
     <section className="section" id="flights">
-      <SectionHead num="陸" kicker={t.flights.kicker} title={t.flights.title} />
+      <SectionHead num="伍" kicker={t.flights.kicker} title={t.flights.title} />
 
       <div className="hint" style={{ marginBottom: 20 }}>
         <span aria-hidden />

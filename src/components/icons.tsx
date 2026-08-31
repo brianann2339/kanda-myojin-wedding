@@ -30,41 +30,8 @@ export function Mizuhiki() {
   )
 }
 
-export function ToriiSmall() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" style={shu} aria-hidden="true">
-      <path d="M3 5 C 8 3.4, 14 3.4, 19 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M5 8 L 17 8" stroke="currentColor" strokeWidth="1.3" />
-      <path d="M7 5.4 L 8 19 M 15 5.4 L 14 19" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  )
-}
 
-export function Gagaku() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" style={gold} aria-hidden="true">
-      <path d="M6 18 L 6 6 C 6 4.5, 7 3.6, 8.4 3.6 L 9.6 3.6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M16 18 L 16 6 C 16 4.5, 15 3.6, 13.6 3.6 L 12.4 3.6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <circle cx="6" cy="18.4" r="1.8" stroke="currentColor" strokeWidth="1.3" fill="none" />
-      <circle cx="16" cy="18.4" r="1.8" stroke="currentColor" strokeWidth="1.3" fill="none" />
-    </svg>
-  )
-}
 
-export function MikoDance() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" style={shu} aria-hidden="true">
-      <path
-        d="M11 4 C 12.6 7, 15.4 8.6, 18.4 8.2 C 17 11, 14.4 12.4, 11 12.4 C 7.6 12.4, 5 11, 3.6 8.2 C 6.6 8.6, 9.4 7, 11 4 Z"
-        stroke="currentColor"
-        strokeWidth="1.3"
-        fill="none"
-        strokeLinejoin="round"
-      />
-      <path d="M11 12.6 L 11 18.6 M 7.6 18.8 L 14.4 18.8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-    </svg>
-  )
-}
 
 export function TrainJR() {
   return (

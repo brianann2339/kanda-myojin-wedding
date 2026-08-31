@@ -9,7 +9,7 @@ export function Contact() {
 
   return (
     <section className="section" id="contact">
-      <SectionHead num="玖" kicker={t.contact.kicker} title={t.contact.title} />
+      <SectionHead num="捌" kicker={t.contact.kicker} title={t.contact.title} />
 
       <div className="card stack">
         <div className="body-text">{t.contact.formIntro}</div>
