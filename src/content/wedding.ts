@@ -45,6 +45,16 @@ export const wedding = {
     officialUrl: 'https://www.kandamyoujin.or.jp/',
   },
 
+  /**
+   * 建議入口：參道大鳥居（Google 地圖地點名 Dotorii，35.7010871,139.767135，
+   * 由使用者提供的分享連結解析而得）。從這裡進來走參道，不用爬長階梯——
+   * 也是導覽影片開頭出現的那座鳥居。
+   */
+  entrance: {
+    shareUrl: 'https://maps.app.goo.gl/iML7rdTy18P1hRxy8',
+    mapEmbedUrl: 'https://maps.google.com/maps?q=35.7010871,139.767135&z=18&output=embed',
+  },
+
   /** 車站資料同樣依官方網站逐字核對，walk 為官方標示的徒步分鐘數 */
   stations: [
     {
@@ -258,8 +268,7 @@ export const wedding = {
     '08:30', // 新娘梳化
     '09:30', // 新郎梳化
     null, // 親友集合（時間未定）
-    null, // 參進之儀（緊接儀式前，時間未定）
-    '11:00', // 神前式
+    '11:00', // 神前式（由參進之儀入場開始）
     '12:00', // 集合照・境內拍攝（約 30 分鐘）
     '12:30', // 披露宴
     null, // 散會（結束時間未定）
@@ -304,15 +313,6 @@ export const wedding = {
     officialUrl: 'https://myojin.tokyo/banquet/',
   },
 
-  gift: {
-    confirmed: true,
-    brand: 'TOKYO TULIP ROSE',
-    brandLocal: { zh: '東京鬱金香玫瑰', ja: '東京チューリップローズ', en: 'Tokyo Tulip Rose' } as Localized,
-    site: 'https://www.tuliprose.jp/',
-    /** 禮盒品項與發放方式尚未決定 */
-    boxConfirmed: false,
-    deliveryConfirmed: false,
-  },
 
   rsvp: {
     /** 取得 Google 表單連結後填入，按鈕會自動啟用 */

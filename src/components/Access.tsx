@@ -31,16 +31,34 @@ export function Access() {
       <div className="stack" style={{ marginTop: 24 }}>
         <div className="group-title">{t.access.videoTitle}</div>
         <p className="body-text">{t.access.videoDesc}</p>
-        <video
-          className="video-embed video-embed--portrait"
-          style={{ aspectRatio: '512 / 910' }}
-          controls
-          preload="none"
-          playsInline
-          poster={wedding.videos.walkthrough.poster}
-        >
-          <source src={wedding.videos.walkthrough.src} type="video/mp4" />
-        </video>
+        <div className="video-map-row">
+          <video
+            className="video-embed video-embed--portrait"
+            style={{ aspectRatio: '512 / 910' }}
+            controls
+            preload="none"
+            playsInline
+            poster={wedding.videos.walkthrough.poster}
+          >
+            <source src={wedding.videos.walkthrough.src} type="video/mp4" />
+          </video>
+          <div className="map-side">
+            <div className="group-title" style={{ fontSize: '0.75rem' }}>
+              {t.access.mapTitle}
+            </div>
+            <iframe
+              className="map-embed"
+              src={wedding.entrance.mapEmbedUrl}
+              title={t.access.mapTitle}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <p className="fact-sub">{t.access.mapDesc}</p>
+            <a className="btn-ghost" href={wedding.entrance.shareUrl} target="_blank" rel="noreferrer">
+              {t.access.mapOpen} ↗
+            </a>
+          </div>
+        </div>
       </div>
 
       <div className="stack" style={{ marginTop: 24 }}>

@@ -151,29 +151,3 @@ export function Crowd() {
   )
 }
 
-export function TulipRose() {
-  return (
-    <svg width="72" height="84" viewBox="0 0 72 84" fill="none" aria-hidden="true">
-      <path
-        d="M14 34 C 14 22, 22 14, 36 14 C 50 14, 58 22, 58 34 L 58 44 C 58 58, 50 66, 36 66 C 22 66, 14 58, 14 44 Z"
-        stroke="var(--shu)"
-        strokeWidth="1.6"
-        fill="none"
-      />
-      <path d="M14 34 L 24 42 L 36 32 L 48 42 L 58 34" stroke="var(--shu)" strokeWidth="1.4" fill="none" strokeLinejoin="round" />
-      <path
-        d="M36 40 C 40 36, 46 38, 45 43 C 44.4 47, 39 48, 36 45 C 33 48, 27.6 47, 27 43 C 26 38, 32 36, 36 40 Z"
-        stroke="var(--gold)"
-        strokeWidth="1.3"
-        fill="none"
-      />
-      <path
-        d="M36 41 C 37.8 39.6, 40.4 40.4, 40 42.6 C 39.6 44.4, 37.2 44.8, 36 43.4 C 34.8 44.8, 32.4 44.4, 32 42.6 C 31.6 40.4, 34.2 39.6, 36 41 Z"
-        stroke="var(--gold)"
-        strokeWidth="1.1"
-        fill="none"
-      />
-      <path d="M36 66 L 36 76 M 28 78 L 44 78" stroke="var(--shu)" strokeWidth="1.4" strokeLinecap="round" />
-    </svg>
-  )
-}

@@ -694,35 +694,6 @@ button {
   letter-spacing: 0.08em;
 }
 
-.ritual {
-  background: var(--card);
-  border: 1px solid var(--line);
-  padding: 1rem;
-  display: flex;
-  gap: 0.875rem;
-  align-items: flex-start;
-}
-
-.ritual svg {
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.ritual h4 {
-  margin: 0 0 0.25rem;
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--ink);
-}
-
-.ritual p {
-  margin: 0;
-  font-size: 0.75rem;
-  color: var(--muted);
-  line-height: 1.8;
-}
-
 .order {
   margin: 0;
   padding: 0;
@@ -1318,6 +1289,36 @@ button {
   margin: 0 auto;
 }
 
+.video-map-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.video-map-row .video-embed--portrait {
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.map-side {
+  flex: 1 1 16rem;
+  min-width: 15rem;
+  max-width: 24rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.map-embed {
+  width: 100%;
+  flex: 1;
+  min-height: 16rem;
+  border: 1px solid var(--line);
+  display: block;
+}
+
 .credit {
   font-size: 0.5625rem;
   letter-spacing: 0.04em;
@@ -1388,50 +1389,6 @@ button {
   font-size: 0.75rem;
   color: var(--muted);
   line-height: 1.9;
-}
-
-/* ---------- gift ---------- */
-
-.gift {
-  background: var(--card);
-  border: 1px solid var(--line);
-  padding: 1.875rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.125rem;
-  text-align: center;
-}
-
-.gift-brand {
-  font-family: var(--serif-en);
-  font-size: clamp(1.25rem, 1.05rem + 0.85vw, 1.625rem);
-  letter-spacing: 0.16em;
-  color: var(--ink);
-}
-
-.gift-local {
-  font-size: 0.875rem;
-  color: var(--muted);
-  letter-spacing: 0.2em;
-  text-indent: 0.2em;
-}
-
-.gift-desc {
-  font-size: 0.75rem;
-  color: var(--muted);
-  line-height: 2;
-}
-
-.gift-site {
-  font-family: var(--serif-en);
-  font-size: 0.6875rem;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-}
-
-.gift-site:hover {
-  color: var(--shu);
 }
 
 /* ---------- rsvp ---------- */

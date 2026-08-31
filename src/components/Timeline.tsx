@@ -2,8 +2,8 @@ import { wedding } from '../content/wedding'
 import { useLang } from '../i18n'
 import { SectionHead } from './SectionHead'
 
-/** 參進之儀、神前式與披露宴是當天的重點，時間軸上以實心點標示 */
-const KEY_STEPS = new Set([3, 4, 6])
+/** 神前式與披露宴是當天的重點，時間軸上以實心點標示 */
+const KEY_STEPS = new Set([3, 5])
 
 export function Timeline() {
   const { t } = useLang()

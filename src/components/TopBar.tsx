@@ -13,7 +13,6 @@ const LINKS = [
   { id: 'flights', key: 'flights' },
   { id: 'stay', key: 'stay' },
   { id: 'faq', key: 'faq' },
-  { id: 'gift', key: 'gift' },
   { id: 'contact', key: 'contact' },
 ] as const
 

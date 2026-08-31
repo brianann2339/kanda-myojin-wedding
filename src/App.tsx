@@ -4,7 +4,6 @@ import { Contact } from './components/Contact'
 import { FAQ } from './components/FAQ'
 import { Flights } from './components/Flights'
 import { Footer } from './components/Footer'
-import { Gift } from './components/Gift'
 import { Hero } from './components/Hero'
 import { Invitation } from './components/Invitation'
 import { Stay } from './components/Stay'
@@ -27,7 +26,6 @@ export default function App() {
         <Flights />
         <Stay />
         <FAQ />
-        <Gift />
         <Contact />
       </main>
       <Footer />

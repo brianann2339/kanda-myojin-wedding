@@ -1,9 +1,6 @@
 import { wedding } from '../content/wedding'
 import { useLang } from '../i18n'
-import { Gagaku, MikoDance, ToriiSmall } from './icons'
 import { SectionHead } from './SectionHead'
-
-const ritualIcons = [ToriiSmall, Gagaku, MikoDance]
 
 export function Ceremony() {
   const { t, l } = useLang()
@@ -46,23 +43,8 @@ export function Ceremony() {
       </div>
 
       <div className="stack" style={{ marginTop: 24 }}>
-        <div className="group-title">{t.ceremony.ritualTitle}</div>
-        {t.ceremony.rituals.map((ritual, i) => {
-          const Icon = ritualIcons[i]
-          return (
-            <div className="ritual" key={ritual.name}>
-              <Icon />
-              <div>
-                <h4>{ritual.name}</h4>
-                <p>{ritual.desc}</p>
-              </div>
-            </div>
-          )
-        })}
-      </div>
-
-      <div className="stack" style={{ marginTop: 24 }}>
         <div className="group-title">{t.ceremony.orderTitle}</div>
+        <p className="body-text">{t.ceremony.ritualNote}</p>
         <ol className="order">
           {t.ceremony.order.map((step) => (
             <li key={step}>{step}</li>
