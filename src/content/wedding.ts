@@ -228,8 +228,60 @@ export const wedding = {
     { name: { zh: '樂桃航空', ja: 'ピーチ', en: 'Peach' } as Localized, url: 'https://www.flypeach.com/tw' },
   ],
 
-  /** 儀式後不設會食（已定案） */
-  reception: { happening: false },
+  /**
+   * 當日流程的時刻，與 copy.ts 的 timeline.items **依序一一對應**（目前 8 項）。
+   * 只有神前式的 11:00 是已確定的，其餘尚未排定一律留 null，畫面顯示 ──：──。
+   * 之後拿到梳化、集合、開宴時間，就把對應位置填上即可。
+   */
+  scheduleTimes: [
+    '08:30', // 新娘梳化
+    '09:30', // 新郎梳化
+    null, // 親友集合（時間未定）
+    null, // 參進之儀（緊接儀式前，時間未定）
+    '11:00', // 神前式
+    '12:00', // 集合照・境內拍攝（約 30 分鐘）
+    '12:30', // 披露宴
+    null, // 散會（結束時間未定）
+  ] as (string | null)[],
+
+  /**
+   * 披露宴（2026-08-31 改為舉辦）。會場在神田明神境內的明神会館。
+   * 兩個宴會廳的名稱、人數與特色皆逐字取自官網 myojin.tokyo/banquet/；
+   * 料理描述取自 myojin.tokyo/cuisine/。實際使用哪一廳、開始時間都還沒定，
+   * 不要在這裡填猜測值。
+   */
+  reception: {
+    happening: true,
+    venueName: { zh: '明神会館', ja: '明神会館', en: 'Myojin Kaikan' } as Localized,
+    venueNote: {
+      zh: '就在神田明神境內，儀式結束後步行即達',
+      ja: '神田明神の境内にあり、挙式後は歩いてそのまま移動できます',
+      en: 'Inside the shrine grounds — a short walk from the ceremony',
+    } as Localized,
+    /** 已定案使用「彩の間」；開始時間仍待確認 */
+    hall: {
+      /** 英文版附上羅馬拼音，否則英語賓客讀不出「彩の間」 */
+      name: { zh: '彩の間', ja: '彩の間', en: 'Sai-no-Ma' } as Localized,
+      capacity: { zh: '可容納 40〜120 名', ja: '対応人数 40〜120名', en: 'Seats 40–120 guests' } as Localized,
+      feature: {
+        zh: '自然光灑落的明亮空間，以白木為基調，氣氛開闊',
+        ja: '自然光が差し込む明るい会場。白木を取り入れたデザインで開放的な雰囲気',
+        en: 'Bright, filled with natural light, finished in pale wood and open in feel',
+      } as Localized,
+    },
+    startTime: '12:30' as string | null,
+    cuisine: {
+      zh: '會場稱之為「明神ガストロノミー」——從「溫故知新」出發，和風與西式交融的新式料理，以生產者細心栽培的江戶食材為主，並在賓客面前完成最後一道手續。',
+      ja: '「明神ガストロノミー」。温故知新の概念から生まれた和と洋が混ざり合う新しい料理で、江戸食材を中心に、サービスがお客様の目の前で仕上げます。',
+      en: 'The venue calls it "Myojin Gastronomy" — new cooking where Japanese and Western traditions meet, built on Edo-region produce and finished at your table.',
+    } as Localized,
+    sourceNote: {
+      zh: '會場與料理資訊依明神会館官方網站',
+      ja: '会場・料理の情報は明神会館公式サイトに準拠',
+      en: 'Hall and cuisine details per the official Myojin Kaikan website',
+    } as Localized,
+    officialUrl: 'https://myojin.tokyo/banquet/',
+  },
 
   gift: {
     confirmed: true,

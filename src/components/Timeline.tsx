@@ -1,8 +1,9 @@
+import { wedding } from '../content/wedding'
 import { useLang } from '../i18n'
 import { SectionHead } from './SectionHead'
 
-/** 參進之儀與神前式是當天的重點，時間軸上以實心點標示 */
-const KEY_STEPS = new Set([3, 4])
+/** 參進之儀、神前式與披露宴是當天的重點，時間軸上以實心點標示 */
+const KEY_STEPS = new Set([3, 4, 6])
 
 export function Timeline() {
   const { t } = useLang()
@@ -25,7 +26,7 @@ export function Timeline() {
               {i < items.length - 1 && <div className="tl-line" />}
             </div>
             <div className="tl-body">
-              <div className="tl-time">──：──</div>
+              <div className="tl-time">{wedding.scheduleTimes[i] ?? '──：──'}</div>
               <div className="tl-name">{item.name}</div>
               <div className="tl-desc">{item.desc}</div>
             </div>

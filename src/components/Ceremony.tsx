@@ -7,6 +7,7 @@ const ritualIcons = [ToriiSmall, Gagaku, MikoDance]
 
 export function Ceremony() {
   const { t, l } = useLang()
+  const reception = wedding.reception
 
   return (
     <section className="section" id="ceremony">
@@ -73,12 +74,48 @@ export function Ceremony() {
         <div className="small-note">{t.ceremony.ritualSource}</div>
       </div>
 
-      <div className="card row-between" style={{ marginTop: 24 }}>
-        <div className="stack-sm">
+      <div className="stack" style={{ marginTop: 24 }}>
+        <div className="row-between">
           <div className="group-title">{t.ceremony.receptionTitle}</div>
-          <div className="fact-sub">{t.ceremony.receptionDesc}</div>
+          <span className="tag tag-fixed">{t.common.confirmed}</span>
         </div>
-        <span className="tag tag-fixed">{t.common.confirmed}</span>
+        <p className="body-text">{t.ceremony.receptionDesc}</p>
+
+        <div className="card stack">
+          <div className="reception-row">
+            <span className="reception-label">{t.ceremony.receptionHallLabel}</span>
+            <span className="reception-value">
+              <span className="reception-hall">
+                {l(reception.venueName)} · {l(reception.hall.name)}
+              </span>
+              <span className="fact-sub">{l(reception.hall.capacity)}</span>
+              <span className="fact-sub">{l(reception.hall.feature)}</span>
+              <span className="fact-sub">{l(reception.venueNote)}</span>
+            </span>
+          </div>
+
+          <div className="reception-row">
+            <span className="reception-label">{t.ceremony.receptionTimeLabel}</span>
+            <span className="reception-value">
+              <span className="row-between" style={{ justifyContent: 'flex-start', gap: 8 }}>
+                <span className="fact-main-placeholder">{reception.startTime ?? '──：──'}</span>
+                {!reception.startTime && <span className="tag tag-tbd">{t.common.tbd}</span>}
+              </span>
+            </span>
+          </div>
+
+          <div className="reception-row">
+            <span className="reception-label">{t.ceremony.receptionCuisineLabel}</span>
+            <span className="reception-value">
+              <span className="fact-sub">{l(reception.cuisine)}</span>
+            </span>
+          </div>
+
+          <a className="btn-ghost" href={reception.officialUrl} target="_blank" rel="noreferrer">
+            {t.ceremony.receptionSiteButton} ↗
+          </a>
+          <div className="small-note">{l(reception.sourceNote)}</div>
+        </div>
       </div>
     </section>
   )

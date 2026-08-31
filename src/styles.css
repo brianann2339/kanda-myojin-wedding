@@ -665,6 +665,35 @@ button {
   line-height: 1.7;
 }
 
+.reception-row {
+  display: flex;
+  gap: 0.875rem;
+  align-items: flex-start;
+}
+
+.reception-label {
+  flex-shrink: 0;
+  width: 3.5rem;
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  padding-top: 0.25rem;
+}
+
+.reception-value {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.reception-hall {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.08em;
+}
+
 .ritual {
   background: var(--card);
   border: 1px solid var(--line);
