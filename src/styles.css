@@ -1449,12 +1449,14 @@ a.channel:hover {
   border-color: var(--red);
 }
 
-.channel-val {
+.channel-go {
   font-size: 0.75rem;
-  color: var(--muted);
-  overflow-wrap: anywhere;
-  text-align: right;
-  min-width: 0;
+  color: var(--ghost);
+  flex-shrink: 0;
+}
+
+a.channel:hover .channel-go {
+  color: var(--shu);
 }
 
 @media (max-width: 619px) {

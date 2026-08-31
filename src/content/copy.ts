@@ -1,5 +1,8 @@
 import type { Lang } from './wedding'
 
+/** FAQ 每題的狀態：已回答／文案草稿／尚未有答案 */
+type FaqStatus = 'answered' | 'draft' | 'pending'
+
 /**
  * 網站文案。zh 為正本，ja / en 依同一組 key 撰寫；
  * 少任何一個 key，TypeScript 會直接報錯。
@@ -176,15 +179,15 @@ const zh = {
     items: [
       {
         q: '服裝建議',
-        a: '以正式服裝為主；部分流程可能於戶外進行，建議準備一件外套，並且準備防蚊液。詳細建議（含女士鞋履、和裝租借等）之後補上。',
-        status: 'draft' as const,
+        a: '女士建議正式洋裝、典雅套裝，或是和服；男士建議正式西裝、西式禮服，或是傳統和服。部分流程可能於戶外進行，建議準備一件外套，並且準備防蚊液。',
+        status: 'answered' as FaqStatus,
       },
-      { q: '需要準備禮金嗎', a: '不需要。我們不收禮金，也不必準備禮物——你願意出席，就是最大的禮物。', status: 'answered' as const },
-      { q: '儀式後有用餐嗎', a: '有的。境內合影之後，我們會移步到神田明神境內的明神会館「彩の間」用餐。開始時間確定後會再告訴大家。', status: 'answered' as const },
-      { q: '神社參列禮儀', a: null, status: 'pending' as const },
-      { q: '儀式中的攝影規範', a: '社殿內請勿拍攝——儀式中只有神田明神專屬攝影師可以拍照。披露宴期間則可以自由拍攝。', status: 'answered' as const },
-      { q: '兒童可以參加嗎', a: '可以。會場備有依年齡準備的兒童餐，也有哺乳室。嬰兒車在館內可以使用，但社殿內不能推入，可寄放在衣帽間。', status: 'answered' as const },
-      { q: '語言與翻譯', a: '不用擔心。我們的朋友當天會擔任翻譯與司儀，儀式與宴席的流程都會即時為大家說明。', status: 'answered' as const },
+      { q: '需要準備禮金嗎', a: '不需要。我們不收禮金，也不必準備禮物——你願意出席，就是最大的禮物。', status: 'answered' as FaqStatus },
+      { q: '儀式後有用餐嗎', a: '有的。境內合影之後，我們會移步到神田明神境內的明神会館「彩の間」用餐。開始時間確定後會再告訴大家。', status: 'answered' as FaqStatus },
+      { q: '神社參列禮儀', a: null, status: 'pending' as FaqStatus },
+      { q: '儀式中的攝影規範', a: '社殿內請勿拍攝——儀式中只有神田明神專屬攝影師可以拍照。披露宴期間則可以自由拍攝。', status: 'answered' as FaqStatus },
+      { q: '兒童可以參加嗎', a: '可以。會場備有依年齡準備的兒童餐，也有哺乳室。嬰兒車在館內可以使用，但社殿內不能推入，可寄放在衣帽間。', status: 'answered' as FaqStatus },
+      { q: '語言與翻譯', a: '不用擔心。我們的朋友當天會擔任翻譯與司儀，儀式與宴席的流程都會即時為大家說明。', status: 'answered' as FaqStatus },
     ],
     pendingTag: '待確認',
     shrineTag: '依神社規定・待確認',
@@ -376,8 +379,8 @@ const ja: Copy = {
     items: [
       {
         q: '服装について',
-        a: 'フォーマルな装いでお越しください。一部屋外での進行が想定されるため、羽織るものと虫除けスプレーがあると安心です。詳細（履物、和装レンタルなど）は後日追記します。',
-        status: 'draft' as const,
+        a: '女性はフォーマルなワンピースや上品なスーツ、または和装がおすすめです。男性はフォーマルなスーツなどの洋装、または和装をどうぞ。一部屋外での進行が想定されるため、羽織るものと虫除けスプレーがあると安心です。',
+        status: 'answered' as const,
       },
       { q: 'ご祝儀は必要ですか', a: '不要です。ご祝儀もお品もお気遣いなく——ご出席そのものが、いちばんの贈り物です。', status: 'answered' as const },
       { q: '披露宴はありますか', a: 'はい。境内での記念撮影ののち、神田明神の境内にある明神会館「彩の間」でお食事をご用意しています。開宴時刻は決まり次第お知らせします。', status: 'answered' as const },
@@ -574,8 +577,8 @@ const en: Copy = {
     items: [
       {
         q: 'What should I wear?',
-        a: 'Formal dress. Parts of the day may be outdoors, so bring a jacket and insect repellent. More detail — shoes, kimono rental — to follow.',
-        status: 'draft' as const,
+        a: 'For women, a formal dress, an elegant suit, or a kimono. For men, a formal suit or other Western formal wear, or traditional Japanese dress. Parts of the day may be outdoors, so bring a jacket and insect repellent.',
+        status: 'answered' as const,
       },
       { q: 'Should I bring a gift?', a: 'No. No cash gifts, nothing to buy — you being there is the gift.', status: 'answered' as const },
       { q: 'Is there a reception?', a: 'Yes. After the group photos we move to Sai-no-Ma at Myojin Kaikan, inside the shrine grounds, for the meal. We will confirm the start time closer to the day.', status: 'answered' as const },

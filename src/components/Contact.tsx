@@ -43,29 +43,36 @@ export function Contact() {
         <div className="fact-sub">{t.contact.contactIntro}</div>
 
         <div className="contact-cards">
-          {wedding.contacts.map((c) => (
-            <div className="person-card stack-sm" key={c.person}>
-              <div className="person-name">
-                {l(c.person === 'groom' ? wedding.couple.groom : wedding.couple.bride)}
+          {wedding.contacts.map((c) => {
+            const name = l(c.person === 'groom' ? wedding.couple.groom : wedding.couple.bride)
+            /* 帳號本身不顯示，點名稱直接開對應的私訊視窗 */
+            const channels = [
+              { label: 'INSTAGRAM', href: c.instagramUrl },
+              { label: 'FACEBOOK', href: c.facebookUrl },
+              { label: 'LINE', href: `https://line.me/ti/p/~${c.lineId}` },
+              { label: 'EMAIL', href: `mailto:${c.email}` },
+            ]
+
+            return (
+              <div className="person-card stack-sm" key={c.person}>
+                <div className="person-name">{name}</div>
+                {channels.map((ch) => (
+                  <a
+                    className="channel"
+                    key={ch.label}
+                    href={ch.href}
+                    aria-label={`${name}・${ch.label}`}
+                    {...(ch.label === 'EMAIL' ? {} : { target: '_blank', rel: 'noreferrer' })}
+                  >
+                    <span className="channel-name">{ch.label}</span>
+                    <span className="channel-go" aria-hidden>
+                      ↗
+                    </span>
+                  </a>
+                ))}
               </div>
-              <a className="channel" href={c.instagramUrl} target="_blank" rel="noreferrer">
-                <span className="channel-name">INSTAGRAM</span>
-                <span className="channel-val">@{c.instagram}</span>
-              </a>
-              <a className="channel" href={c.facebookUrl} target="_blank" rel="noreferrer">
-                <span className="channel-name">FACEBOOK</span>
-                <span className="channel-val">{c.facebookHandle}</span>
-              </a>
-              <a className="channel" href={`https://line.me/ti/p/~${c.lineId}`} target="_blank" rel="noreferrer">
-                <span className="channel-name">LINE</span>
-                <span className="channel-val">{c.lineId}</span>
-              </a>
-              <a className="channel" href={`mailto:${c.email}`}>
-                <span className="channel-name">EMAIL</span>
-                <span className="channel-val">{c.email}</span>
-              </a>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         <div className="small-note">{t.contact.noPhone}</div>
