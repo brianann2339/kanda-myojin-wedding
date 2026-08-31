@@ -4,8 +4,8 @@ import { Chevron } from './icons'
 import { SectionHead } from './SectionHead'
 
 export function Contact() {
-  const { t } = useLang()
-  const { formUrl, lineUrl, email } = wedding.rsvp
+  const { t, l } = useLang()
+  const { formUrl } = wedding.rsvp
 
   return (
     <section className="section" id="contact">
@@ -42,21 +42,30 @@ export function Contact() {
         <div className="group-title">{t.contact.contactTitle}</div>
         <div className="fact-sub">{t.contact.contactIntro}</div>
 
-        <div className="stack-sm">
-          <div className="channel">
-            <span className="channel-name">LINE</span>
-            {lineUrl ? (
-              <a href={lineUrl} target="_blank" rel="noreferrer">
-                LINE
+        <div className="contact-cards">
+          {wedding.contacts.map((c) => (
+            <div className="person-card stack-sm" key={c.person}>
+              <div className="person-name">
+                {l(c.person === 'groom' ? wedding.couple.groom : wedding.couple.bride)}
+              </div>
+              <a className="channel" href={c.instagramUrl} target="_blank" rel="noreferrer">
+                <span className="channel-name">INSTAGRAM</span>
+                <span className="channel-val">@{c.instagram}</span>
               </a>
-            ) : (
-              <span className="tag tag-tbd">{t.contact.lineTbd}</span>
-            )}
-          </div>
-          <div className="channel">
-            <span className="channel-name">EMAIL</span>
-            {email ? <a href={`mailto:${email}`}>{email}</a> : <span className="tag tag-tbd">{t.contact.emailTbd}</span>}
-          </div>
+              <a className="channel" href={c.facebookUrl} target="_blank" rel="noreferrer">
+                <span className="channel-name">FACEBOOK</span>
+                <span className="channel-val">{c.facebookHandle}</span>
+              </a>
+              <a className="channel" href={`https://line.me/ti/p/~${c.lineId}`} target="_blank" rel="noreferrer">
+                <span className="channel-name">LINE</span>
+                <span className="channel-val">{c.lineId}</span>
+              </a>
+              <a className="channel" href={`mailto:${c.email}`}>
+                <span className="channel-name">EMAIL</span>
+                <span className="channel-val">{c.email}</span>
+              </a>
+            </div>
+          ))}
         </div>
 
         <div className="small-note">{t.contact.noPhone}</div>

@@ -1408,6 +1408,55 @@ button {
   color: var(--ink);
 }
 
+/* 兩人的私訊管道卡（捌・聯絡我們） */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.person-card {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 1rem;
+  min-width: 0;
+}
+
+.person-name {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid var(--red);
+  align-self: flex-start;
+}
+
+a.channel {
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease;
+  min-width: 0;
+}
+
+a.channel:hover {
+  border-color: var(--red);
+}
+
+.channel-val {
+  font-size: 0.75rem;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+  text-align: right;
+  min-width: 0;
+}
+
+@media (max-width: 619px) {
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- footer ---------- */
 
 .footer {

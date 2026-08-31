@@ -315,11 +315,31 @@ export const wedding = {
 
 
   rsvp: {
-    /** 取得 Google 表單連結後填入，按鈕會自動啟用 */
+    /** Google 表單建好後填入，按鈕會自動啟用（表單記得包含飲食禁忌／過敏題） */
     formUrl: null as string | null,
-    lineUrl: null as string | null,
-    email: null as string | null,
   },
+
+  /** 兩人的私訊管道（2026-08-31 由新人提供並同意公開於網站） */
+  contacts: [
+    {
+      person: 'groom' as const,
+      facebookUrl: 'https://www.facebook.com/brianann75/',
+      facebookHandle: 'brianann75',
+      instagram: 'shrape75895',
+      instagramUrl: 'https://www.instagram.com/shrape75895/',
+      lineId: 'brianann75',
+      email: 'brianann75@gmail.com',
+    },
+    {
+      person: 'bride' as const,
+      facebookUrl: 'https://www.facebook.com/anna.sweet.566',
+      facebookHandle: 'anna.sweet.566',
+      instagram: 'anna.sweet.566',
+      instagramUrl: 'https://www.instagram.com/anna.sweet.566/',
+      lineId: 'annasweet2339',
+      email: 'annasweet2339@gmail.com',
+    },
+  ],
 
   /**
    * 圖片。換成你們自己的照片時：檔案放進 public/images/，
