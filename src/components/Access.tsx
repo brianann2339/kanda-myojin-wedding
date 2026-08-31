@@ -53,7 +53,11 @@ export function Access() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-            <p className="fact-sub">{t.access.mapDesc}</p>
+            <p className="fact-sub">
+              {t.access.mapDesc}
+              <strong className="em-shu">{t.access.mapDescStrong}</strong>
+              {t.access.mapDescTail}
+            </p>
             <a className="btn-ghost" href={wedding.entrance.shareUrl} target="_blank" rel="noreferrer">
               {t.access.mapOpen} ↗
             </a>

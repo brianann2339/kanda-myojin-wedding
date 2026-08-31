@@ -1408,6 +1408,12 @@ button {
   color: var(--ink);
 }
 
+/* 句中強調：朱紅粗體 */
+.em-shu {
+  color: var(--shu);
+  font-weight: 700;
+}
+
 /* 兩人的私訊管道卡（捌・聯絡我們） */
 .contact-cards {
   display: grid;
