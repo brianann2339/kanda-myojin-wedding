@@ -1277,6 +1277,18 @@ button {
   justify-content: flex-end;
 }
 
+.video-embed {
+  display: block;
+  width: 100%;
+  background: #000;
+  border: 1px solid var(--line);
+}
+
+.video-embed--portrait {
+  max-width: 18.75rem;
+  margin: 0 auto;
+}
+
 .credit {
   font-size: 0.5625rem;
   letter-spacing: 0.04em;

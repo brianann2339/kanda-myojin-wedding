@@ -57,6 +57,22 @@ export function Venue() {
       </div>
 
       <div className="stack" style={{ marginTop: 24 }}>
+        <div className="group-title">{t.venue.videoTitle}</div>
+        <p className="body-text">{t.venue.videoDesc}</p>
+        <video
+          className="video-embed"
+          style={{ aspectRatio: '16 / 9' }}
+          controls
+          preload="none"
+          playsInline
+          poster={wedding.videos.ceremonyPreview.poster}
+        >
+          <source src={wedding.videos.ceremonyPreview.src} type="video/mp4" />
+        </video>
+        <div className="credit">{wedding.videos.ceremonyPreview.credit}</div>
+      </div>
+
+      <div className="stack" style={{ marginTop: 24 }}>
         <div className="group-title">{t.venue.addressTitle}</div>
         <div className="card stack">
           <div className="stack-sm">

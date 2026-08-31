@@ -270,6 +270,22 @@ export const wedding = {
   },
 
   /**
+   * 影片。ceremonyPreview 由明神会館提供、經對方同意公開使用；
+   * walkthrough 是新人自己在現場錄的導覽，兩者都已壓縮成適合網頁播放的檔案。
+   */
+  videos: {
+    ceremonyPreview: {
+      src: asset('videos/ceremony-preview.mp4'),
+      poster: asset('images/ceremony-preview-poster.jpg'),
+      credit: '影片提供：明神会館',
+    },
+    walkthrough: {
+      src: asset('videos/venue-walkthrough.mp4'),
+      poster: asset('images/venue-walkthrough-poster.jpg'),
+    },
+  },
+
+  /**
    * 住宿候選。名稱與官網網址、車站徒步分鐘皆取自各飯店官方網站；
    * 官網自己標示不一致或未標示分鐘數的，只寫車站不寫分鐘（不猜）。
    */

@@ -29,6 +29,21 @@ export function Access() {
       </div>
 
       <div className="stack" style={{ marginTop: 24 }}>
+        <div className="group-title">{t.access.videoTitle}</div>
+        <p className="body-text">{t.access.videoDesc}</p>
+        <video
+          className="video-embed video-embed--portrait"
+          style={{ aspectRatio: '512 / 910' }}
+          controls
+          preload="none"
+          playsInline
+          poster={wedding.videos.walkthrough.poster}
+        >
+          <source src={wedding.videos.walkthrough.src} type="video/mp4" />
+        </video>
+      </div>
+
+      <div className="stack" style={{ marginTop: 24 }}>
         <div className="group-title">{t.access.airportTitle}</div>
 
         {wedding.airportRoutes.map((airport) => (
