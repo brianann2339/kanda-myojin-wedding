@@ -1657,3 +1657,140 @@ a.channel:hover .channel-go {
     animation: none;
   }
 }
+
+/* ---------- desktop（≥1024px）：編輯式雙欄，手機版完全不動 ----------
+ * 手機是單欄疊卡；桌機若只是把根字級放大，看起來就像手機版被放大。
+ * 這裡讓桌機真的用到寬度：hero 圖文左右、各區塊「章節欄＋內容欄」、清單兩欄。
+ * media query 裡的 rem 以 16px 計，與 html 的流體字級無關。 */
+@media (min-width: 64rem) {
+  :root {
+    --page: 62rem;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    grid-template-areas:
+      'kicker figure'
+      'stroke figure'
+      'names figure'
+      'when figure';
+    align-content: center;
+    align-items: center;
+    justify-items: start;
+    row-gap: 1.25rem;
+    column-gap: 4rem;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 5rem 3rem 6rem;
+    text-align: left;
+  }
+
+  .hero-kicker {
+    grid-area: kicker;
+    text-indent: 0;
+  }
+
+  .hero-stroke {
+    grid-area: stroke;
+  }
+
+  .hero-names {
+    grid-area: names;
+    align-items: flex-start;
+  }
+
+  .hero-names h1 {
+    text-indent: 0;
+    font-size: clamp(1.75rem, 1.2rem + 1.4vw, 2.5rem);
+  }
+
+  .hero-romaji {
+    text-indent: 0;
+  }
+
+  .hero-figure {
+    grid-area: figure;
+    justify-self: end;
+  }
+
+  .hero-photo {
+    width: min(38rem, 44vw);
+  }
+
+  .hero-when {
+    grid-area: when;
+    align-items: flex-start;
+  }
+
+  .hero-shrine,
+  .hero-date {
+    text-indent: 0;
+  }
+
+  .hero-scroll {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* 章節欄（左，跟著捲動）＋內容欄（右）。
+   * 內容子元素各自成列，章節欄跨滿所有列才能 sticky 整段。 */
+  .section {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 1fr);
+    column-gap: 3.5rem;
+    align-items: start;
+  }
+
+  .section > .sec-head {
+    grid-column: 1;
+    grid-row: 1 / span 40;
+    position: sticky;
+    top: 5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0;
+  }
+
+  .section > .sec-head .sec-rule {
+    order: 3;
+    width: 2.5rem;
+    height: 2px;
+  }
+
+  .section > .sec-head .sec-num {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .section > :not(.sec-head) {
+    grid-column: 2;
+  }
+
+  .body-text {
+    max-width: 42rem;
+  }
+
+  /* 卡片清單兩欄；群組標題與註記跨滿 */
+  .stack:has(> .station),
+  .stack:has(> .hotel),
+  .stack:has(> .route),
+  .airport {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .stack:has(> .station) > .group-title,
+  .stack:has(> .station) > .small-note,
+  .stack:has(> .hotel) > .group-title,
+  .stack:has(> .hotel) > .small-note,
+  .airport > .airport-name {
+    grid-column: 1 / -1;
+  }
+
+  .airlines {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
