@@ -21,7 +21,7 @@ const zh = {
     flights: '航班',
     stay: '住宿',
     faq: '指南',
-    contact: '出席按這裡',
+    contact: '新增/查詢出席賓客',
     menu: '目錄',
   },
   hero: {
@@ -185,7 +185,7 @@ const zh = {
   },
   contact: {
     kicker: 'RSVP · CONTACT',
-    title: '出席回覆',
+    title: '新增賓客',
     form: {
       intro: '一份表單可以填多位——請把同行的每一位都列出來，並分別告訴我們神前式與披露宴是否參加。生日只用來確認身分，之後要修改回覆時會用到。',
       colName: '姓名',
@@ -227,7 +227,7 @@ const zh = {
       closed: '表單尚未開放',
     },
     attendees: {
-      title: '已回覆的賓客',
+      title: '查詢已報名賓客',
       intro: '名字以「王O明」的方式顯示。要修改自己的回覆，按該列的「修改」並輸入當初填的生日即可。',
       groom: '新郎側',
       bride: '新娘側',
@@ -270,7 +270,7 @@ const ja: Copy = {
     flights: '航空便',
     stay: '宿泊',
     faq: 'ご案内',
-    contact: 'ご出欠はこちら',
+    contact: '出欠の登録／確認',
     menu: '目次',
   },
   hero: {
@@ -433,7 +433,7 @@ const ja: Copy = {
   },
   contact: {
     kicker: 'RSVP · CONTACT',
-    title: 'ご出欠のご返信',
+    title: 'ご出欠の登録',
     form: {
       intro: '1 回の送信で複数名をご登録いただけます。ご一緒に来られる方全員をご記入のうえ、神前式・披露宴それぞれのご出欠をお知らせください。お誕生日（月・日）はご本人確認のためだけに使い、あとで回答を変更する際に必要になります。',
       colName: 'お名前',
@@ -475,7 +475,7 @@ const ja: Copy = {
       closed: 'フォームは準備中です',
     },
     attendees: {
-      title: 'お返事をいただいた方',
+      title: '登録済みの方を確認',
       intro: 'お名前は「山O郎」のように一部を伏せて表示しています。ご自身の回答を変更するには、その行の「変更」を押し、登録時のお誕生日を入力してください。',
       groom: '新郎側',
       bride: '新婦側',
@@ -516,7 +516,7 @@ const en: Copy = {
     flights: 'Flights',
     stay: 'Stay',
     faq: 'Guide',
-    contact: 'RSVP here',
+    contact: 'Add / check guests',
     menu: 'Menu',
   },
   hero: {
@@ -679,7 +679,7 @@ const en: Copy = {
   },
   contact: {
     kicker: 'RSVP · CONTACT',
-    title: 'RSVP',
+    title: 'Add guests',
     form: {
       intro: 'One form can cover several people. List everyone coming with you, and tell us for each person whether they will join the ceremony and the reception lunch. The birthday (month/day) is only used to confirm identity if you need to change your reply later.',
       colName: 'Name',
@@ -721,7 +721,7 @@ const en: Copy = {
       closed: 'Form not open yet',
     },
     attendees: {
-      title: 'Guests who have replied',
+      title: 'Check registered guests',
       intro: 'Names are partly hidden (e.g. 王O明 or B. C.). To change your own reply, press "Edit" on that row and enter the birthday you gave.',
       groom: "Groom's side",
       bride: "Bride's side",

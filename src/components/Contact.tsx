@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { wedding } from '../content/wedding'
 import { useLang } from '../i18n'
 import { Attendees } from './Attendees'
@@ -8,6 +8,13 @@ import { SectionHead } from './SectionHead'
 export function Contact() {
   const { t, l } = useLang()
   const [refreshKey, setRefreshKey] = useState(0)
+  const listRef = useRef<HTMLDivElement>(null)
+
+  /* 送出成功後才捲到「查詢已報名賓客」：放在 effect 裡，等表單收合成完成訊息、版面定型後再量位置 */
+  useEffect(() => {
+    if (refreshKey === 0) return
+    listRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }, [refreshKey])
 
   return (
     <section className="section" id="contact">
@@ -17,7 +24,9 @@ export function Contact() {
         <RsvpForm onSubmitted={() => setRefreshKey((k) => k + 1)} />
       </div>
 
-      <Attendees refreshKey={refreshKey} />
+      <div ref={listRef} className="scroll-target">
+        <Attendees refreshKey={refreshKey} />
+      </div>
 
       <div className="card stack" style={{ marginTop: 12 }}>
         <div className="group-title">{t.contact.contactTitle}</div>

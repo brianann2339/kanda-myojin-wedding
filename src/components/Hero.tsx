@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { wedding } from '../content/wedding'
 import { useCoupleNames, useLang } from '../i18n'
 import { Chevron, Torii } from './icons'
-import { LangSwitch } from './LangSwitch'
 
 /** 日期確定前回傳 null，畫面顯示佔位的 ── */
 function useCountdown() {
@@ -50,10 +49,6 @@ export function Hero() {
 
   return (
     <header className="hero" id="top">
-      <div className="hero-langs">
-        <LangSwitch />
-      </div>
-
       <div className="hero-kicker">TOKYO · {wedding.date.year}</div>
       <div className="hero-stroke" />
 

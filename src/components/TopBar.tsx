@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { wedding } from '../content/wedding'
 import { useLang } from '../i18n'
 import { LangSwitch } from './LangSwitch'
@@ -17,17 +16,9 @@ const LINKS = [
 
 export function TopBar() {
   const { t } = useLang()
-  const [shown, setShown] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setShown(window.scrollY > window.innerHeight * 0.8)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   return (
-    <div className="topbar" data-shown={shown}>
+    <div className="topbar">
       <div className="topbar-inner">
         <a className="topbar-name" href="#top">
           {wedding.couple.romaji}

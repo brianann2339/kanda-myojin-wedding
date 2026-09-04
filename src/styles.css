@@ -106,12 +106,6 @@ button {
   background: rgba(247, 243, 233, 0.94);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
-  transform: translateY(-100%);
-  transition: transform 0.35s ease;
-}
-
-.topbar[data-shown='true'] {
-  transform: translateY(0);
 }
 
 .topbar-inner {
@@ -158,21 +152,21 @@ button {
   color: var(--shu);
 }
 
-/* 出席入口：紅字、緩慢閃爍；關閉動態效果時只留紅字 */
+/* 出席入口：紅底白字按鈕 */
 .topbar-links a.topbar-rsvp {
-  color: var(--shu);
+  background: var(--shu);
+  color: var(--paper);
   font-weight: 700;
-  animation: rsvp-blink 1.6s ease-in-out infinite;
+  padding: 0.4rem 0.75rem;
 }
 
-@keyframes rsvp-blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.35;
-  }
+.topbar-links a.topbar-rsvp:hover {
+  background: #9c3527;
+  color: var(--paper);
+}
+
+.scroll-target {
+  scroll-margin-top: 4.5rem;
 }
 
 /* 窄螢幕沒有空間同時擺姓名與導覽，導覽優先——否則十個段落只能一路捲 */
@@ -201,12 +195,6 @@ button {
   gap: 1.5rem;
   padding: 4.75rem 2rem 6rem;
   text-align: center;
-}
-
-.hero-langs {
-  position: absolute;
-  top: 1.375rem;
-  right: 1.5rem;
 }
 
 .hero-kicker {
@@ -1671,9 +1659,6 @@ a.channel:hover .channel-go {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .topbar-links a.topbar-rsvp {
-    animation: none;
-  }
 
   html {
     scroll-behavior: auto;
