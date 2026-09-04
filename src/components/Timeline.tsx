@@ -15,7 +15,7 @@ function icsEscape(v: string) {
 
 /**
  * 產生「加入行事曆」的 .ics 內容。
- * 11:00 JST = 02:00Z；結束時間尚未定，先以 15:00 JST 佔位，
+ * 報到 10:00 JST = 01:00Z、散會 15:00 JST = 06:00Z（2026-09-04 定案），
  * 並在 DESCRIPTION 中明講散會時間另行通知。
  */
 function calendarHref(summary: string, description: string, location: string) {
@@ -26,7 +26,7 @@ function calendarHref(summary: string, description: string, location: string) {
     'BEGIN:VEVENT',
     'UID:wedding-20270325@brianann2339.github.io',
     'DTSTAMP:20260831T000000Z',
-    'DTSTART:20270325T020000Z',
+    'DTSTART:20270325T010000Z',
     'DTEND:20270325T060000Z',
     `SUMMARY:${icsEscape(summary)}`,
     `LOCATION:${icsEscape(location)}`,
