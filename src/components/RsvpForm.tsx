@@ -2,32 +2,33 @@ import { useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { wedding } from '../content/wedding'
 import { useLang } from '../i18n'
+import { BirthdaySelect, DIETS, RELATIONS, personKey, validBirthday } from './rsvpShared'
+import type { Diet, Relation, YesNo } from './rsvpShared'
 
-const RELATIONS = ['groom-family', 'groom-friend', 'bride-family', 'bride-friend'] as const
-const DIETS = ['no-meal', 'omnivore', 'vegan', 'ovo', 'lacto', 'lacto-ovo', 'flexi'] as const
-type Relation = (typeof RELATIONS)[number]
-type Diet = (typeof DIETS)[number]
-type YesNo = 'yes' | 'no'
-type Person = { id: number; name: string; relation: Relation | ''; ceremony: YesNo | ''; reception: YesNo | ''; diet: Diet | '' }
-type Status = 'idle' | 'sending' | 'done' | 'invalid' | 'duplicate' | 'error'
-
-/** 與後端 key_ 完全相同：全形轉半形、去所有空白、小寫；同一個人＝姓名＋關係相同 */
-function personKey(name: string, relation: string) {
-  return `${name.normalize('NFKC').replace(/\s+/g, '').toLowerCase()}|${relation}`
+type Person = {
+  id: number
+  name: string
+  relation: Relation | ''
+  bm: string
+  bd: string
+  ceremony: YesNo | ''
+  reception: YesNo | ''
+  diet: Diet | ''
 }
+type Status = 'idle' | 'sending' | 'done' | 'invalid' | 'birthday' | 'duplicate' | 'error'
+
+const blank = (id: number): Person => ({ id, name: '', relation: '', bm: '', bd: '', ceremony: '', reception: '', diet: '' })
 
 const complete = (p: Person) =>
-  p.name.trim() !== '' && p.relation !== '' && p.ceremony !== '' && p.reception !== '' && (p.reception !== 'yes' || p.diet !== '')
+  p.name.trim() !== '' && p.relation !== '' && p.bm !== '' && p.bd !== '' && p.ceremony !== '' && p.reception !== '' &&
+  (p.reception !== 'yes' || p.diet !== '')
 
-export function RsvpForm() {
+export function RsvpForm({ onSubmitted }: { onSubmitted?: () => void }) {
   const { t, lang } = useLang()
   const f = t.contact.form
   const endpoint = wedding.rsvp.endpoint
   const nextId = useRef(1)
-  const [people, setPeople] = useState<Person[]>([{ id: 0, name: '', relation: '', ceremony: '', reception: '', diet: '' }])
-  const [email, setEmail] = useState('')
-  const [diet, setDiet] = useState('')
-  const [message, setMessage] = useState('')
+  const [people, setPeople] = useState<Person[]>([blank(0)])
   const [dupes, setDupes] = useState<Set<string>>(new Set())
   const [status, setStatus] = useState<Status>('idle')
 
@@ -56,8 +57,12 @@ export function RsvpForm() {
   async function submit(e: FormEvent) {
     e.preventDefault()
     if (!endpoint) return
-    if (!people.every(complete) || !/^\S+@\S+\.\S+$/.test(email)) {
+    if (!people.every(complete)) {
       setStatus('invalid')
+      return
+    }
+    if (!people.every((p) => validBirthday(p.bm, p.bd))) {
+      setStatus('birthday')
       return
     }
     if (people.some((p) => dupes.has(personKey(p.name, p.relation)))) {
@@ -70,16 +75,22 @@ export function RsvpForm() {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify({
-          email,
           lang,
-          diet,
-          message,
-          people: people.map(({ id: _id, ...p }) => ({ ...p, diet: p.reception === 'yes' ? p.diet : '' })),
+          people: people.map((p) => ({
+            name: p.name,
+            relation: p.relation,
+            birthday: p.bm + p.bd,
+            ceremony: p.ceremony,
+            reception: p.reception,
+            diet: p.reception === 'yes' ? p.diet : '',
+          })),
         }),
       })
       const data: { ok?: boolean; duplicates?: { name: string; relation: string }[] } = await res.json()
-      if (data.ok) setStatus('done')
-      else if (data.duplicates?.length) {
+      if (data.ok) {
+        setStatus('done')
+        onSubmitted?.()
+      } else if (data.duplicates?.length) {
         markDupes(data.duplicates, true, false)
         setStatus('duplicate')
       } else setStatus('error')
@@ -97,6 +108,8 @@ export function RsvpForm() {
   }
 
   if (status === 'done') return <div className="rsvp-done">{f.done}</div>
+
+  const birthdayLabels = { pick: f.pick, month: f.month, day: f.day }
 
   return (
     <form className="rsvp-form stack" onSubmit={submit} noValidate>
@@ -127,6 +140,15 @@ export function RsvpForm() {
                   ))}
                 </select>
               </label>
+              <div className="rsvp-cell">
+                <span>{f.colBirthday}</span>
+                <BirthdaySelect
+                  month={p.bm}
+                  day={p.bd}
+                  labels={birthdayLabels}
+                  onChange={(next) => update(p.id, { ...(next.month !== undefined ? { bm: next.month } : {}), ...(next.day !== undefined ? { bd: next.day } : {}) })}
+                />
+              </div>
               <label className="rsvp-cell">
                 <span>{f.colCeremony}</span>
                 <select value={p.ceremony} onChange={(e) => update(p.id, { ceremony: e.target.value as YesNo })}>
@@ -172,32 +194,12 @@ export function RsvpForm() {
         })}
       </div>
 
-      <button
-        type="button"
-        className="btn-ghost"
-        onClick={() =>
-          setPeople((ps) => [...ps, { id: nextId.current++, name: '', relation: '', ceremony: '', reception: '', diet: '' }])
-        }
-      >
+      <button type="button" className="btn-ghost" onClick={() => setPeople((ps) => [...ps, blank(nextId.current++)])}>
         {f.addPerson}
       </button>
 
-      <label className="rsvp-cell">
-        <span>{f.email}</span>
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      </label>
-      <div className="small-note">{f.emailHint}</div>
-
-      <label className="rsvp-cell">
-        <span>{f.diet}</span>
-        <textarea rows={2} value={diet} onChange={(e) => setDiet(e.target.value)} />
-      </label>
-      <label className="rsvp-cell">
-        <span>{f.message}</span>
-        <textarea rows={2} value={message} onChange={(e) => setMessage(e.target.value)} />
-      </label>
-
       {status === 'invalid' && <div className="rsvp-error">{f.errRequired}</div>}
+      {status === 'birthday' && <div className="rsvp-error">{f.errBirthday}</div>}
       {status === 'duplicate' && <div className="rsvp-error">{f.errDuplicate}</div>}
       {status === 'error' && <div className="rsvp-error">{f.errNetwork}</div>}
 

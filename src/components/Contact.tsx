@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { wedding } from '../content/wedding'
 import { useLang } from '../i18n'
 import { Attendees } from './Attendees'
@@ -6,16 +7,17 @@ import { SectionHead } from './SectionHead'
 
 export function Contact() {
   const { t, l } = useLang()
+  const [refreshKey, setRefreshKey] = useState(0)
 
   return (
     <section className="section" id="contact">
       <SectionHead num="捌" kicker={t.contact.kicker} title={t.contact.title} />
 
       <div className="card stack">
-        <RsvpForm />
+        <RsvpForm onSubmitted={() => setRefreshKey((k) => k + 1)} />
       </div>
 
-      <Attendees />
+      <Attendees refreshKey={refreshKey} />
 
       <div className="card stack" style={{ marginTop: 12 }}>
         <div className="group-title">{t.contact.contactTitle}</div>

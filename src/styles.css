@@ -1952,7 +1952,7 @@ a.channel:hover .channel-go {
 .rsvp-row {
   position: relative;
   display: grid;
-  grid-template-columns: 1.25rem 1.3fr 1fr 1fr 1fr;
+  grid-template-columns: 1.25rem 1.2fr 1fr 1.2fr 1fr 1fr;
   gap: 0.5rem 0.625rem;
   align-items: end;
   border: 1px solid var(--line);
@@ -2020,6 +2020,16 @@ a.channel:hover .channel-go {
   grid-column: 2 / -1;
 }
 
+.rsvp-birthday {
+  display: flex;
+  gap: 0.375rem;
+}
+
+.rsvp-birthday select {
+  min-width: 0;
+  flex: 1;
+}
+
 .rsvp-dup {
   grid-column: 1 / -1;
   font-size: 0.6875rem;
@@ -2056,15 +2066,16 @@ a.channel:hover .channel-go {
   }
 
   .rsvp-row > .rsvp-cell:nth-of-type(1),
-  .rsvp-row > .rsvp-cell:nth-of-type(2) {
+  .rsvp-row > .rsvp-cell:nth-of-type(2),
+  .rsvp-row > .rsvp-cell:nth-of-type(3) {
     grid-column: 2 / -1;
   }
 
-  .rsvp-row > .rsvp-cell:nth-of-type(3) {
+  .rsvp-row > .rsvp-cell:nth-of-type(4) {
     grid-column: 2;
   }
 
-  .rsvp-row > .rsvp-cell:nth-of-type(4) {
+  .rsvp-row > .rsvp-cell:nth-of-type(5) {
     grid-column: 3;
   }
 }
@@ -2094,6 +2105,24 @@ a.channel:hover .channel-go {
   display: inline-block;
 }
 
+.attendee-table-wrap {
+  overflow-x: auto;
+}
+
+.attendee-edit {
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  color: var(--shu);
+  border: 1px solid var(--shu);
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+}
+
+.attendee-edit:hover {
+  background: var(--shu);
+  color: var(--paper);
+}
+
 .attendee-table {
   width: 100%;
   border-collapse: collapse;
@@ -2116,8 +2145,9 @@ a.channel:hover .channel-go {
   color: var(--ink);
 }
 
-.attendee-table td:last-child {
+.attendee-table td:nth-child(n + 3) {
   color: var(--muted);
+  white-space: nowrap;
 }
 
 @media (max-width: 619px) {
