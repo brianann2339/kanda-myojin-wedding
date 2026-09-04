@@ -347,8 +347,8 @@ export const wedding = {
    */
   photos: {
     hero: {
-      /** 新人自備的浮世繪風畫像（2026-08-31 提供），自有圖片、無需出處標示 */
-      src: asset('images/hero-ukiyoe-couple.jpg'),
+      /** 新人自備的浮世繪風畫像（2026-09-04 更新版），自有圖片、無需出處標示 */
+      src: asset('images/hero-ukiyoe-couple-v2.jpg'),
       credit: null as string | null,
       creditUrl: null as string | null,
       isPlaceholder: false,
