@@ -260,9 +260,8 @@ export const wedding = {
   ],
 
   /**
-   * 當日流程的時刻，與 copy.ts 的 timeline.items **依序一一對應**（目前 8 項）。
-   * 只有神前式的 11:00 是已確定的，其餘尚未排定一律留 null，畫面顯示 ──：──。
-   * 之後拿到梳化、集合、開宴時間，就把對應位置填上即可。
+   * 當日流程的時刻，與 copy.ts 的 timeline.items **依序一一對應**（目前 7 項）。
+   * 2026-09-04 全部定案；流程若再變，兩邊要一起改。
    */
   scheduleTimes: [
     '08:30', // 新娘梳化
@@ -276,9 +275,8 @@ export const wedding = {
 
   /**
    * 披露宴（2026-08-31 改為舉辦）。會場在神田明神境內的明神会館。
-   * 兩個宴會廳的名稱、人數與特色皆逐字取自官網 myojin.tokyo/banquet/；
-   * 料理描述取自 myojin.tokyo/cuisine/。實際使用哪一廳、開始時間都還沒定，
-   * 不要在這裡填猜測值。
+   * 宴會廳「彩の間」的名稱、人數與特色逐字取自官網 myojin.tokyo/banquet/；
+   * 料理描述取自 myojin.tokyo/cuisine/。開宴 12:30、約 15:00 散會（2026-09-04 定案）。
    */
   reception: {
     happening: true,
@@ -288,7 +286,7 @@ export const wedding = {
       ja: '神田明神の境内にあり、挙式後は歩いてそのまま移動できます',
       en: 'Inside the shrine grounds — a short walk from the ceremony',
     } as Localized,
-    /** 已定案使用「彩の間」；開始時間仍待確認 */
+    /** 已定案使用「彩の間」（2026-08-31） */
     hall: {
       /** 英文版附上羅馬拼音，否則英語賓客讀不出「彩の間」 */
       name: { zh: '彩の間', ja: '彩の間', en: 'Sai-no-Ma' } as Localized,
@@ -351,14 +349,12 @@ export const wedding = {
       src: asset('images/hero-ukiyoe-couple-v2.jpg'),
       credit: null as string | null,
       creditUrl: null as string | null,
-      isPlaceholder: false,
     },
     venue: {
       src: asset('images/kanda-myojin-hall.jpg'),
       /** CC BY-SA 4.0：使用時必須標示作者與授權 */
       credit: 'Photo: Hyppolyte de Saint-Rambert / Wikimedia Commons · CC BY-SA 4.0',
       creditUrl: 'https://commons.wikimedia.org/wiki/File:Kanda-Myojin_grand_hall.jpg',
-      isPlaceholder: false,
     },
   },
 
