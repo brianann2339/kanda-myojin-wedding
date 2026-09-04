@@ -1371,6 +1371,7 @@ button {
 }
 
 .faq-a {
+  white-space: pre-line;
   padding: 0 1rem 1rem;
   font-size: 0.75rem;
   color: var(--muted);
