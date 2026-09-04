@@ -1,42 +1,21 @@
 import { wedding } from '../content/wedding'
 import { useLang } from '../i18n'
-import { Chevron } from './icons'
+import { Attendees } from './Attendees'
+import { RsvpForm } from './RsvpForm'
 import { SectionHead } from './SectionHead'
 
 export function Contact() {
   const { t, l } = useLang()
-  const { formUrl } = wedding.rsvp
 
   return (
     <section className="section" id="contact">
       <SectionHead num="捌" kicker={t.contact.kicker} title={t.contact.title} />
 
       <div className="card stack">
-        <div className="body-text">{t.contact.formIntro}</div>
-        <div className="stack-sm">
-          {t.contact.fields.map((field) => (
-            <div className="field" key={field}>
-              <span>{field}</span>
-              <Chevron />
-            </div>
-          ))}
-        </div>
-
-        {formUrl ? (
-          <a className="btn" href={formUrl} target="_blank" rel="noreferrer">
-            {t.contact.rsvpButton}
-          </a>
-        ) : (
-          <>
-            <span className="btn" aria-disabled="true">
-              {t.contact.rsvpButton}
-            </span>
-            <span className="tag tag-tbd" style={{ alignSelf: 'center' }}>
-              {t.contact.formTbd}
-            </span>
-          </>
-        )}
+        <RsvpForm />
       </div>
+
+      <Attendees />
 
       <div className="card stack" style={{ marginTop: 12 }}>
         <div className="group-title">{t.contact.contactTitle}</div>
