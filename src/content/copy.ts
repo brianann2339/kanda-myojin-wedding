@@ -199,7 +199,7 @@ const zh = {
       colName: '姓名',
       colRelation: '關係',
       colCeremony: '參加神前式 11:00–12:00',
-      colReception: '參加披露宴午餐 12:30–13:30',
+      colReception: '參加披露宴午餐 12:30–15:00',
       relations: {
         'groom-family': '新郎親人',
         'groom-friend': '新郎朋友',
@@ -433,7 +433,7 @@ const ja: Copy = {
       colName: 'お名前',
       colRelation: 'ご関係',
       colCeremony: '神前式 11:00–12:00',
-      colReception: '披露宴（昼食）12:30–13:30',
+      colReception: '披露宴（昼食）12:30–15:00',
       relations: {
         'groom-family': '新郎ご親族',
         'groom-friend': '新郎ご友人',
@@ -665,7 +665,7 @@ const en: Copy = {
       colName: 'Name',
       colRelation: 'Relationship',
       colCeremony: 'Ceremony 11:00–12:00',
-      colReception: 'Reception lunch 12:30–13:30',
+      colReception: 'Reception lunch 12:30–15:00',
       relations: {
         'groom-family': "Groom's family",
         'groom-friend': "Groom's friend",
