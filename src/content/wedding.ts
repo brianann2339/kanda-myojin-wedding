@@ -131,7 +131,7 @@ export const wedding = {
           legs: [
             { zh: '第 3 航廈搭東京單軌電車「機場快速」', ja: '第3ターミナルから東京モノレール「空港快速」', en: 'Tokyo Monorail Haneda Express from Terminal 3' } as Localized,
             { zh: '浜松町轉 JR 山手線／京濱東北線', ja: '浜松町でJR山手線・京浜東北線に乗り換え', en: 'Change at Hamamatsucho for the JR Yamanote / Keihin-Tohoku Line' } as Localized,
-            { zh: '秋葉原下車，電氣街口徒步 7 分', ja: '秋葉原下車、電気街口から徒歩7分', en: 'Get off at Akihabara — 7 min walk from the Electric Town Exit' } as Localized,
+            { zh: '秋葉原下車，電氣街口徒步 7 分（或是搭到神田站轉御茶ノ水）', ja: '秋葉原下車、電気街口から徒歩7分（または神田で中央線に乗り換えて御茶ノ水へ）', en: 'Get off at Akihabara — 7 min walk from the Electric Town Exit (or ride on to Kanda and change for Ochanomizu)' } as Localized,
           ],
           duration: { zh: '約 29 分（含轉乘）', ja: '約29分（乗換含む）', en: 'About 29 min including the change' } as Localized,
           fare: { zh: '約 720 日圓', ja: '約720円', en: 'About ¥720' } as Localized | null,
@@ -142,7 +142,7 @@ export const wedding = {
           legs: [
             { zh: '第 3 航廈搭京急線「機場快特」', ja: '第3ターミナルから京急線「エアポート快特」', en: 'Keikyu Airport Limited Express from Terminal 3' } as Localized,
             { zh: '品川轉 JR 山手線／京濱東北線', ja: '品川でJR山手線・京浜東北線に乗り換え', en: 'Change at Shinagawa for the JR Yamanote / Keihin-Tohoku Line' } as Localized,
-            { zh: '秋葉原下車，電氣街口徒步 7 分', ja: '秋葉原下車、電気街口から徒歩7分', en: 'Get off at Akihabara — 7 min walk from the Electric Town Exit' } as Localized,
+            { zh: '秋葉原下車，電氣街口徒步 7 分（或是搭到神田站轉御茶ノ水）', ja: '秋葉原下車、電気街口から徒歩7分（または神田で中央線に乗り換えて御茶ノ水へ）', en: 'Get off at Akihabara — 7 min walk from the Electric Town Exit (or ride on to Kanda and change for Ochanomizu)' } as Localized,
           ],
           duration: { zh: '約 31 分（含轉乘）', ja: '約31分（乗換含む）', en: 'About 31 min including the change' } as Localized,
           fare: { zh: '約 540 日圓　四條路線中最便宜', ja: '約540円　4ルート中いちばん安い', en: 'About ¥540 — the cheapest of the four' } as Localized | null,
