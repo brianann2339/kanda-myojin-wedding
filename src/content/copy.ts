@@ -175,7 +175,6 @@ const zh = {
   faq: {
     kicker: 'GUIDE · FAQ',
     title: '參列指南',
-    note: '題目可再增減，答案取得後逐題展開。',
     items: [
       {
         q: '服裝建議',
@@ -410,7 +409,6 @@ const ja: Copy = {
   faq: {
     kicker: 'GUIDE · FAQ',
     title: 'ご参列の案内',
-    note: '項目は増減する場合があります。回答が得られ次第、順次公開します。',
     items: [
       {
         q: '服装について',
@@ -643,7 +641,6 @@ const en: Copy = {
   faq: {
     kicker: 'GUIDE · FAQ',
     title: 'Guest guide',
-    note: 'Questions may be added or dropped; answers appear as we get them.',
     items: [
       {
         q: 'What should I wear?',
