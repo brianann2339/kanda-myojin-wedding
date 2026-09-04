@@ -1,9 +1,9 @@
 import { wedding } from '../content/wedding'
 import { useLang } from '../i18n'
-import { Crowd, Jacket, Pin, Torii } from './icons'
+import { Jacket, Pin, Torii } from './icons'
 import { SectionHead } from './SectionHead'
 
-const noticeIcons = [Jacket, Crowd]
+const noticeIcons = [Jacket]
 
 export function Venue() {
   const { t, l } = useLang()
@@ -103,10 +103,7 @@ export function Venue() {
           return (
             <div className="notice" key={notice}>
               <Icon />
-              <p>
-                {notice}
-                <em>（{t.venue.noticeTags[i]}）</em>
-              </p>
+              <p>{notice}</p>
             </div>
           )
         })}

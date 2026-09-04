@@ -10,11 +10,8 @@ type FaqStatus = 'answered' | 'draft' | 'pending'
 const zh = {
   langName: '中',
   common: {
-    tbd: '待確認',
-    toBeAdded: '待補',
     confirmed: '已確定',
     draft: '文案草稿・可再修改',
-    draftShrine: '文案草稿・待神社確認',
   },
   nav: {
     invitation: '邀請函',
@@ -29,9 +26,7 @@ const zh = {
   },
   hero: {
     shrineLine: '神田明神　神前式',
-    dateNote: '正確日期待確認・倒數屆時啟用',
     photoPlaceholder: '合照／神田明神實景',
-    photoTag: '暫以此圖代替・合照待補',
     photoAlt: '浮世繪風畫像：兩人身著和裝，立於神田明神御社殿前',
     scroll: '邀請函',
     days: 'DAYS',
@@ -125,9 +120,7 @@ const zh = {
     noticeTitle: '參列提醒',
     notices: [
       '部分流程可能於戶外進行，建議準備一件外套，並且準備防蚊液。',
-      '春季境內的參拜人潮與動線注意事項，待與神社確認後補充。',
     ],
-    noticeTags: ['當日氣候與細節待確認', '待確認'],
   },
   access: {
     kicker: 'ACCESS',
@@ -155,10 +148,9 @@ const zh = {
     note: '2027 年 3 月已可訂位，但航空公司通常要更接近日期才會公布確切班表。以下是 2026 年 8 月查得的航線與航空公司，訂票時請以各官網當時公布的班表為準。',
     carriersLabel: '目前飛這條航線的航空公司',
     compareTitle: '羽田 vs 成田',
-    compareDesc: '羽田離市中心近，到會場約 23–30 分鐘車程（不含轉乘）；成田較遠，Skyliner 到日暮里最短 36 分再轉 JR，N’EX 到東京站最快 53 分再轉 4 分。行李多又不想多走路的話，N’EX 轉中央線在御茶ノ水下車，是離神社最近的一站。',
+    compareDesc: '羽田離市中心近，到會場約 30 分鐘（含轉乘）；成田較遠，Skyliner 到秋葉原約 56 分（在日暮里轉 JR），N’EX 約 60 分（在東京站轉中央線）。行李多又不想多走路的話，搭 N’EX 轉中央線在御茶ノ水下車，那是離神社最近的一站。',
     bookTitle: '訂票',
     bookNote: '航線與班次以各航空公司官網公告為準',
-    dayNote: '婚禮當天有披露宴，結束時間會比原先預告的晚，請不要訂當天下午太早的回程班機。確切結束時間確定後會再通知。',
     japanTitle: '日本國內出發的親友',
     japanDesc: '不需要機票資訊——直接參考「交通方式」前往神田明神即可。',
   },
@@ -245,11 +237,8 @@ export type Copy = typeof zh
 const ja: Copy = {
   langName: '日',
   common: {
-    tbd: '未定',
-    toBeAdded: '後日掲載',
     confirmed: '決定',
     draft: '文案は下書き・変更の可能性あり',
-    draftShrine: '下書き・神社に確認中',
   },
   nav: {
     invitation: '招待状',
@@ -264,9 +253,7 @@ const ja: Copy = {
   },
   hero: {
     shrineLine: '神田明神　神前式',
-    dateNote: '日取りは未定・確定後にカウントダウンを開始します',
     photoPlaceholder: '二人の写真／神田明神の風景',
-    photoTag: '仮の画像です・写真は後日',
     photoAlt: '浮世絵風の画像：和装のふたりが神田明神御社殿の前に立つ',
     scroll: '招待状',
     days: 'DAYS',
@@ -339,7 +326,7 @@ const ja: Copy = {
     photoAlt: '神田明神 御社殿',
     aboutTitle: '神田明神について',
     about: [
-      '神田明神の創建は天平2年（730年）。出雲氏族の真神田臣によって、武蔵国豊島郡芝崎村——いまの千代田区大手町・将門塚のあたりに創建されました。',
+      '神田明神の創建は天平2年（730年）。武蔵国豊島郡芝崎村——いまの千代田区大手町・将門塚のあたりに創建されました。',
       '元和2年（1616年）、江戸城の表鬼門を守る現在の地へ遷座し、幕府によって社殿が造営されます。江戸時代を通じて「江戸総鎮守」として崇敬を集め、氏子は神田・日本橋・秋葉原・大手丸の内など108町会に及びます。',
       '現在の社殿は昭和9年の再建。大正12年の関東大震災で江戸後期の社殿を焼失したのち、当時としては画期的な鉄骨鉄筋コンクリート・総朱漆塗で建て直されました。その耐火構造ゆえ、境内の多くが失われた戦災も、わずかな損傷で耐えぬいています。',
     ],
@@ -360,9 +347,7 @@ const ja: Copy = {
     noticeTitle: 'ご参列にあたって',
     notices: [
       '一部は屋外で執り行われる可能性があります。羽織るものと虫除けスプレーをご用意ください。',
-      '春の境内の混雑や動線については、神社に確認のうえ追記します。',
     ],
-    noticeTags: ['当日の天候・詳細は未定', '未定'],
   },
   access: {
     kicker: 'ACCESS',
@@ -389,10 +374,9 @@ const ja: Copy = {
     note: '2027年3月の予約はすでに可能ですが、確定したダイヤは日程が近づいてから発表されるのが通例です。以下は2026年8月時点の就航路線と航空会社です。ご予約の際は各公式サイトの最新ダイヤをご確認ください。',
     carriersLabel: '現在この路線に就航している航空会社',
     compareTitle: '羽田 と 成田',
-    compareDesc: '羽田は都心に近く、会場までおよそ23〜30分（乗換時間を除く）。成田は遠く、スカイライナーで日暮里まで最短36分＋JR、成田エクスプレスなら東京駅まで最速53分＋JR4分です。荷物が多く歩きたくない方は、成田エクスプレスから中央線に乗り換えて御茶ノ水で降りるのが、神社にいちばん近い駅です。',
+    compareDesc: '羽田は都心に近く、会場まで乗り換えを含めて約30分。成田は遠く、スカイライナーは日暮里でJRに乗り換えて秋葉原まで約56分、成田エクスプレスは東京駅で中央線に乗り換えて約60分です。荷物が多く歩きたくない方は、成田エクスプレスから中央線に乗り換えて御茶ノ水で降りるのがおすすめです。御茶ノ水は神社にいちばん近い駅です。',
     bookTitle: 'ご予約',
     bookNote: '就航路線・便数は各航空会社の公式サイトの案内に準じます',
-    dayNote: '当日は披露宴がございますので、終了は当初のご案内より遅くなります。当日午後の早い便でのご帰国はお避けください。終了時刻は決まり次第お知らせします。',
     japanTitle: '日本国内からお越しの方',
     japanDesc: '航空便の情報は不要です。「アクセス」をご覧のうえ神田明神へお越しください。',
   },
@@ -477,11 +461,8 @@ const ja: Copy = {
 const en: Copy = {
   langName: 'EN',
   common: {
-    tbd: 'TBC',
-    toBeAdded: 'Coming soon',
     confirmed: 'Confirmed',
     draft: 'Draft wording · may change',
-    draftShrine: 'Draft · pending the shrine',
   },
   nav: {
     invitation: 'Invitation',
@@ -496,9 +477,7 @@ const en: Copy = {
   },
   hero: {
     shrineLine: 'Kanda Myojin · Shinto Ceremony',
-    dateNote: 'Exact date to be confirmed · countdown starts then',
     photoPlaceholder: 'Our photo / Kanda Myojin',
-    photoTag: 'Stand-in image · our photo to come',
     photoAlt: 'Ukiyo-e style artwork: the couple in wedding kimono before the main hall of Kanda Myojin',
     scroll: 'Invitation',
     days: 'DAYS',
@@ -577,9 +556,9 @@ const en: Copy = {
     ],
     deitiesTitle: 'The deities',
     deities: [
-      { name: 'Onamuchi-no-mikoto', alias: 'Daikoku-sama', role: 'God of nation-building, of marriage and of matchmaking' },
-      { name: 'Sukunahikona-no-mikoto', alias: 'Ebisu-sama', role: 'God of business, health and good fortune' },
-      { name: 'Taira-no-Masakado-no-mikoto', alias: 'Masakado-sama', role: 'God who wards off misfortune' },
+      { name: 'First shrine · Onamuchi-no-mikoto', alias: 'Daikoku-sama', role: 'God of nation-building, of marriage and of matchmaking' },
+      { name: 'Second shrine · Sukunahikona-no-mikoto', alias: 'Ebisu-sama', role: 'God of business, health and good fortune' },
+      { name: 'Third shrine · Taira-no-Masakado-no-mikoto', alias: 'Masakado-sama', role: 'God who wards off misfortune' },
     ],
     aboutSource: 'History and deities per the official Kanda Myojin website',
     videoTitle: 'What the ceremony looks like',
@@ -592,9 +571,7 @@ const en: Copy = {
     noticeTitle: 'Before you come',
     notices: [
       'Parts of the day may take place outdoors — a jacket and insect repellent are worth packing.',
-      'Notes on spring crowds and moving around the grounds will follow, once the shrine confirms.',
     ],
-    noticeTags: ['Weather and details TBC', 'TBC'],
   },
   access: {
     kicker: 'ACCESS',
@@ -621,10 +598,9 @@ const en: Copy = {
     note: 'March 2027 is already bookable, but airlines usually publish firm timetables closer to the date. Below are the routes and carriers as of August 2026 — check each airline\'s own timetable when you book.',
     carriersLabel: 'Airlines currently flying this route',
     compareTitle: 'Haneda or Narita',
-    compareDesc: 'Haneda is close to the centre — roughly 23–30 minutes to the venue, transfers aside. Narita is further out: the Skyliner reaches Nippori in 36 minutes at best, and the N\'EX reaches Tokyo Station in 53, plus 4 more on the Chuo Line. With heavy bags, the N\'EX and then the Chuo Line to Ochanomizu puts you at the closest station to the shrine.',
+    compareDesc: 'Haneda is close to the city centre — about 30 minutes to the venue including the change. Narita is further out: the Skyliner takes about 56 minutes to Akihabara (changing to JR at Nippori), the N’EX about 60 minutes (changing to the Chuo Line at Tokyo Station). If you have luggage and would rather not walk, take the N’EX and change to the Chuo Line for Ochanomizu — the closest station to the shrine.',
     bookTitle: 'Booking',
     bookNote: 'Routes and schedules as published by each airline',
-    dayNote: 'There is a reception on the day, so we will finish later than first announced — please avoid booking an early afternoon flight home. We will confirm the end time closer to the day.',
     japanTitle: 'Coming from within Japan',
     japanDesc: 'No flight details needed — see "Getting there" for the way to Kanda Myojin.',
   },

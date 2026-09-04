@@ -24,7 +24,6 @@ export function Invitation() {
           <div className="letter-sign">
             {lang === 'en' ? names.full : `${names.full}　${t.invitation.signature}`}
           </div>
-          <span className="tag tag-draft">{t.common.draft}</span>
         </div>
       </div>
     </section>

@@ -77,7 +77,6 @@ export function Hero() {
             </>
           )}
         </div>
-        {photo?.isPlaceholder && <span className="tag tag-tbd">{t.hero.photoTag}</span>}
         {photo?.credit && photo.creditUrl && (
           <a className="credit" href={photo.creditUrl} target="_blank" rel="noreferrer">
             {photo.credit}
@@ -96,7 +95,6 @@ export function Hero() {
             </div>
           ))}
         </div>
-        {!wedding.date.confirmed && <div className="hero-note">{t.hero.dateNote}</div>}
       </div>
 
       <a className="hero-scroll" href="#invitation">
