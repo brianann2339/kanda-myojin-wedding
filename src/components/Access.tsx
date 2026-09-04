@@ -99,7 +99,6 @@ export function Access() {
           <div className="group-title">{t.access.taxiTitle}</div>
           <div className="fact-sub">{t.access.taxiDesc}</div>
         </div>
-        <span className="tag tag-tbd">{t.common.toBeAdded}</span>
       </div>
     </section>
   )
