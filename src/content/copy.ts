@@ -101,7 +101,7 @@ const zh = {
     about: [
       '神田明神創建於天平二年（730 年），相傳由出雲氏族的真神田臣（まかんだおみ）所建，最初座落在武藏國豐島郡芝崎村——也就是今天千代田區大手町、將門塚一帶。',
       '元和二年（1616 年），神社遷到現在這片高地，鎮守江戶城的表鬼門，社殿由幕府興建。整個江戶時代，這裡被稱作「江戶總鎮守」；氏子地域至今仍涵蓋神田、日本橋、秋葉原、大手丸之內等一百零八個町會。',
-      '現在的社殿建於昭和九年（1934 年）。大正十二年的關東大震災燒毀了江戶後期的社殿之後，重建時採用當時相當前衛的鋼骨鋼筋混凝土，外覆總朱漆塗；也正因為是耐火構造，戰火中境內多數建築付之一炬，社殿卻只受了輕微損傷，留存至今。',
+      '現在的社殿建於昭和九年（1934 年）。大正十二年的關東大震災燒毀了江戶後期的社殿之後，重建時採用當時相當前衛的鋼骨鋼筋混凝土，外覆總朱漆塗；也正因為是耐火構造，戰火中境內多數建築付之一炬，社殿卻只受了輕微損傷，留存至今；平成十五年（2003 年）登錄為國家登錄有形文化財。',
     ],
     deitiesTitle: '御祭神',
     deities: [
@@ -139,8 +139,8 @@ const zh = {
     airportTitle: '從機場前往',
     routeSource: '時間與票價為 2026 年 8 月以 Google 地圖查得的參考值，實際依班次與購票方式而異，訂票前請再確認。',
     operatorLink: '業者官網',
-    taxiTitle: '計程車建議',
-    taxiDesc: '上車報「神田明神」即可。日文唸法：かんだみょうじん（Kanda Myōjin），空耳大概是「康打・謬金」，「謬」拉長音。',
+    taxiTitle: '計程車・自行開車',
+    taxiDesc: '上車報「神田明神」即可，車子可以直接開到明神会館正門前；從東京站、上野站搭車約 10 分鐘。日文唸法：かんだみょうじん（Kanda Myōjin），空耳大概是「康打・謬金」，「謬」拉長音。自行開車：神社北側有參拜者停車場 20 台，不接受預約，客滿時請利用附近的投幣停車場。',
   },
   flights: {
     kicker: 'FLIGHTS',
@@ -328,7 +328,7 @@ const ja: Copy = {
     about: [
       '神田明神の創建は天平2年（730年）。社伝によると、出雲氏族の真神田臣（まかんだおみ）によって、武蔵国豊島郡芝崎村——いまの千代田区大手町・将門塚のあたりに創建されました。',
       '元和2年（1616年）、江戸城の表鬼門を守る現在の地へ遷座し、幕府によって社殿が造営されます。江戸時代を通じて「江戸総鎮守」として崇敬を集め、氏子は神田・日本橋・秋葉原・大手丸の内など108町会に及びます。',
-      '現在の社殿は昭和9年の再建。大正12年の関東大震災で江戸後期の社殿を焼失したのち、当時としては画期的な鉄骨鉄筋コンクリート・総朱漆塗で建て直されました。その耐火構造ゆえ、境内の多くが失われた戦災も、わずかな損傷で耐えぬいています。',
+      '現在の社殿は昭和9年の再建。大正12年の関東大震災で江戸後期の社殿を焼失したのち、当時としては画期的な鉄骨鉄筋コンクリート・総朱漆塗で建て直されました。その耐火構造ゆえ、境内の多くが失われた戦災も、わずかな損傷で耐えぬいています。平成15年（2003年）には国の登録有形文化財に登録されました。',
     ],
     deitiesTitle: '御祭神',
     deities: [
@@ -365,8 +365,8 @@ const ja: Copy = {
     airportTitle: '空港から',
     routeSource: '所要時間と運賃は2026年8月時点でGoogleマップにて検索した目安です。列車や購入方法により変わりますので、ご乗車前にご確認ください。',
     operatorLink: '公式サイト',
-    taxiTitle: 'タクシーの場合',
-    taxiDesc: '「神田明神まで」とお伝えください。',
+    taxiTitle: 'タクシー・お車の場合',
+    taxiDesc: '「神田明神まで」とお伝えください。明神会館の正面玄関前まで乗り入れできます。東京駅・上野駅から約10分です。お車の場合は神社北側の参拝者駐車場（20台）をご利用ください。予約はできず、満車の際はお近くのコインパーキングをお願いします。',
   },
   flights: {
     kicker: 'FLIGHTS',
@@ -552,7 +552,7 @@ const en: Copy = {
     about: [
       'Kanda Myojin was founded in 730 — by tradition, by Makanda-no-omi of the Izumo clan — on the site of what is now Otemachi in central Tokyo.',
       'In 1616 it moved to the hill it occupies today, placed there to guard the unlucky northeast gate of Edo Castle, with its hall built by the shogunate. Through the Edo period it was the guardian shrine of the whole city, and its parish still covers Kanda, Nihonbashi, Akihabara, Otemachi and Marunouchi — 108 neighbourhood associations in all.',
-      'The present hall dates from 1934. After the Great Kanto Earthquake of 1923 destroyed its late-Edo predecessor, it was rebuilt in steel-reinforced concrete — radical for its time — and lacquered throughout in vermilion. Being fireproof, it survived the wartime air raids with only slight damage, while most of the grounds around it burned.',
+      'The present hall dates from 1934. After the Great Kanto Earthquake of 1923 destroyed its late-Edo predecessor, it was rebuilt in steel-reinforced concrete — radical for its time — and lacquered throughout in vermilion. Being fireproof, it survived the wartime air raids with only slight damage, while most of the grounds around it burned. In 2003 it was registered as a tangible cultural property of Japan.',
     ],
     deitiesTitle: 'The deities',
     deities: [
@@ -589,8 +589,8 @@ const en: Copy = {
     airportTitle: 'From the airport',
     routeSource: 'Times and fares are Google Maps estimates from August 2026; they vary by service and ticket type, so do check before you travel.',
     operatorLink: 'Operator site',
-    taxiTitle: 'By taxi',
-    taxiDesc: 'Just tell the driver "Kanda Myojin" — kahn-dah MYOH-jin (かんだみょうじん).',
+    taxiTitle: 'By taxi or car',
+    taxiDesc: 'Just tell the driver "Kanda Myojin" — kahn-dah MYOH-jin (かんだみょうじん). Taxis can drive right up to the Myojin Kaikan entrance; it is about 10 minutes from Tokyo Station or Ueno Station. If you drive, there is a 20-car visitors\' car park on the north side of the shrine — no reservations, so if it is full please use a nearby coin-parking lot.',
   },
   flights: {
     kicker: 'FLIGHTS',
