@@ -158,6 +158,23 @@ button {
   color: var(--shu);
 }
 
+/* 出席入口：紅字、緩慢閃爍；關閉動態效果時只留紅字 */
+.topbar-links a.topbar-rsvp {
+  color: var(--shu);
+  font-weight: 700;
+  animation: rsvp-blink 1.6s ease-in-out infinite;
+}
+
+@keyframes rsvp-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
 /* 窄螢幕沒有空間同時擺姓名與導覽，導覽優先——否則十個段落只能一路捲 */
 @media (max-width: 859px) {
   .topbar-name {
@@ -1654,6 +1671,10 @@ a.channel:hover .channel-go {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .topbar-links a.topbar-rsvp {
+    animation: none;
+  }
+
   html {
     scroll-behavior: auto;
   }
@@ -1993,6 +2014,10 @@ a.channel:hover .channel-go {
 
 .rsvp-remove:hover {
   color: var(--shu);
+}
+
+.rsvp-cell--diet {
+  grid-column: 2 / -1;
 }
 
 .rsvp-dup {

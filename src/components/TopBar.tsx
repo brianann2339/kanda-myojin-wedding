@@ -5,6 +5,7 @@ import { LangSwitch } from './LangSwitch'
 
 /** 與頁面上的八個 section 一一對應 */
 const LINKS = [
+  { id: 'contact', key: 'contact' },
   { id: 'invitation', key: 'invitation' },
   { id: 'timeline', key: 'timeline' },
   { id: 'venue', key: 'venue' },
@@ -12,7 +13,6 @@ const LINKS = [
   { id: 'flights', key: 'flights' },
   { id: 'stay', key: 'stay' },
   { id: 'faq', key: 'faq' },
-  { id: 'contact', key: 'contact' },
 ] as const
 
 export function TopBar() {
@@ -34,7 +34,7 @@ export function TopBar() {
         </a>
         <nav className="topbar-links">
           {LINKS.map((link) => (
-            <a key={link.id} href={`#${link.id}`}>
+            <a key={link.id} href={`#${link.id}`} className={link.id === 'contact' ? 'topbar-rsvp' : undefined}>
               {t.nav[link.key]}
             </a>
           ))}

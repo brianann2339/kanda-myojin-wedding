@@ -4,9 +4,11 @@ import { wedding } from '../content/wedding'
 import { useLang } from '../i18n'
 
 const RELATIONS = ['groom-family', 'groom-friend', 'bride-family', 'bride-friend'] as const
+const DIETS = ['no-meal', 'omnivore', 'vegan', 'ovo', 'lacto', 'lacto-ovo', 'flexi'] as const
 type Relation = (typeof RELATIONS)[number]
+type Diet = (typeof DIETS)[number]
 type YesNo = 'yes' | 'no'
-type Person = { id: number; name: string; relation: Relation | ''; ceremony: YesNo | ''; reception: YesNo | '' }
+type Person = { id: number; name: string; relation: Relation | ''; ceremony: YesNo | ''; reception: YesNo | ''; diet: Diet | '' }
 type Status = 'idle' | 'sending' | 'done' | 'invalid' | 'duplicate' | 'error'
 
 /** 與後端 key_ 完全相同：全形轉半形、去所有空白、小寫；同一個人＝姓名＋關係相同 */
@@ -14,14 +16,15 @@ function personKey(name: string, relation: string) {
   return `${name.normalize('NFKC').replace(/\s+/g, '').toLowerCase()}|${relation}`
 }
 
-const complete = (p: Person) => p.name.trim() !== '' && p.relation !== '' && p.ceremony !== '' && p.reception !== ''
+const complete = (p: Person) =>
+  p.name.trim() !== '' && p.relation !== '' && p.ceremony !== '' && p.reception !== '' && (p.reception !== 'yes' || p.diet !== '')
 
 export function RsvpForm() {
   const { t, lang } = useLang()
   const f = t.contact.form
   const endpoint = wedding.rsvp.endpoint
   const nextId = useRef(1)
-  const [people, setPeople] = useState<Person[]>([{ id: 0, name: '', relation: '', ceremony: '', reception: '' }])
+  const [people, setPeople] = useState<Person[]>([{ id: 0, name: '', relation: '', ceremony: '', reception: '', diet: '' }])
   const [email, setEmail] = useState('')
   const [diet, setDiet] = useState('')
   const [message, setMessage] = useState('')
@@ -66,7 +69,13 @@ export function RsvpForm() {
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({ email, lang, diet, message, people: people.map(({ id: _id, ...p }) => p) }),
+        body: JSON.stringify({
+          email,
+          lang,
+          diet,
+          message,
+          people: people.map(({ id: _id, ...p }) => ({ ...p, diet: p.reception === 'yes' ? p.diet : '' })),
+        }),
       })
       const data: { ok?: boolean; duplicates?: { name: string; relation: string }[] } = await res.json()
       if (data.ok) setStatus('done')
@@ -134,6 +143,19 @@ export function RsvpForm() {
                   <option value="no">{f.no}</option>
                 </select>
               </label>
+              {p.reception === 'yes' && (
+                <label className="rsvp-cell rsvp-cell--diet">
+                  <span>{f.colDiet}</span>
+                  <select value={p.diet} onChange={(e) => update(p.id, { diet: e.target.value as Diet })}>
+                    <option value="">{f.pick}</option>
+                    {DIETS.map((d) => (
+                      <option key={d} value={d}>
+                        {f.diets[d]}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              )}
               {people.length > 1 && (
                 <button
                   type="button"
@@ -153,7 +175,9 @@ export function RsvpForm() {
       <button
         type="button"
         className="btn-ghost"
-        onClick={() => setPeople((ps) => [...ps, { id: nextId.current++, name: '', relation: '', ceremony: '', reception: '' }])}
+        onClick={() =>
+          setPeople((ps) => [...ps, { id: nextId.current++, name: '', relation: '', ceremony: '', reception: '', diet: '' }])
+        }
       >
         {f.addPerson}
       </button>

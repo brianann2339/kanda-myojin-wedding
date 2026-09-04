@@ -3,17 +3,26 @@
  * 部署為網頁應用程式：執行身分「我」、存取權「所有人」。
  * GET  ?action=check&payload=[{name,relation}]  → { duplicates: [...] }
  * GET  ?action=list                              → { attendees: [{name(遮名), relation}] }
- * POST { email, lang, diet, message, people:[{name,relation,ceremony,reception}] }
+ * POST { email, lang, diet, message, people:[{name,relation,ceremony,reception,diet}] }（披露宴＝yes 時 diet 必填）
  *      → { ok:true, saved:n } 或 { ok:false, duplicates:[...] } 或 { ok:false, error }
  * 同一個人的定義：姓名＋關係都相同（2026-09-04 新人裁定）。
  */
 const SHEET_NAME = 'RSVP'
-const HEADERS = ['送出時間', '填表人 Email', '姓名', '關係', '神前式 11:00', '披露宴 12:30', '飲食禁忌與過敏', '留言', '語言', '群組', '關係代碼']
+const HEADERS = ['送出時間', '填表人 Email', '姓名', '關係', '神前式 11:00', '披露宴 12:30', '飲食禁忌與過敏', '留言', '語言', '群組', '關係代碼', '飲食']
 const RELATION_LABEL = {
   'groom-family': '新郎親人',
   'groom-friend': '新郎朋友',
   'bride-family': '新娘親人',
   'bride-friend': '新娘朋友',
+}
+const DIET_LABEL = {
+  'no-meal': '嬰兒或不食用餐點',
+  omnivore: '無忌口',
+  vegan: '全素',
+  ovo: '蛋素',
+  lacto: '奶素',
+  'lacto-ovo': '蛋奶素',
+  flexi: '鍋邊素',
 }
 
 function sheet_() {
@@ -23,6 +32,8 @@ function sheet_() {
   if (sh.getLastRow() === 0) {
     sh.appendRow(HEADERS)
     sh.setFrozenRows(1)
+  } else if (sh.getLastColumn() < HEADERS.length) {
+    sh.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS])
   }
   return sh
 }
@@ -86,7 +97,11 @@ function doPost(e) {
   const yesNo = (v) => v === 'yes' || v === 'no'
   const valid =
     people.length > 0 &&
-    people.every((p) => p.name && String(p.name).trim() && RELATION_LABEL[p.relation] && yesNo(p.ceremony) && yesNo(p.reception)) &&
+    people.every(
+      (p) =>
+        p.name && String(p.name).trim() && RELATION_LABEL[p.relation] && yesNo(p.ceremony) && yesNo(p.reception) &&
+        (p.reception !== 'yes' || DIET_LABEL[p.diet]),
+    ) &&
     /^\S+@\S+\.\S+$/.test(body.email || '')
   if (!valid) return json_({ ok: false, error: 'invalid' })
 
@@ -118,6 +133,7 @@ function doPost(e) {
       body.lang || '',
       group,
       p.relation,
+      p.reception === 'yes' ? DIET_LABEL[p.diet] : '',
     ])
     sh.getRange(sh.getLastRow() + 1, 1, rows.length, rows[0].length).setValues(rows)
     return json_({ ok: true, saved: rows.length })
