@@ -19,13 +19,7 @@ export function FAQ() {
           const isOpen = open === i && item.a !== null
           const answered = item.status === 'answered'
           const draft = item.status === 'draft'
-          const tag = answered
-            ? t.common.confirmed
-            : draft
-              ? t.common.draft
-              : i === SHRINE_RULE_INDEX
-                ? t.faq.shrineTag
-                : t.faq.pendingTag
+          const tag = draft ? t.common.draft : i === SHRINE_RULE_INDEX ? t.faq.shrineTag : t.faq.pendingTag
 
           return (
             <div className="faq" key={item.q} data-open={isOpen} data-answered={answered} data-draft={draft}>
@@ -38,7 +32,7 @@ export function FAQ() {
                 >
                   <span>{item.q}</span>
                   <span className="faq-meta">
-                    <span className={answered ? 'tag tag-fixed' : 'tag tag-tbd'}>{tag}</span>
+                    {!answered && <span className="tag tag-tbd">{tag}</span>}
                     <Chevron className="faq-chevron" />
                   </span>
                 </button>
@@ -54,11 +48,6 @@ export function FAQ() {
             </div>
           )
         })}
-      </div>
-
-      <div className="hint" style={{ marginTop: 20 }}>
-        <span aria-hidden />
-        <p>{t.faq.note}</p>
       </div>
     </section>
   )
