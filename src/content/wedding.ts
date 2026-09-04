@@ -316,7 +316,7 @@ export const wedding = {
 
   rsvp: {
     /** Apps Script 網頁應用程式的 /exec 網址（程式碼在 apps-script/Code.gs）；null 時表單顯示尚未開放 */
-    endpoint: null as string | null,
+    endpoint: 'https://script.google.com/macros/s/AKfycbxhT6bEfuh4WH38VAOxpNU2fVeDdDmBCvQAkFBUPZ6tQSsmVWDZssd4FB4UaTag4D7L/exec' as string | null,
   },
 
   /** 兩人的私訊管道（2026-08-31 由新人提供並同意公開於網站） */
