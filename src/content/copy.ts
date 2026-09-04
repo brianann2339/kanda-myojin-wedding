@@ -99,7 +99,7 @@ const zh = {
     photoAlt: '神田明神 御社殿',
     aboutTitle: '關於神田明神',
     about: [
-      '神田明神創建於天平二年（730 年），最初座落在武藏國豐島郡芝崎村——也就是今天千代田區大手町、將門塚一帶。',
+      '神田明神創建於天平二年（730 年），相傳由出雲氏族的真神田臣（まかんだおみ）所建，最初座落在武藏國豐島郡芝崎村——也就是今天千代田區大手町、將門塚一帶。',
       '元和二年（1616 年），神社遷到現在這片高地，鎮守江戶城的表鬼門，社殿由幕府興建。整個江戶時代，這裡被稱作「江戶總鎮守」；氏子地域至今仍涵蓋神田、日本橋、秋葉原、大手丸之內等一百零八個町會。',
       '現在的社殿建於昭和九年（1934 年）。大正十二年的關東大震災燒毀了江戶後期的社殿之後，重建時採用當時相當前衛的鋼骨鋼筋混凝土，外覆總朱漆塗；也正因為是耐火構造，戰火中境內多數建築付之一炬，社殿卻只受了輕微損傷，留存至今。',
     ],
@@ -326,7 +326,7 @@ const ja: Copy = {
     photoAlt: '神田明神 御社殿',
     aboutTitle: '神田明神について',
     about: [
-      '神田明神の創建は天平2年（730年）。武蔵国豊島郡芝崎村——いまの千代田区大手町・将門塚のあたりに創建されました。',
+      '神田明神の創建は天平2年（730年）。社伝によると、出雲氏族の真神田臣（まかんだおみ）によって、武蔵国豊島郡芝崎村——いまの千代田区大手町・将門塚のあたりに創建されました。',
       '元和2年（1616年）、江戸城の表鬼門を守る現在の地へ遷座し、幕府によって社殿が造営されます。江戸時代を通じて「江戸総鎮守」として崇敬を集め、氏子は神田・日本橋・秋葉原・大手丸の内など108町会に及びます。',
       '現在の社殿は昭和9年の再建。大正12年の関東大震災で江戸後期の社殿を焼失したのち、当時としては画期的な鉄骨鉄筋コンクリート・総朱漆塗で建て直されました。その耐火構造ゆえ、境内の多くが失われた戦災も、わずかな損傷で耐えぬいています。',
     ],
@@ -550,7 +550,7 @@ const en: Copy = {
     photoAlt: 'The main hall of Kanda Myojin',
     aboutTitle: 'About the shrine',
     about: [
-      'Kanda Myojin was founded in 730, on the site of what is now Otemachi in central Tokyo.',
+      'Kanda Myojin was founded in 730 — by tradition, by Makanda-no-omi of the Izumo clan — on the site of what is now Otemachi in central Tokyo.',
       'In 1616 it moved to the hill it occupies today, placed there to guard the unlucky northeast gate of Edo Castle, with its hall built by the shogunate. Through the Edo period it was the guardian shrine of the whole city, and its parish still covers Kanda, Nihonbashi, Akihabara, Otemachi and Marunouchi — 108 neighbourhood associations in all.',
       'The present hall dates from 1934. After the Great Kanto Earthquake of 1923 destroyed its late-Edo predecessor, it was rebuilt in steel-reinforced concrete — radical for its time — and lacquered throughout in vermilion. Being fireproof, it survived the wartime air raids with only slight damage, while most of the grounds around it burned.',
     ],
