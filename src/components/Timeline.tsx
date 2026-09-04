@@ -145,6 +145,11 @@ export function Timeline() {
           <span className="reception-label">{t.ceremony.receptionCuisineLabel}</span>
           <span className="reception-value">
             <span className="fact-sub">{l(reception.cuisine)}</span>
+            <ul className="cuisine-list">
+              {reception.cuisineHighlights.map((item) => (
+                <li key={item.zh}>{l(item)}</li>
+              ))}
+            </ul>
           </span>
         </div>
 

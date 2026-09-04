@@ -299,10 +299,33 @@ export const wedding = {
     },
     startTime: '12:30' as string | null,
     cuisine: {
-      zh: '會場稱之為「明神ガストロノミー」——從「溫故知新」出發，和風與西式交融的新式料理，以生產者細心栽培的江戶食材為主，並在賓客面前完成最後一道手續。',
-      ja: '「明神ガストロノミー」。温故知新の概念から生まれた和と洋が混ざり合う新しい料理で、江戸食材を中心に、サービスがお客様の目の前で仕上げます。',
-      en: 'The venue calls it "Myojin Gastronomy" — new cooking where Japanese and Western traditions meet, built on Edo-region produce and finished at your table.',
+      zh: '會場稱之為「明神ガストロノミー」——從「溫故知新」出發，融合和食與法式料理人的知識、技術與經驗，以生產者細心栽培的江戶食材為主，並在賓客面前完成最後一道手續。',
+      ja: '「明神ガストロノミー」。温故知新の概念から生まれ、和食とフレンチの料理人の知識・技術・経験を融合した新しい料理。江戸食材を中心に、サービスがお客様の目の前で仕上げます。',
+      en: 'The venue calls it "Myojin Gastronomy" — new cooking that fuses the craft of Japanese and French chefs, built on Edo-region produce and finished at your table.',
     } as Localized,
+    /** 逐條取自 myojin.tokyo/cuisine/「料理へのこだわり」與器皿段落（2026-09-05 讀取） */
+    cuisineHighlights: [
+      {
+        zh: '地產地消・旬產旬消：蔬菜來自東京小平市的川里農園——都內少數取得有機栽培認證的農園。',
+        ja: '地産地消・旬産旬消。野菜は東京・小平市の川里農園から——都内で有機栽培認証を持つ数少ない農園です。',
+        en: 'Local and seasonal: the vegetables come from Kawasato Farm in Kodaira, one of the few certified-organic farms inside Tokyo.',
+      },
+      {
+        zh: '「幻の東京ビーフ」：東京あきる野市東京和牛的牛肉，搭配以昆布與蛤蜊熬出的高湯，是會館的招牌一品。',
+        ja: '「幻の東京ビーフ」。東京・あきる野市の東京和牛を、昆布と蛤から煮出した出汁と合わせる自慢の一品。',
+        en: '"Phantom Tokyo Beef" from Tokyo Wagyu in Akiruno, served with a dashi drawn from kombu and clams — the house signature.',
+      },
+      {
+        zh: '祝酒是東京東村山市豐島屋酒造的「金婚」——創業四百年、神田明神唯一的御神酒酒造，作為兩人「開始的一杯」。',
+        ja: '祝い酒は東村山市・豊島屋酒造の「金婚」。創業400年、神田明神の御神酒を納める唯一の酒造です。',
+        en: 'The toast is "Kinkon" sake from Toshimaya, a 400-year-old brewery in Higashimurayama and the only one that supplies Kanda Myojin\'s sacred sake.',
+      },
+      {
+        zh: '器皿選自全國工房：有田燒老舖かまち陶房、富山高岡的能作鑄物，連手感都講究。',
+        ja: '器は全国の工房から——有田焼のかまち陶房、富山・高岡の能作の鋳物など、手触りまでこだわっています。',
+        en: 'Tableware comes from workshops across Japan — Arita ware by Kamachi Tobo and cast metalware by Nousaku of Takaoka, Toyama.',
+      },
+    ] as Localized[],
     sourceNote: {
       zh: '會場與料理資訊依明神会館官方網站',
       ja: '会場・料理の情報は明神会館公式サイトに準拠',

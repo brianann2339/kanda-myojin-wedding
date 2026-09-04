@@ -680,6 +680,21 @@ button {
   letter-spacing: 0.08em;
 }
 
+.cuisine-list {
+  margin: 0.375rem 0 0;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.cuisine-list li::marker {
+  color: var(--gold);
+}
+
 .order {
   margin: 0;
   padding: 0;
