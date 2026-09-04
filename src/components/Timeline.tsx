@@ -15,8 +15,7 @@ function icsEscape(v: string) {
 
 /**
  * 產生「加入行事曆」的 .ics 內容。
- * 報到 10:00 JST = 01:00Z、散會 15:00 JST = 06:00Z（2026-09-04 定案），
- * 並在 DESCRIPTION 中明講散會時間另行通知。
+ * 報到 10:00 JST = 01:00Z、散會 15:00 JST = 06:00Z（2026-09-04 定案）。
  */
 function calendarHref(summary: string, description: string, location: string) {
   const ics = [
