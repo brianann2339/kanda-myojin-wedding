@@ -173,7 +173,7 @@ const zh = {
     items: [
       {
         q: '服裝建議',
-        a: '女士建議正式洋裝、典雅套裝，或是和服；男士建議正式西裝、西式禮服，或是傳統和服。部分流程可能於戶外進行，建議準備一件外套，並且準備防蚊液。',
+        a: '女士建議正式洋裝、典雅套裝，或是和服；男士建議正式西裝、西式禮服，或是傳統和服。想穿和服的話，建議提前一天去租，當天早上才不會太趕。部分流程可能於戶外進行，建議準備一件外套，並且準備防蚊液。',
         status: 'answered' as FaqStatus,
       },
       { q: '需要準備禮金嗎', a: '不需要。我們不收禮金，也不必準備禮物——你願意出席，就是最大的禮物。', status: 'answered' as FaqStatus },
@@ -423,7 +423,7 @@ const ja: Copy = {
     items: [
       {
         q: '服装について',
-        a: '女性はフォーマルなワンピースや上品なスーツ、または和装がおすすめです。男性はフォーマルなスーツなどの洋装、または和装をどうぞ。一部屋外での進行が想定されるため、羽織るものと虫除けスプレーがあると安心です。',
+        a: '女性はフォーマルなワンピースや上品なスーツ、または和装がおすすめです。男性はフォーマルなスーツなどの洋装、または和装をどうぞ。和装をご希望の場合は、前日にレンタルしておくと当日の朝に慌てずに済みます。一部屋外での進行が想定されるため、羽織るものと虫除けスプレーがあると安心です。',
         status: 'answered' as const,
       },
       { q: 'ご祝儀は必要ですか', a: '不要です。ご祝儀もお品もお気遣いなく——ご出席そのものが、いちばんの贈り物です。', status: 'answered' as const },
@@ -671,7 +671,7 @@ const en: Copy = {
     items: [
       {
         q: 'What should I wear?',
-        a: 'For women, a formal dress, an elegant suit, or a kimono. For men, a formal suit or other Western formal wear, or traditional Japanese dress. Parts of the day may be outdoors, so bring a jacket and insect repellent.',
+        a: 'For women, a formal dress, an elegant suit, or a kimono. For men, a formal suit or other Western formal wear, or traditional Japanese dress. If you would like to wear a kimono, we suggest renting it the day before so the morning is not rushed. Parts of the day may be outdoors, so bring a jacket and insect repellent.',
         status: 'answered' as const,
       },
       { q: 'Should I bring a gift?', a: 'No. No cash gifts, nothing to buy — you being there is the gift.', status: 'answered' as const },
