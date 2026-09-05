@@ -15,6 +15,7 @@
   --line-2: #d9cdb4;
 
   --shu: #b23e2f;
+  --matsu: #2e5c46; /* 松葉：深綠，配朱紅用 */
   --gold: #9a7d43;
 
   --dark: #2b2622;
@@ -28,6 +29,10 @@
 
   /* 版心與字級都以 rem 表示，隨下方的根字級一起縮放 */
   --page: 40rem;
+  /* 固定頂欄兩行的總高（估值，實測後校正）；錨點位移與 hero 上緣都以此為準 */
+  --topbar-h: 6.25rem;
+  /* 區塊淡入時的位移量；錨點的 scroll-margin 也用它補償（跳錨當下區塊多半還沒淡入，瀏覽器照位移後的框算落點） */
+  --reveal-shift: 14px;
 }
 
 * {
@@ -132,6 +137,8 @@ button {
   display: flex;
   gap: 1rem;
   overflow-x: auto;
+  /* 上下留一點空間，鍵盤焦點環才不會被 overflow 容器裁掉 */
+  padding-block: 0.25rem;
   min-width: 0;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -152,21 +159,61 @@ button {
   color: var(--shu);
 }
 
-/* 出席入口：紅底白字按鈕 */
-.topbar-links a.topbar-rsvp {
-  background: var(--shu);
-  color: var(--paper);
-  font-weight: 700;
-  padding: 0.4rem 0.75rem;
+/* 第二行：出席入口兩顆按鈕——新增＝朱紅、查詢／修改＝深綠 */
+.topbar-actions {
+  margin: 0 auto;
+  max-width: min(48rem, 100%);
+  padding: 0 1.375rem 0.625rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
-.topbar-links a.topbar-rsvp:hover {
+.topbar-btn {
+  flex: 1 1 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--paper);
+  text-align: center;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.topbar-btn--add {
+  background: var(--shu);
+}
+
+.topbar-btn--add:hover {
   background: #9c3527;
   color: var(--paper);
 }
 
+.topbar-btn--check {
+  background: var(--matsu);
+}
+
+.topbar-btn--check:hover {
+  background: #254b39;
+  color: var(--paper);
+}
+
 .scroll-target {
-  scroll-margin-top: 4.5rem;
+  /* 名單在捌區裡，首次進站直接按「查詢/修改」時該區還沒淡入，同樣要補位移量 */
+  scroll-margin-top: calc(var(--topbar-h) + 0.75rem + var(--reveal-shift));
+}
+
+/* 窄螢幕：兩顆按鈕各只有一半寬，字距與字級收一點，英日文標籤才放得下 */
+@media (max-width: 479px) {
+  .topbar-btn {
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    padding-inline: 0.5rem;
+  }
 }
 
 /* 窄螢幕沒有空間同時擺姓名與導覽，導覽優先——否則十個段落只能一路捲 */
@@ -178,7 +225,8 @@ button {
   /* 右緣淡出，讓「還可以往右捲」看起來是刻意的，而不是字被切掉 */
   .topbar-links {
     flex: 1;
-    padding-right: 0.5rem;
+    /* 右側留白要比淡出區寬，捲到底時最後一個連結才能完整走出淡出區 */
+    padding-right: 3rem;
     mask-image: linear-gradient(to right, #000 82%, transparent);
   }
 }
@@ -193,7 +241,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  padding: 4.75rem 2rem 6rem;
+  padding: calc(var(--topbar-h) + 1.5rem) 2rem 6rem;
   text-align: center;
 }
 
@@ -349,7 +397,7 @@ button {
 
 .section {
   padding: 3.5rem 0 0.5rem;
-  scroll-margin-top: 4rem;
+  scroll-margin-top: calc(var(--topbar-h) + 0.5rem + var(--reveal-shift));
 }
 
 .section:last-of-type {
@@ -1647,7 +1695,7 @@ a.channel:hover .channel-go {
 
 .will-reveal {
   opacity: 0;
-  transform: translateY(14px);
+  transform: translateY(var(--reveal-shift));
   transition:
     opacity 0.7s ease,
     transform 0.7s ease;
@@ -1685,6 +1733,16 @@ a.channel:hover .channel-go {
  * 餘白鋪七宝紋、隔段換紙色、時間軸橫排。字型／朱紅／紙色全部沿用，手機版不動。
  * media query 裡的 rem 以 16px 計，與 html 的流體字級無關。 */
 @media (min-width: 64rem) {
+  /* 桌機：第二行兩顆按鈕不必撐滿，置中、各限寬 */
+  .topbar-actions {
+    justify-content: center;
+    padding-bottom: 0.75rem;
+  }
+
+  .topbar-btn {
+    flex: 0 1 15rem;
+  }
+
   :root {
     --page: 62rem;
     --paper-2: #f0e9da;
@@ -1726,7 +1784,7 @@ a.channel:hover .channel-go {
     justify-items: start;
     column-gap: 3rem;
     row-gap: 2.25rem;
-    padding: 6rem 0 6rem max(3rem, calc((100vw - 76rem) / 2 + 3rem));
+    padding: calc(var(--topbar-h) + 2rem) 0 6rem max(3rem, calc((100vw - 76rem) / 2 + 3rem));
     text-align: left;
     background: radial-gradient(ellipse 50% 70% at 76% 50%, var(--paper-2), transparent 72%);
   }
@@ -1815,7 +1873,7 @@ a.channel:hover .channel-go {
     grid-column: 1;
     grid-row: 1 / span 40;
     position: sticky;
-    top: 5rem;
+    top: calc(var(--topbar-h) + 1.25rem);
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;

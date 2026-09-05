@@ -24,7 +24,7 @@ export function Contact() {
         <RsvpForm onSubmitted={() => setRefreshKey((k) => k + 1)} />
       </div>
 
-      <div ref={listRef} className="scroll-target">
+      <div ref={listRef} id="attendees" className="scroll-target">
         <Attendees refreshKey={refreshKey} />
       </div>
 
