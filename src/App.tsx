@@ -6,6 +6,7 @@ import { Flights } from './components/Flights'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
 import { Invitation } from './components/Invitation'
+import { Procession } from './components/Procession'
 import { Stay } from './components/Stay'
 import { Timeline } from './components/Timeline'
 import { TopBar } from './components/TopBar'
@@ -36,6 +37,7 @@ export default function App() {
     <LangProvider>
       <TopBar />
       <Hero />
+      <Procession />
       <main className="page">
         <Invitation />
         <Timeline />

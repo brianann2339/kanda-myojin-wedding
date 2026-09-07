@@ -27,6 +27,11 @@ const zh = {
     sectionsLabel: '頁面導覽',
     rsvpLabel: '出席回覆',
   },
+  procession: {
+    alt: '參進之儀的隊伍：三位伶人與持笏的神職、持神樂鈴的巫女領頭，其後是紋付袴的男士、白無垢的新娘、撐紅番傘的留袖女性，以及留袖、西裝與和服的親友，隊尾是穿振袖的女孩。',
+    pause: '暫停隊伍',
+    play: '讓隊伍繼續走',
+  },
   hero: {
     shrineLine: '神田明神　神前式',
     photoPlaceholder: '合照／神田明神實景',
@@ -278,6 +283,11 @@ const ja: Copy = {
     sectionsLabel: 'ページ内リンク',
     rsvpLabel: 'ご出欠',
   },
+  procession: {
+    alt: '参進の儀の行列。笛や笙などの伶人三名、笏を持つ神職、神楽鈴の巫女に続いて、紋付袴の男性、白無垢の花嫁、紅い番傘を差す留袖の女性、さらに留袖・スーツ・着物の方々が進み、最後に振袖の女の子が続きます。',
+    pause: '行列を止める',
+    play: '行列を動かす',
+  },
   hero: {
     shrineLine: '神田明神　神前式',
     photoPlaceholder: '二人の写真／神田明神の風景',
@@ -525,6 +535,11 @@ const en: Copy = {
     checkGuests: 'Check / edit reply',
     sectionsLabel: 'Sections',
     rsvpLabel: 'RSVP',
+  },
+  procession: {
+    alt: 'A wedding procession: three court musicians, a priest with a shaku and a shrine maiden with bells, then men in montsuki hakama, the bride in a white shiromuku, a woman in tomesode holding a red parasol, more guests in tomesode, a suit and a kimono, and a girl in furisode at the rear.',
+    pause: 'Pause the procession',
+    play: 'Resume the procession',
   },
   hero: {
     shrineLine: 'Kanda Myojin · Shinto Ceremony',

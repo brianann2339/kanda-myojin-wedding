@@ -1,5 +1,6 @@
 :root {
   --paper: #f7f3e9;
+  --paper-2: #f0e9da;
   --card: #fbf8f0;
   --card-inner: #fffdf8;
   --panel: #efe7d6;
@@ -391,6 +392,133 @@ button {
   letter-spacing: 0.3em;
   text-indent: 0.3em;
   color: var(--gold);
+}
+
+/* ---------- 參進之儀的隊伍 ---------- */
+
+.procession {
+  position: relative;
+  /* 精靈圖 1px 對應的顯示長度；成人一格高 132px，所以身高約 66px */
+  --walk-unit: 0.5px;
+  --walk-cycle: 0.78s;
+  --walk-gap: 24;
+  /* 由 Procession.tsx 量完版面後寫進來 */
+  --advance: 0px;
+  --duration: 24s;
+
+  background: var(--paper-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding-top: calc(14 * var(--walk-unit));
+}
+
+.proc-viewport {
+  overflow: hidden;
+  /* 圖片還沒載入時先撐住高度，避免版面跳動 */
+  min-height: calc(var(--tallest, 164) * var(--walk-unit));
+  /* 兩端淡出，隊伍是走進來、走出去，不是被切掉 */
+  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+}
+
+.proc-track {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(var(--walk-gap) * var(--walk-unit));
+  width: max-content;
+  will-change: transform;
+  animation: proc-move var(--duration) linear infinite;
+}
+
+.proc-group {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(var(--walk-gap) * var(--walk-unit));
+}
+
+.walker {
+  display: block;
+  flex: none;
+  width: var(--fw);
+  height: var(--fh);
+  background-repeat: no-repeat;
+  background-size: calc(var(--fw) * 4) var(--fh);
+  animation: walk-cycle var(--walk-cycle) steps(4) infinite;
+}
+
+@keyframes proc-move {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(calc(var(--advance) * -1), 0, 0);
+  }
+}
+
+@keyframes walk-cycle {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: calc(var(--fw) * -4) 0;
+  }
+}
+
+/* 捲出視窗、或訪客按了暫停，就停格 */
+.procession[data-live='false'] .proc-track,
+.procession[data-live='false'] .walker,
+.procession[data-paused='true'] .proc-track,
+.procession[data-paused='true'] .walker {
+  animation-play-state: paused;
+}
+
+/* 暫停鈕：平常很淡，指到或用鍵盤選到才清楚 */
+.proc-pause {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line-2);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--muted);
+  opacity: 0.45;
+  transition:
+    opacity 0.2s ease,
+    color 0.2s ease;
+}
+
+.proc-pause:hover,
+.proc-pause:focus-visible {
+  opacity: 1;
+  color: var(--shu);
+}
+
+.proc-pause svg {
+  width: 0.5rem;
+  height: 0.5rem;
+  fill: currentColor;
+}
+
+@media (max-width: 47.9375rem) {
+  .procession {
+    --walk-unit: 0.36px;
+    --walk-gap: 22;
+  }
+}
+
+/* Windows 高對比：讓橫帶保留自己的紙色，否則黑衣的小人會和被強制成黑色的底融在一起 */
+@media (forced-colors: active) {
+  .procession {
+    forced-color-adjust: none;
+  }
 }
 
 /* ---------- section shell ---------- */
@@ -1712,6 +1840,27 @@ a.channel:hover .channel-go {
     scroll-behavior: auto;
   }
 
+  /* 隊伍不走了，定格在併腳的那一格站著；左緣不再淡出，否則最前面那位會被抹掉 */
+  .proc-viewport {
+    mask-image: linear-gradient(to right, #000 93%, transparent);
+    -webkit-mask-image: linear-gradient(to right, #000 93%, transparent);
+  }
+
+  .proc-pause {
+    display: none;
+  }
+
+  .proc-track {
+    animation: none;
+    /* 不動就別留一個永久的合成圖層 */
+    will-change: auto;
+  }
+
+  .walker {
+    animation: none;
+    background-position: calc(var(--fw) * -1) 0;
+  }
+
   .topbar,
   .faq-chevron,
   .will-reveal {
@@ -1745,7 +1894,6 @@ a.channel:hover .channel-go {
 
   :root {
     --page: 62rem;
-    --paper-2: #f0e9da;
   }
 
   /* 餘白：左右兩道七宝繋ぎ，只有寬螢幕多出來的空白處看得到 */
