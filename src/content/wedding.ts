@@ -367,7 +367,8 @@ export const wedding = {
    * 陣列順序就是隊伍順序（最前面的走在最左邊）；每個檔案是一條四格的走路循環，
    * w、h 是「單格」的像素尺寸，畫面上會整組等比縮放，所以彼此的身高比例維持原畫。
    * 三張原圖的作畫比例不一致（第三張大 16%），切圖時已用「腳到臉」的身高逐張校正，
-   * 且第三張原圖的五個人（p11–p15）原本面向右，已水平鏡射成與其他人一致的面向左，
+   * 且最後五位原本面向右，已水平鏡射成與其他人一致的面向左；
+   * p08 是「白無垢新婦＋替她撐紅番傘的留袖女性」畫在同一張的一組（新人另外提供，傘才遮得到新娘），
    * 所以這裡的 w、h 已經是可以直接互比的尺寸，不要再另外調整個別人物大小。
    * 要增減人數，改這個陣列與 public/images/procession/ 底下的檔案即可。
    */
@@ -379,14 +380,13 @@ export const wedding = {
     { src: asset('images/procession/p05.png'), w: 71, h: 128 },
     { src: asset('images/procession/p06.png'), w: 67, h: 126 },
     { src: asset('images/procession/p07.png'), w: 66, h: 129 },
-    { src: asset('images/procession/p08.png'), w: 73, h: 140 },
-    { src: asset('images/procession/p09.png'), w: 102, h: 164 },
-    { src: asset('images/procession/p10.png'), w: 62, h: 116 },
-    { src: asset('images/procession/p11.png'), w: 67, h: 123 },
-    { src: asset('images/procession/p12.png'), w: 53, h: 119 },
-    { src: asset('images/procession/p13.png'), w: 62, h: 122 },
-    { src: asset('images/procession/p14.png'), w: 59, h: 120 },
-    { src: asset('images/procession/p15.png'), w: 59, h: 109 },
+    { src: asset('images/procession/p08.png'), w: 114, h: 173 },
+    { src: asset('images/procession/p09.png'), w: 62, h: 116 },
+    { src: asset('images/procession/p10.png'), w: 67, h: 123 },
+    { src: asset('images/procession/p11.png'), w: 53, h: 119 },
+    { src: asset('images/procession/p12.png'), w: 62, h: 122 },
+    { src: asset('images/procession/p13.png'), w: 59, h: 120 },
+    { src: asset('images/procession/p14.png'), w: 59, h: 109 },
   ],
 
   /**

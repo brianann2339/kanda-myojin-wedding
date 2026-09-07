@@ -57,7 +57,8 @@ export function Procession() {
       const advance = groups[1].getBoundingClientRect().left - groups[0].getBoundingClientRect().left
       const gap = advance - groups[0].getBoundingClientRect().width
       if (advance > 0) {
-        const need = Math.max(2, Math.ceil(1 + (band.clientWidth + gap) / advance))
+        /* 多算 64px 安全邊際，免得次像素進位讓右緣剛好差一點點 */
+        const need = Math.max(2, Math.ceil(1 + (band.clientWidth + gap + 64) / advance))
         setCopies((prev) => (prev === need ? prev : need))
       }
       const ref = track.querySelector<HTMLElement>('.walker')
