@@ -22,7 +22,7 @@ export function Invitation() {
             ))}
           </div>
           <div className="letter-sign">
-            {lang === 'en' ? names.full : `${names.full}　${t.invitation.signature}`}
+            {lang === 'en' ? names.full : `${names.full}${lang === 'zh' ? ' ' : '　'}${t.invitation.signature}`}
           </div>
         </div>
       </div>

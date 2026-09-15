@@ -5,8 +5,8 @@ import { Modal } from './Modal'
 import { SectionHead } from './SectionHead'
 
 /** 神前式與披露宴是當天的重點，時間軸上以實心點標示，且各自有細節彈窗 */
-const KEY_STEPS = new Set([3, 5])
-const DETAIL: Record<number, 'ceremony' | 'reception'> = { 3: 'ceremony', 5: 'reception' }
+const KEY_STEPS = new Set([2, 4])
+const DETAIL: Record<number, 'ceremony' | 'reception'> = { 2: 'ceremony', 4: 'reception' }
 
 /** ICS 的文字欄位要跳脫反斜線、分號與逗號 */
 function icsEscape(v: string) {

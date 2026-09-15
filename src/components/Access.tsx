@@ -98,6 +98,11 @@ export function Access() {
         <div className="stack-sm">
           <div className="group-title">{t.access.taxiTitle}</div>
           <div className="fact-sub">{t.access.taxiDesc}</div>
+          <div className="card stack-sm">
+            <p className="fact-sub">{t.access.taxiCardLabel}</p>
+            <p className="body-text" lang="ja">{t.access.taxiCardText}</p>
+            {t.access.taxiCardTranslation && <p className="fact-sub">{t.access.taxiCardTranslation}</p>}
+          </div>
         </div>
       </div>
     </section>

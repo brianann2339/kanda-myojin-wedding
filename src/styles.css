@@ -2081,7 +2081,7 @@ a.channel:hover .channel-go {
   /* 當日流程橫排：一條線七個點 */
   .timeline {
     display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .tl-item {
