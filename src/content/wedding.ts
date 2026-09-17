@@ -337,6 +337,8 @@ export const wedding = {
   rsvp: {
     /** Apps Script 網頁應用程式的 /exec 網址（程式碼在 apps-script/Code.gs）；null 時表單顯示尚未開放 */
     endpoint: 'https://script.google.com/macros/s/AKfycbxhT6bEfuh4WH38VAOxpNU2fVeDdDmBCvQAkFBUPZ6tQSsmVWDZssd4FB4UaTag4D7L/exec' as string | null,
+    /** 新郎側、新娘側各自的名額，名單上顯示「已報名/名額」（2026-09-17 新人指定每側神前式 42、披露宴 60；不跟 ceremonySeats／maxGuests 連動） */
+    sideQuota: { ceremony: 42, reception: 60 },
   },
 
   /** 兩人的私訊管道（2026-08-31 由新人提供並同意公開於網站） */

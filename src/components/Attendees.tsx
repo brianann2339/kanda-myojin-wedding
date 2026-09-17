@@ -47,6 +47,8 @@ export function Attendees({ refreshKey = 0 }: { refreshKey?: number }) {
   if (!endpoint) return null
 
   const side = (s: Side) => (list ?? []).filter((e) => e.relation.startsWith(s)).sort(order)
+  const attending = (rows: Entry[], part: 'ceremony' | 'reception') => rows.filter((e) => e[part] === 'yes').length
+  const quota = wedding.rsvp.sideQuota
   const yesNo = (v: YesNo) => (v === 'yes' ? f.yes : f.no)
   const dietLabel = (code: string) => (code in f.diets ? f.diets[code as Diet] : code)
 
@@ -118,6 +120,10 @@ export function Attendees({ refreshKey = 0 }: { refreshKey?: number }) {
             return (
               <div className="attendee-col" key={s}>
                 <div className="attendee-head">{a[s]}</div>
+                <div className="attendee-tally">
+                  <span>{a.tally(a.colCeremony, attending(rows, 'ceremony'), quota.ceremony)}</span>
+                  <span>{a.tally(a.colReception, attending(rows, 'reception'), quota.reception)}</span>
+                </div>
                 {rows.length === 0 ? (
                   <div className="small-note">{a.empty}</div>
                 ) : (

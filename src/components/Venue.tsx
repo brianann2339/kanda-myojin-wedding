@@ -79,6 +79,13 @@ export function Venue() {
         <div className="card">
           <CapacityList rows={capacityRows} />
         </div>
+      </div>
+
+      <div className="stack" style={{ marginTop: 24 }}>
+        <div className="group-title">{t.ceremony.receptionCapacityTitle}</div>
+        <div className="card">
+          <CapacityList rows={[{ label: t.ceremony.capacityLimit, count: wedding.reception.hall.maxGuests }]} />
+        </div>
         <div className="small-note">{t.ceremony.capacitySource}</div>
       </div>
 
