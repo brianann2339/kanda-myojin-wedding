@@ -339,6 +339,8 @@ export const wedding = {
     endpoint: 'https://script.google.com/macros/s/AKfycbxhT6bEfuh4WH38VAOxpNU2fVeDdDmBCvQAkFBUPZ6tQSsmVWDZssd4FB4UaTag4D7L/exec' as string | null,
     /** 新郎側、新娘側各自的名額，名單上顯示「已報名/名額」（2026-09-17 新人指定每側神前式 42、披露宴 60；不跟 ceremonySeats／maxGuests 連動） */
     sideQuota: { ceremony: 42, reception: 60 },
+    /** 回覆統計的截止日，顯示在「新增賓客」按鈕與標題旁（2026-09-17 新人指定；表單本身不會因此關閉） */
+    deadline: '2026/11/30',
   },
 
   /** 兩人的私訊管道（2026-08-31 由新人提供並同意公開於網站） */

@@ -30,8 +30,8 @@
 
   /* 版心與字級都以 rem 表示，隨下方的根字級一起縮放 */
   --page: 40rem;
-  /* 固定頂欄兩行的總高（估值，實測後校正）；錨點位移與 hero 上緣都以此為準 */
-  --topbar-h: 6.25rem;
+  /* 固定頂欄兩行的總高（首繪用的估值，JS 實測後覆寫）；按鈕加了截止日小字後實測約 6.80–6.92rem，桌機另設 */
+  --topbar-h: 6.85rem;
   /* 區塊淡入時的位移量；錨點的 scroll-margin 也用它補償（跳錨當下區塊多半還沒淡入，瀏覽器照位移後的框算落點） */
   --reveal-shift: 14px;
 }
@@ -185,8 +185,17 @@ button {
   transition: background-color 0.15s ease;
 }
 
+/* 按鈕寬度只夠一行標籤，截止日放到第二行小字 */
 .topbar-btn--add {
+  flex-direction: column;
+  gap: 0.0625rem;
   background: var(--shu);
+}
+
+.topbar-btn-note {
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 .topbar-btn--add:hover {
@@ -214,6 +223,13 @@ button {
     font-size: 0.75rem;
     letter-spacing: 0.04em;
     padding-inline: 0.5rem;
+  }
+}
+
+/* 360px 以下：截止日小字撐住了按鈕最小寬，內距再收，兩顆按鈕才會等寬 */
+@media (max-width: 359px) {
+  .topbar-btn {
+    padding-inline: 0.25rem;
   }
 }
 
@@ -573,6 +589,16 @@ button {
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--ink);
+}
+
+.sec-note {
+  display: inline-block;
+  margin-left: 0.25rem;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  white-space: nowrap;
 }
 
 /* ---------- shared pieces ---------- */
@@ -1958,6 +1984,8 @@ a.channel:hover .channel-go {
 
   :root {
     --page: 62rem;
+    /* 桌機頂欄實測約 6.92–6.98rem */
+    --topbar-h: 6.95rem;
   }
 
   /* 餘白：左右兩道七宝繋ぎ，只有寬螢幕多出來的空白處看得到 */
@@ -2114,6 +2142,12 @@ a.channel:hover .channel-go {
 
   .section > .sec-head h2 {
     font-size: 1.5rem;
+  }
+
+  /* 桌機標題欄窄，截止日換到標題下一行 */
+  .section > .sec-head .sec-note {
+    display: block;
+    margin: 0.5rem 0 0;
   }
 
   .section > .sec-head .sec-kicker {

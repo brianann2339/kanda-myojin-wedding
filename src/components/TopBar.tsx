@@ -53,6 +53,7 @@ export function TopBar() {
       <nav className="topbar-actions" aria-label={t.nav.rsvpLabel}>
         <a className="topbar-btn topbar-btn--add" href="#contact">
           {t.nav.addGuests}
+          <span className="topbar-btn-note">{t.nav.deadline(wedding.rsvp.deadline)}</span>
         </a>
         <a className="topbar-btn topbar-btn--check" href="#attendees">
           {t.nav.checkGuests}

@@ -18,7 +18,12 @@ export function Contact() {
 
   return (
     <section className="section" id="contact">
-      <SectionHead num="捌" kicker={t.contact.kicker} title={t.contact.title} />
+      <SectionHead
+        num="捌"
+        kicker={t.contact.kicker}
+        title={t.contact.title}
+        note={t.nav.deadline(wedding.rsvp.deadline)}
+      />
 
       <div className="card stack">
         <RsvpForm onSubmitted={() => setRefreshKey((k) => k + 1)} />

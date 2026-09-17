@@ -22,6 +22,7 @@ const zh = {
     stay: '住宿',
     faq: '指南',
     addGuests: '新增賓客',
+    deadline: (date: string) => `（統計到${date}截止）`,
     checkGuests: '查詢/修改賓客資料',
     /* 兩個 <nav> 地標的名稱（螢幕閱讀器用），不顯示在畫面上 */
     sectionsLabel: '頁面導覽',
@@ -290,6 +291,7 @@ const ja: Copy = {
     stay: '宿泊',
     faq: 'ご案内',
     addGuests: 'ご出欠の登録',
+    deadline: (date: string) => `（${date} 締切）`,
     checkGuests: '登録内容の確認・変更',
     sectionsLabel: 'ページ内リンク',
     rsvpLabel: 'ご出欠',
@@ -554,6 +556,7 @@ const en: Copy = {
     stay: 'Stay',
     faq: 'Guide',
     addGuests: 'Add guests',
+    deadline: (date: string) => `(closes ${date})`,
     checkGuests: 'Check / edit reply',
     sectionsLabel: 'Sections',
     rsvpLabel: 'RSVP',
