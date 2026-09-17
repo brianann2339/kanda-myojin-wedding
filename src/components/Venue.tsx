@@ -1,5 +1,6 @@
 import { wedding } from '../content/wedding'
 import { useLang } from '../i18n'
+import { CapacityList, useShrineCapacityRows } from './CapacityList'
 import { Jacket, Pin, Torii } from './icons'
 import { SectionHead } from './SectionHead'
 
@@ -8,6 +9,7 @@ const noticeIcons = [Jacket]
 export function Venue() {
   const { t, l } = useLang()
   const photo = wedding.photos.venue
+  const capacityRows = useShrineCapacityRows()
 
   return (
     <section className="section" id="venue">
@@ -70,6 +72,14 @@ export function Venue() {
           <source src={wedding.videos.ceremonyPreview.src} type="video/mp4" />
         </video>
         <div className="credit">{wedding.videos.ceremonyPreview.credit}</div>
+      </div>
+
+      <div className="stack" style={{ marginTop: 24 }}>
+        <div className="group-title">{t.ceremony.capacityTitle}</div>
+        <div className="card">
+          <CapacityList rows={capacityRows} />
+        </div>
+        <div className="small-note">{t.ceremony.capacitySource}</div>
       </div>
 
       <div className="stack" style={{ marginTop: 24 }}>

@@ -861,6 +861,70 @@ button {
   letter-spacing: 0.08em;
 }
 
+.capacity {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.capacity-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-block: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.capacity-row:first-child {
+  padding-top: 0;
+}
+
+.capacity-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.capacity dt {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.12em;
+}
+
+.capacity dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--shu);
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* 上排／下排是總數的細項：縮排、字小一級 */
+.capacity-row--sub dt {
+  padding-left: 0.875rem;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.capacity-row--sub dd {
+  font-size: 0.8125rem;
+  color: var(--ink);
+}
+
+/* 披露宴視窗的窄欄：標籤與數字緊挨著，跟同欄其他文字一樣靠左 */
+.capacity--inline .capacity-row {
+  justify-content: flex-start;
+  gap: 0.625rem;
+}
+
+.capacity--inline dt {
+  font-size: 0.75rem;
+}
+
 .cuisine-list {
   margin: 0.375rem 0 0;
   padding-left: 1rem;

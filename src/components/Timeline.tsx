@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { wedding } from '../content/wedding'
 import { useCoupleNames, useLang } from '../i18n'
+import { CapacityList, useShrineCapacityRows } from './CapacityList'
 import { Modal } from './Modal'
 import { SectionHead } from './SectionHead'
 
@@ -42,6 +43,7 @@ export function Timeline() {
   const [detail, setDetail] = useState<null | 'ceremony' | 'reception'>(null)
   const items = t.timeline.items
   const reception = wedding.reception
+  const capacityRows = useShrineCapacityRows()
 
   const ics = calendarHref(
     `${names.full}${t.timeline.icsTitleSuffix}`,
@@ -108,7 +110,8 @@ export function Timeline() {
             <li key={step}>{step}</li>
           ))}
         </ol>
-        <div className="card stack-sm">
+        <div className="card stack">
+          <CapacityList rows={capacityRows} />
           <div className="fact-sub">{t.ceremony.capacity}</div>
         </div>
         <div className="small-note">{t.ceremony.ritualSource}</div>
@@ -128,7 +131,10 @@ export function Timeline() {
             <span className="reception-hall">
               {l(reception.venueName)} · {l(reception.hall.name)}
             </span>
-            <span className="fact-sub">{l(reception.hall.capacity)}</span>
+            <CapacityList
+              inline
+              rows={[{ label: t.ceremony.capacityLimit, count: reception.hall.maxGuests }]}
+            />
             <span className="fact-sub">{l(reception.hall.feature)}</span>
             <span className="fact-sub">{l(reception.venueNote)}</span>
           </span>
