@@ -24,15 +24,22 @@ export function BirthdaySelect({
   day,
   onChange,
   labels,
+  invalid,
+  describedBy,
 }: {
   month: string
   day: string
   onChange: (next: { month?: string; day?: string }) => void
   labels: { pick: string; month: string; day: string }
+  /** 送出後標紅：只標還沒選的那格；月、日都選了卻組不成日期時兩格都標 */
+  invalid?: boolean
+  describedBy?: string
 }) {
+  const bad = (value: string) =>
+    invalid && (value === '' || (month !== '' && day !== '')) ? { 'aria-invalid': true as const, 'aria-describedby': describedBy } : {}
   return (
     <span className="rsvp-birthday">
-      <select value={month} onChange={(e) => onChange({ month: e.target.value })}>
+      <select value={month} onChange={(e) => onChange({ month: e.target.value })} aria-label={labels.month} {...bad(month)}>
         <option value="">{labels.pick}</option>
         {MONTHS.map((m) => (
           <option key={m} value={m}>
@@ -40,7 +47,7 @@ export function BirthdaySelect({
           </option>
         ))}
       </select>
-      <select value={day} onChange={(e) => onChange({ day: e.target.value })}>
+      <select value={day} onChange={(e) => onChange({ day: e.target.value })} aria-label={labels.day} {...bad(day)}>
         <option value="">{labels.pick}</option>
         {DAYS.map((d) => (
           <option key={d} value={d}>

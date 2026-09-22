@@ -2242,7 +2242,8 @@ a.channel:hover .channel-go {
   position: relative;
   display: grid;
   grid-template-columns: 1.25rem 1.2fr 1fr 1.2fr 1fr 1fr;
-  gap: 0.5rem 0.625rem;
+  /* 列距只留 0.2rem：每格自己的「輸入框→紅字」那道 0.3rem 間距會補上，合起來仍是 0.5rem */
+  gap: 0.2rem 0.625rem;
   align-items: end;
   border: 1px solid var(--line);
   background: var(--card-inner);
@@ -2254,10 +2255,12 @@ a.channel:hover .channel-go {
 }
 
 .rsvp-idx {
-  font-family: var(--serif-en);
+  grid-row: 2;
+  align-self: center;
+  /* 不用 Cormorant：它的「1」長得像「I」，提示寫「第 1 位」時長輩對不上 */
+  font-family: var(--serif-tc);
   font-size: 0.9375rem;
   color: var(--gold);
-  padding-bottom: 0.625rem;
 }
 
 .rsvp-cell {
@@ -2268,6 +2271,18 @@ a.channel:hover .channel-go {
   font-size: 0.625rem;
   letter-spacing: 0.1em;
   color: var(--muted);
+}
+
+/* 每格佔三道列（標題／輸入框／紅字）並共用整列的列線：某格多了一行紅字時，同排的輸入框仍對齊 */
+.rsvp-row > .rsvp-cell {
+  grid-row: span 3;
+  display: grid;
+  grid-template-rows: subgrid;
+  row-gap: 0.3rem;
+}
+
+.rsvp-row > .rsvp-cell > span:first-child {
+  align-self: end;
 }
 
 .rsvp-cell input,
@@ -2309,6 +2324,29 @@ a.channel:hover .channel-go {
   grid-column: 2 / -1;
 }
 
+/* 按過送出仍沒填的格子：紅框、紅標題、底下一行紅字（不只靠顏色，色弱也看得出來） */
+.rsvp-cell.is-missing > span:first-child {
+  color: var(--shu);
+  font-weight: 700;
+}
+
+/* 紅框跟著 aria-invalid 走：生日只缺「日」時，已經選好的「月」不會跟著變紅 */
+.rsvp-cell [aria-invalid='true'] {
+  border-color: var(--shu);
+  /* 用陰影加粗成 2px，框線變粗也不會把版面推動 */
+  box-shadow: 0 0 0 1px var(--shu);
+  background: #fbefec;
+}
+
+.rsvp-missing {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--shu);
+  /* 紅字離自己的框比離下一題的標題近，才不會被看成是下一題沒填 */
+  margin-bottom: 0.5rem;
+}
+
 .rsvp-birthday {
   display: flex;
   gap: 0.375rem;
@@ -2334,6 +2372,15 @@ a.channel:hover .channel-go {
   color: var(--shu);
 }
 
+.rsvp-error-line {
+  font-weight: 700;
+}
+
+/* 空的播報區不佔位：抵掉 .stack 多出來的那道間距 */
+.rsvp-live:empty {
+  margin-top: -0.625rem;
+}
+
 .rsvp-done {
   border: 1px solid var(--gold);
   padding: 1.25rem 1rem;
@@ -2350,22 +2397,10 @@ a.channel:hover .channel-go {
     padding-right: 2rem;
   }
 
-  .rsvp-idx {
-    grid-row: 1;
-  }
-
-  .rsvp-row > .rsvp-cell:nth-of-type(1),
-  .rsvp-row > .rsvp-cell:nth-of-type(2),
-  .rsvp-row > .rsvp-cell:nth-of-type(3) {
+  /* 每一題都佔整行，飲食出現在披露宴正下方。
+     舊寫法用 :nth-of-type 分欄，但生日格是 <div>、其他是 <label>，計數錯開，飲食被擠到披露宴右邊半格，長輩常漏看 */
+  .rsvp-row > .rsvp-cell {
     grid-column: 2 / -1;
-  }
-
-  .rsvp-row > .rsvp-cell:nth-of-type(4) {
-    grid-column: 2;
-  }
-
-  .rsvp-row > .rsvp-cell:nth-of-type(5) {
-    grid-column: 3;
   }
 }
 
