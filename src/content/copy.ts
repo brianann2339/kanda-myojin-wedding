@@ -5,27 +5,27 @@ type FaqStatus = 'answered' | 'draft' | 'pending'
 
 /**
  * 「參加神前式」的意思：新增賓客表單開頭與參列指南第一題共用同一份文字（2026-10-14 新人要求）。
- * 「紅毯」是新人確認的用詞；選項名稱須與各語言表單的 yes/no 一致；「約 45 分鐘」同兒童 FAQ。
+ * 「紅毯」是新人確認的用詞；選項名稱須與各語言表單的 yes/no 一致；「約 30 分鐘」依明神会館阿部小姐的時程表（挙式 約30分間），同兒童 FAQ。
  */
 const ceremonyMeaning = {
   zh: {
     title: '「參加神前式」是什麼意思？',
     lines: [
-      '這跟台灣婚禮的習俗不太一樣：神前式選「是」的親友，會跟著新人的隊伍一起走紅毯，進入社殿，並在社殿內坐著參與整場儀式（約 45 分鐘），不是在旁邊觀禮拍照而已。',
+      '這跟台灣婚禮的習俗不太一樣：神前式選「是」的親友，會跟著新人的隊伍一起走紅毯，進入社殿，並在社殿內坐著參與整場儀式（約 30 分鐘），不是在旁邊觀禮拍照而已。',
       '只想在旁邊看、拍照的話，請選「否」：當天一樣歡迎在參道兩側觀禮，並一起拍大合照。',
     ],
   },
   ja: {
     title: '神前式の「出席」について',
     lines: [
-      '神前式で「出席」を選ばれた方は、新郎新婦とともに行列に加わって赤い絨毯の上を歩き、社殿にお入りいただきます。式のあいだ（約45分）は、社殿内でご着席いただきます。',
+      '神前式で「出席」を選ばれた方は、新郎新婦とともに行列に加わって赤い絨毯の上を歩き、社殿にお入りいただきます。式のあいだ（約30分）は、社殿内でご着席いただきます。',
       '見守ったり撮影したりするだけの場合は、「欠席」をお選びください。その場合も、当日は参道の両側から参進の儀をご覧いただけます。集合写真にもぜひご参加ください。',
     ],
   },
   en: {
     title: 'What does "Yes" for the ceremony mean?',
     lines: [
-      'Choosing "Yes" for the ceremony means you walk the red carpet with the couple in the procession, enter the shrine hall, and sit through the whole ceremony inside (about 45 minutes), rather than just watching and taking photos from the side.',
+      'Choosing "Yes" for the ceremony means you walk the red carpet with the couple in the procession, enter the shrine hall, and sit through the whole ceremony inside (about 30 minutes), rather than just watching and taking photos from the side.',
       'If you would only like to watch or take photos, please choose "No". You are still very welcome to watch from either side of the approach and join the group photo.',
     ],
   },
@@ -120,18 +120,19 @@ const zh = {
   timeline: {
     kicker: 'WEDDING DAY',
     title: '當日流程',
-    note: '賓客請於 10:00–10:45 完成報到，10:45 起列隊準備進場；11:00 神前式、12:15 披露宴，約 15:00 散會。',
+    note: '參加神前式的親友請於 10:20 抵達明神会館，10:50 列隊準備參進之儀，11:00 神前式；11:45 披露宴報到、12:15 開宴，約 15:00 散會。只參加披露宴的親友，最晚請於 11:45 抵達；也歡迎提早來，在參道兩側觀禮參進之儀（10:50 起），並一起拍 11:30 的大合照。',
     detailLabel: '看細節',
     close: '關閉',
     calendarLabel: '加入行事曆',
     icsTitleSuffix: ' 婚禮',
-    icsDesc: '10:00–10:45 報到・11:00 神前式・12:15 披露宴（明神会館 彩の間）・約 15:00 散會。',
+    icsDesc: '10:20 抵達（參加神前式者）・11:00 神前式・11:45 披露宴報到・12:15 開宴（明神会館 彩の間）・約 15:00 散會。',
     items: [
-      { name: "迎賓報到", desc: "（請於明神会館完成報到，稍作休息）" },
-      { name: "列隊進場", desc: "（在司儀引導下於參道集結，準備步入社殿）" },
-      { name: "神前式儀式", desc: "（由雅樂與「參進之儀」揭開序幕）" },
+      { name: "抵達明神会館", desc: "（參加神前式的親友請到明神会館集合，會進行親族介紹與儀式說明）" },
+      { name: "參進之儀（列隊）", desc: "（在司儀引導下於參道排好隊伍，準備跟著新人步入社殿；只參加披露宴的親友，也歡迎在參道兩側觀禮）" },
+      { name: "神前式儀式", desc: "（由雅樂與「參進之儀」揭開序幕，約 30 分鐘）" },
       { name: "境內紀念拍攝", desc: "（全體親友大合照與境內留影）" },
-      { name: "披露宴午宴", desc: "（移步明神会館「彩の間」享用料理）" },
+      { name: "披露宴報到", desc: "（在明神会館辦理披露宴報到；只參加披露宴的親友，最晚請於此時抵達）" },
+      { name: "披露宴午宴", desc: "（在明神会館「彩の間」享用料理）" },
       { name: "圓滿禮成", desc: "（宴席尾聲為個別合照時間；午後的東京時光，就留給你漫步賞櫻、自在探索）" },
     ],
   },
@@ -225,7 +226,7 @@ const zh = {
       { q: '儀式後有用餐嗎', a: '有的。境內合影之後，我們會移步到神田明神境內的明神会館「彩の間」用餐，預計 12:15 開始。', status: 'answered' as const },
       { q: '神社參列禮儀', a: '神社是神明的居所，請把它當作參加一場莊重的儀式：\n・走參道時靠邊走，正中央是神明走的路；經過鳥居時可以輕輕點頭致意。\n・進社殿前請把手機關靜音；進社殿時不能戴帽子，請務必脫帽。社殿內不能飲食。\n・參進之儀時，隊伍以外的賓客請在兩側等候；儀式開始後依神職人員與司儀的引導就座、起立、低頭即可，不用擔心做錯。\n・儀式中最重要的動作是「二拜二拍手一拜」（鞠躬兩次、拍手兩次、再鞠躬一次），神職人員會示意時機，跟著做就好。\n・儀式中請保持安靜，社殿內不能拍照（攝影規範見下一題）。\n有任何不確定的地方，當天以現場引導為準。', status: 'answered' as const },
       { q: '儀式中的攝影規範', a: '社殿內請勿拍攝——儀式中只有神田明神專屬攝影師可以拍照。不過參進之儀（進入社殿前的隊伍行進）時，沒有在隊伍中的人可以像一般遊客一樣，在兩側盡情側拍。披露宴期間則可以自由拍攝。', status: 'answered' as FaqStatus },
-      { q: "可以帶小朋友出席嗎？", a: "可以，但神前式希望12歲以上參加，因為神前式社殿內儀式時間約 45 分鐘，環境非常安靜肅穆，為了讓爸爸媽媽更自在，建議攜帶幼童的親友直接參加 12:15 的披露宴（午餐）。會館備有依年齡調整的兒童餐椅、兒童餐與哺乳室；嬰兒推車可於會館內自由使用。", status: 'answered' as const },
+      { q: "可以帶小朋友出席嗎？", a: "可以，但神前式希望12歲以上參加，因為神前式社殿內儀式時間約 30 分鐘，環境非常安靜肅穆，為了讓爸爸媽媽更自在，建議攜帶幼童的親友直接參加披露宴（午餐；11:45 報到、12:15 開宴）。會館備有依年齡調整的兒童餐椅、兒童餐與哺乳室；嬰兒推車可於會館內自由使用。", status: 'answered' as const },
       { q: '語言與翻譯', a: '不用擔心。我們的朋友當天會擔任翻譯與司儀，儀式與宴席的流程都會即時為大家說明。', status: 'answered' as FaqStatus },
     ],
     pendingTag: '待確認',
@@ -242,7 +243,7 @@ const zh = {
       colBirthday: '生日（月／日）',
       month: '月',
       day: '日',
-      colCeremony: '參加神前式（日式婚禮儀式）11:00–11:45',
+      colCeremony: '參加神前式（日式婚禮儀式）11:00–11:30',
       colReception: '參加披露宴（午餐）12:15–15:00',
       colDiet: '飲食',
       relations: {
@@ -396,18 +397,19 @@ const ja: Copy = {
   timeline: {
     kicker: 'WEDDING DAY',
     title: '当日の流れ',
-    note: '10:00〜10:45 に受付をお済ませください。10:45 から参進の列に並びます。神前式 11:00、披露宴 12:15、お開きは 15:00 頃です。',
+    note: '神前式にご参列の方は 10:20 に明神会館へお越しください。10:50 に参進の列に並び、11:00 から神前式です。披露宴の受付は 11:45、開宴は 12:15、お開きは 15:00 頃です。披露宴のみご出席の方は、11:45 までにお越しください。それより前にお越しいただければ、参道の両側から参進の儀（10:50〜）をご覧いただき、11:30 の集合写真にもご参加いただけます。',
     detailLabel: '詳細を見る',
     close: '閉じる',
     calendarLabel: 'カレンダーに追加',
     icsTitleSuffix: ' 結婚式',
-    icsDesc: '受付10:00〜10:45・神前式11:00・披露宴12:15（明神会館 彩の間）・お開き15:00頃。',
+    icsDesc: '来館10:20（神前式ご参列の方）・神前式11:00・披露宴受付11:45・開宴12:15（明神会館 彩の間）・お開き15:00頃。',
     items: [
-      { name: "迎賓・受付", desc: "明神会館で受付を済ませ、ひと息おつきください" },
-      { name: "整列・入場", desc: "司会の案内で参道に集まり、社殿への入場に備えます" },
-      { name: "神前式", desc: "雅楽と「参進の儀」で幕を開けます" },
+      { name: "ご来館", desc: "神前式にご参列の方は明神会館へお越しください。親族紹介と挙式のご案内があります" },
+      { name: "参進の儀（整列）", desc: "司会の案内で参道に並び、新郎新婦とともに社殿へ進む準備をします。披露宴のみご出席の方も、参道の両側からご覧いただけます" },
+      { name: "神前式", desc: "雅楽と「参進の儀」で幕を開けます（約30分）" },
       { name: "境内での記念撮影", desc: "ご親族・ご友人全員での集合写真と境内での撮影" },
-      { name: "披露宴・昼食", desc: "明神会館「彩の間」へ移動し、お料理をお楽しみください" },
+      { name: "披露宴受付", desc: "明神会館で披露宴の受付をお済ませください（ご祝儀は不要です）。披露宴のみご出席の方は、この時間までにお越しください" },
+      { name: "披露宴・昼食", desc: "明神会館「彩の間」でお料理をお楽しみください" },
       { name: "お開き", desc: "宴の終わりに個別の記念撮影を。午後の東京では、お花見や自由な散策をお楽しみください" },
     ],
   },
@@ -500,7 +502,7 @@ const ja: Copy = {
       { q: '披露宴はありますか', a: 'はい。境内での記念撮影ののち、神田明神の境内にある明神会館「彩の間」でお食事をご用意しています。開宴は 12:15 の予定です。', status: 'answered' as const },
       { q: '神社での作法', a: '神社は神様のお住まいです。厳かな儀式に参列するつもりでお越しください。\n・参道は端を歩きます。中央は神様の通り道です。鳥居をくぐる際は軽く一礼を。\n・社殿に入る前に携帯電話をマナーモードに。社殿内では帽子をかぶれませんので、必ずお取りください。社殿内での飲食はできません。\n・参進の儀では、列に加わらない方は両脇でお待ちください。式が始まったら、神職と司会の案内に従って着席・起立・低頭していただければ大丈夫です。\n・式中いちばん大切な作法は「二拝二拍手一拝」（二回お辞儀、二回拍手、もう一回お辞儀）。神職が合図しますので、それに合わせてください。\n・式中はお静かに。社殿内は撮影できません（次の質問をご覧ください）。\n迷ったときは、当日の案内に従ってください。', status: 'answered' as const },
       { q: '式中の撮影について', a: '社殿内の撮影はご遠慮ください。挙式中は神田明神専属のフォトグラファーのみ撮影が可能です。ただし参進の儀（社殿に入る前の行列）では、列に加わらない方は一般の参拝客と同じように両脇から自由に撮影いただけます。披露宴中はご自由に撮影いただけます。', status: 'answered' as const },
-      { q: '子ども連れでも大丈夫ですか', a: "はい。ただし神前式へのご参加は12歳以上を希望しています。社殿内での儀式は約45分間、非常に静かで厳かな雰囲気の中で行われます。お父様・お母様にも気楽に過ごしていただけるよう、小さなお子様連れの方には12:15からの披露宴（昼食）への直接のご参加をおすすめします。会館には年齢に合わせた子ども用の椅子、お子様料理、授乳室がございます。ベビーカーは館内で自由にご利用いただけます。", status: 'answered' as const },
+      { q: '子ども連れでも大丈夫ですか', a: "はい。ただし神前式へのご参加は12歳以上を希望しています。社殿内での儀式は約30分間、非常に静かで厳かな雰囲気の中で行われます。お父様・お母様にも気楽に過ごしていただけるよう、小さなお子様連れの方には披露宴（昼食／受付11:45・開宴12:15）への直接のご参加をおすすめします。会館には年齢に合わせた子ども用の椅子、お子様料理、授乳室がございます。ベビーカーは館内で自由にご利用いただけます。", status: 'answered' as const },
       { q: '言語・通訳について', a: 'ご安心ください。当日は友人が通訳と司会を務め、挙式・披露宴の進行をその都度ご案内します。', status: 'answered' as const },
     ],
     pendingTag: '未定',
@@ -517,7 +519,7 @@ const ja: Copy = {
       colBirthday: 'お誕生日（月／日）',
       month: '月',
       day: '日',
-      colCeremony: '神前式（神道の挙式）11:00–11:45',
+      colCeremony: '神前式（神道の挙式）11:00–11:30',
       colReception: '披露宴（昼食）12:15–15:00',
       colDiet: 'お食事',
       relations: {
@@ -668,18 +670,19 @@ const en: Copy = {
   timeline: {
     kicker: 'WEDDING DAY',
     title: 'The day',
-    note: 'Please check in between 10:00 and 10:45; from 10:45 we line up for the procession. Ceremony 11:00, reception 12:15, finishing around 15:00.',
+    note: 'If you are joining the ceremony, please arrive at Myojin Kaikan at 10:20; we line up for the procession at 10:50 and the ceremony starts at 11:00. Reception check-in is at 11:45, lunch starts at 12:15, and we finish around 15:00. If you are coming to the reception only, please arrive by 11:45 — or come earlier to watch the procession from either side of the approach (from 10:50) and join the 11:30 group photo.',
     detailLabel: 'Details',
     close: 'Close',
     calendarLabel: 'Add to calendar',
     icsTitleSuffix: ' — wedding',
-    icsDesc: 'Check-in 10:00–10:45, ceremony 11:00, reception 12:15 at Sai-no-Ma, Myojin Kaikan, finishing around 15:00.',
+    icsDesc: 'Arrive 10:20 if joining the ceremony; ceremony 11:00; reception check-in 11:45; lunch 12:15 at Sai-no-Ma, Myojin Kaikan; finishing around 15:00.',
     items: [
-      { name: "Welcome and check-in", desc: "Please check in at Myojin Kaikan and take a moment to rest" },
-      { name: "Line up for entry", desc: "Gather on the approach under the MC’s guidance, ready to enter the shrine hall" },
-      { name: "Shinto ceremony", desc: "Opening with gagaku music and the sanshin-no-gi procession" },
+      { name: "Arrival at Myojin Kaikan", desc: "Guests joining the ceremony gather at Myojin Kaikan for the family introductions and a briefing on the ceremony" },
+      { name: "Line up for the procession", desc: "Line up on the approach under the MC's guidance, ready to walk with the couple into the shrine hall; reception-only guests are welcome to watch from either side" },
+      { name: "Shinto ceremony", desc: "Opening with gagaku music and the sanshin-no-gi procession (about 30 minutes)" },
       { name: "Photos in the shrine grounds", desc: "Group photos with all family and friends, and photos around the grounds" },
-      { name: "Lunch reception", desc: "Move to Sai-no-Ma at Myojin Kaikan to enjoy the meal" },
+      { name: "Reception check-in", desc: "Check in for the reception at Myojin Kaikan; if you are coming to the reception only, please arrive by this time" },
+      { name: "Lunch reception", desc: "Enjoy the meal at Sai-no-Ma, Myojin Kaikan" },
       { name: "Celebration concludes", desc: "Individual photos round off the reception; the afternoon in Tokyo is yours for cherry-blossom walks and exploring at leisure" },
     ],
   },
@@ -772,7 +775,7 @@ const en: Copy = {
       { q: 'Is there a reception?', a: 'Yes. After the group photos we move to Sai-no-Ma at Myojin Kaikan, inside the shrine grounds, for the meal. It is expected to start at 12:15.', status: 'answered' as const },
       { q: 'Shrine etiquette', a: 'The shrine is the home of the deities, so please treat the day as a solemn ceremony:\n・Walk along the sides of the approach — the centre is the path of the deities. A slight bow as you pass under the torii is customary.\n・Before entering the hall, silence your phone. Hats are not allowed inside the hall — please make sure to take yours off. No food or drink inside.\n・During the procession, guests not walking in it wait at the sides. Once the ceremony begins, simply follow the priests and the MC — sit, stand and bow your head when guided. Nobody expects you to know the ritual.\n・The one gesture to know is "two bows, two claps, one bow" (bow twice, clap twice, bow once more). The priest will signal when.\n・Please keep quiet during the ceremony; no photography inside the hall (see the next question).\nIf in doubt, follow the guidance on the day.', status: 'answered' as const },
       { q: 'Photography during the ceremony', a: 'No photography inside the main hall — during the ceremony only the shrine\'s own photographer may take pictures. During the sanshin-no-gi procession before we enter the hall, though, anyone not walking in the procession is welcome to take photos from either side, just like any visitor. Photos are free during the reception.', status: 'answered' as const },
-      { q: 'Can children come?', a: "Yes, but we would like ceremony participants to be aged 12 or above. The ceremony inside the shrine hall lasts around 45 minutes in a very quiet and solemn setting. To help parents feel more at ease, we suggest that guests with young children join us directly for the reception (lunch) at 12:15. The venue provides age-appropriate children’s chairs and meals, as well as a nursing room; pushchairs may be used freely inside the venue.", status: 'answered' as const },
+      { q: 'Can children come?', a: "Yes, but we would like ceremony participants to be aged 12 or above. The ceremony inside the shrine hall lasts around 30 minutes in a very quiet and solemn setting. To help parents feel more at ease, we suggest that guests with young children join us directly for the reception (lunch; check-in 11:45, starting 12:15). The venue provides age-appropriate children’s chairs and meals, as well as a nursing room; pushchairs may be used freely inside the venue.", status: 'answered' as const },
       { q: 'Language and translation', a: 'No need to worry. A friend of ours is our interpreter and MC for the day, and will walk everyone through the ceremony and the reception as it unfolds.', status: 'answered' as const },
     ],
     pendingTag: 'TBC',
@@ -789,7 +792,7 @@ const en: Copy = {
       colBirthday: 'Birthday (month / day)',
       month: '',
       day: '',
-      colCeremony: 'Ceremony (Shinto rite) 11:00–11:45',
+      colCeremony: 'Ceremony (Shinto rite) 11:00–11:30',
       colReception: 'Reception lunch 12:15–15:00',
       colDiet: 'Meal',
       relations: {

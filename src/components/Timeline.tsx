@@ -6,8 +6,8 @@ import { Modal } from './Modal'
 import { SectionHead } from './SectionHead'
 
 /** 神前式與披露宴是當天的重點，時間軸上以實心點標示，且各自有細節彈窗 */
-const KEY_STEPS = new Set([2, 4])
-const DETAIL: Record<number, 'ceremony' | 'reception'> = { 2: 'ceremony', 4: 'reception' }
+const KEY_STEPS = new Set([2, 5])
+const DETAIL: Record<number, 'ceremony' | 'reception'> = { 2: 'ceremony', 5: 'reception' }
 
 /** ICS 的文字欄位要跳脫反斜線、分號與逗號 */
 function icsEscape(v: string) {
@@ -16,7 +16,7 @@ function icsEscape(v: string) {
 
 /**
  * 產生「加入行事曆」的 .ics 內容。
- * 報到 10:00 JST = 01:00Z、散會 15:00 JST = 06:00Z（2026-09-04 定案）。
+ * 開始＝神前式參列者來館 10:20 JST = 01:20Z（2026-10-14 依明神会館時程表）；散會 15:00 JST = 06:00Z（2026-09-04 定案，10-14 新人確認維持）。
  */
 function calendarHref(summary: string, description: string, location: string) {
   const ics = [
@@ -25,9 +25,11 @@ function calendarHref(summary: string, description: string, location: string) {
     'PRODID:-//kanda-myojin-wedding//TW',
     'BEGIN:VEVENT',
     'UID:wedding-20270325@brianann2339.github.io',
-    'DTSTAMP:20260831T000000Z',
-    'DTSTART:20270325T010000Z',
+    'DTSTAMP:20261014T000000Z',
+    'DTSTART:20270325T012000Z',
     'DTEND:20270325T060000Z',
+    // 同一個 UID 改過時間：SEQUENCE 遞增，已匯入舊版的行事曆才會更新而不是重複
+    'SEQUENCE:1',
     `SUMMARY:${icsEscape(summary)}`,
     `LOCATION:${icsEscape(location)}`,
     `DESCRIPTION:${icsEscape(description)}`,
