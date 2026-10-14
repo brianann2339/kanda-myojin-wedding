@@ -3,8 +3,8 @@ import { useLang } from '../i18n'
 import { Chevron } from './icons'
 import { SectionHead } from './SectionHead'
 
-/** 攝影規範一題要標明「依神社規定」 */
-const SHRINE_RULE_INDEX = 4
+/** 攝影規範一題要標明「依神社規定」；2026-10-14 最前面加了「參加神前式」一題，攝影規範由第 4 題移到第 5 題（從 0 起算） */
+const SHRINE_RULE_INDEX = 5
 
 export function FAQ() {
   const { t } = useLang()

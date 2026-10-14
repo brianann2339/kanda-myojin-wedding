@@ -4,6 +4,34 @@ import type { Lang } from './wedding'
 type FaqStatus = 'answered' | 'draft' | 'pending'
 
 /**
+ * 「參加神前式」的意思：新增賓客表單開頭與參列指南第一題共用同一份文字（2026-10-14 新人要求）。
+ * 「紅毯」是新人確認的用詞；選項名稱須與各語言表單的 yes/no 一致；「約 45 分鐘」同兒童 FAQ。
+ */
+const ceremonyMeaning = {
+  zh: {
+    title: '「參加神前式」是什麼意思？',
+    lines: [
+      '這跟台灣婚禮的習俗不太一樣：神前式選「是」的親友，會跟著新人的隊伍一起走紅毯，進入社殿，並在社殿內坐著參與整場儀式（約 45 分鐘），不是在旁邊觀禮拍照而已。',
+      '只想在旁邊看、拍照的話，請選「否」：當天一樣歡迎在參道兩側觀禮，並一起拍大合照。',
+    ],
+  },
+  ja: {
+    title: '神前式の「出席」について',
+    lines: [
+      '神前式で「出席」を選ばれた方は、新郎新婦とともに行列に加わって赤い絨毯の上を歩き、社殿にお入りいただきます。式のあいだ（約45分）は、社殿内でご着席いただきます。',
+      '見守ったり撮影したりするだけの場合は、「欠席」をお選びください。その場合も、当日は参道の両側から参進の儀をご覧いただけます。集合写真にもぜひご参加ください。',
+    ],
+  },
+  en: {
+    title: 'What does "Yes" for the ceremony mean?',
+    lines: [
+      'Choosing "Yes" for the ceremony means you walk the red carpet with the couple in the procession, enter the shrine hall, and sit through the whole ceremony inside (about 45 minutes), rather than just watching and taking photos from the side.',
+      'If you would only like to watch or take photos, please choose "No". You are still very welcome to watch from either side of the approach and join the group photo.',
+    ],
+  },
+}
+
+/**
  * 網站文案。zh 為正本，ja / en 依同一組 key 撰寫；
  * 少任何一個 key，TypeScript 會直接報錯。
  */
@@ -187,6 +215,7 @@ const zh = {
     kicker: 'GUIDE · FAQ',
     title: '參列指南',
     items: [
+      { q: ceremonyMeaning.zh.title, a: ceremonyMeaning.zh.lines.join('\n'), status: 'answered' as FaqStatus },
       {
         q: '當天該如何著裝？（Dress Code）',
         a: "女士：推薦端莊洋裝、雅緻套裝或和服。請避免全身純白（純白色留給新娘白無垢）；若穿著深色或黑色洋裝，建議搭配明亮色系的披肩、首飾或包款。\n男士：請著正式深色西裝，搭配淡色或喜慶色系領帶（請避免全黑領帶，為避免休閒感，請勿穿著牛仔褲與球鞋）。\n鞋履提醒：神社境內多有石板路與碎石參道，建議女士穿著好走的粗跟鞋或正式平底鞋，避免細高跟鞋以免卡在石縫中。\n襪子提醒：社殿內禁止赤腳，特別是女士，請記得穿著絲襪或襪子。\n氣候提醒：3 月下旬東京初春氣候涼爽（約 10～15°C），部分儀式於戶外進行，建議隨身攜帶防蚊液、外套或披肩。",
@@ -207,6 +236,7 @@ const zh = {
     title: '新增賓客',
     form: {
       intro: '一份表單可以填多位——請把同行的每一位都列出來，並分別告訴我們神前式與披露宴是否參加。生日只用來確認身分，之後要修改回覆時會用到。',
+      ceremonyMeaning: ceremonyMeaning.zh,
       colName: '姓名',
       colRelation: '關係',
       colBirthday: '生日（月／日）',
@@ -460,6 +490,7 @@ const ja: Copy = {
     kicker: 'GUIDE · FAQ',
     title: 'ご参列の案内',
     items: [
+      { q: ceremonyMeaning.ja.title, a: ceremonyMeaning.ja.lines.join('\n'), status: 'answered' as FaqStatus },
       {
         q: '服装について',
         a: "女性：上品なワンピース、エレガントなスーツ、または和服をおすすめします。全身白の装いはお控えください（純白は花嫁の白無垢に）。濃色や黒のワンピースには、明るい色のショール、アクセサリー、バッグなどを合わせてください。\n男性：濃色のフォーマルスーツに、淡い色やお祝いにふさわしい色のネクタイをお選びください（黒一色のネクタイは避け、カジュアルな印象になるジーンズやスニーカーもお控えください）。\n靴について：境内には石畳や砂利の参道が多くあります。女性は歩きやすい太めのヒールやフォーマルなフラットシューズがおすすめです。石の隙間に挟まりやすい細いハイヒールは避けてください。\n靴下について：裸足での昇殿は禁じられています。特に女性の方は、ストッキングまたは靴下のご着用をお忘れのないようお願いいたします。\n気候について：3月下旬の東京は涼しい春先の気候（約10～15°C）です。儀式の一部は屋外で行われますので、虫よけ、上着やショールをご持参ください。",
@@ -480,6 +511,7 @@ const ja: Copy = {
     title: 'ご出欠の登録',
     form: {
       intro: '1 回の送信で複数名をご登録いただけます。ご一緒に来られる方全員をご記入のうえ、神前式・披露宴それぞれのご出欠をお知らせください。お誕生日（月・日）はご本人確認のためだけに使い、あとで回答を変更する際に必要になります。',
+      ceremonyMeaning: ceremonyMeaning.ja,
       colName: 'お名前',
       colRelation: 'ご関係',
       colBirthday: 'お誕生日（月／日）',
@@ -730,6 +762,7 @@ const en: Copy = {
     kicker: 'GUIDE · FAQ',
     title: 'Guest guide',
     items: [
+      { q: ceremonyMeaning.en.title, a: ceremonyMeaning.en.lines.join('\n'), status: 'answered' as FaqStatus },
       {
         q: 'What should I wear?',
         a: "Women: We recommend a modest dress, an elegant suit or a kimono. Please avoid an all-white outfit (pure white is reserved for the bride’s shiromuku); if wearing a dark or black dress, consider a brightly coloured shawl, jewellery or bag.\nMen: Please wear a formal dark suit with a light-coloured or festive tie (avoid all-black ties, and please do not wear jeans or trainers, which look casual).\nFootwear: The shrine grounds have many stone-paved paths and gravel approaches. Women are advised to wear comfortable block heels or formal flats, avoiding narrow high heels that can get caught between the stones.\nSocks: Bare feet are not allowed inside the shrine hall. Women in particular, please remember to wear stockings or socks.\nWeather: Late March in Tokyo brings cool early-spring weather (around 10–15°C). Parts of the ceremony take place outdoors, so please bring insect repellent and a jacket or shawl.",
@@ -750,6 +783,7 @@ const en: Copy = {
     title: 'Add guests',
     form: {
       intro: 'One form can cover several people. List everyone coming with you, and tell us for each person whether they will join the ceremony and the reception lunch. The birthday (month/day) is only used to confirm identity if you need to change your reply later.',
+      ceremonyMeaning: ceremonyMeaning.en,
       colName: 'Name',
       colRelation: 'Relationship',
       colBirthday: 'Birthday (month / day)',

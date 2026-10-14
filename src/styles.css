@@ -2365,6 +2365,30 @@ a.channel:hover .channel-go {
   color: var(--shu);
 }
 
+/* 「參加神前式」說明：放在表單開頭，字比 .body-text 大、用深色，長輩才看得清楚 */
+.rsvp-callout {
+  border-left: 3px solid var(--shu);
+  background: var(--card-inner);
+  padding: 0.75rem 0.875rem;
+  font-size: 0.8125rem;
+  color: var(--ink);
+  line-height: 1.85;
+}
+
+.rsvp-callout-title {
+  font-weight: 700;
+  color: var(--shu);
+  margin-bottom: 0.25rem;
+}
+
+.rsvp-callout p {
+  margin: 0;
+}
+
+.rsvp-callout p + p {
+  margin-top: 0.375rem;
+}
+
 .rsvp-error {
   border: 1px dashed var(--shu);
   padding: 0.625rem 0.75rem;

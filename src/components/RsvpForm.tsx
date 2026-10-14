@@ -156,6 +156,13 @@ export function RsvpForm({ onSubmitted }: { onSubmitted?: () => void }) {
   return (
     <form className="rsvp-form stack" onSubmit={submit} noValidate ref={formRef}>
       <div className="body-text">{f.intro}</div>
+      {/* 台灣賓客習慣在旁觀禮拍照：選神前式之前先講清楚「參加」是要跟著隊伍走進社殿 */}
+      <div className="rsvp-callout">
+        <div className="rsvp-callout-title">{f.ceremonyMeaning.title}</div>
+        {f.ceremonyMeaning.lines.map((line) => (
+          <p key={line}>{line}</p>
+        ))}
+      </div>
 
       <div className="rsvp-rows">
         {people.map((p, i) => {
