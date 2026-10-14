@@ -19,12 +19,6 @@ type Edit = {
   draft: Draft
 }
 
-/** 先親人後朋友，再依姓氏（遮名後仍以姓開頭）以繁中排序 */
-function order(a: Entry, b: Entry) {
-  const rank = (e: Entry) => (e.relation.endsWith('family') ? 0 : 1)
-  return rank(a) - rank(b) || a.name.localeCompare(b.name, 'zh-Hant')
-}
-
 export function Attendees({ refreshKey = 0 }: { refreshKey?: number }) {
   const { t } = useLang()
   const a = t.contact.attendees
@@ -46,7 +40,8 @@ export function Attendees({ refreshKey = 0 }: { refreshKey?: number }) {
 
   if (!endpoint) return null
 
-  const side = (s: Side) => (list ?? []).filter((e) => e.relation.startsWith(s)).sort(order)
+  /* 照送出先後排（2026-10-14 新人要求），不再重排：後端照試算表由上而下回傳，新回覆一律接在最下面、修改只改原列 */
+  const side = (s: Side) => (list ?? []).filter((e) => e.relation.startsWith(s))
   const attending = (rows: Entry[], part: 'ceremony' | 'reception') => rows.filter((e) => e[part] === 'yes').length
   const quota = wedding.rsvp.sideQuota
   const yesNo = (v: YesNo) => (v === 'yes' ? f.yes : f.no)
