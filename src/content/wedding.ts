@@ -261,9 +261,10 @@ export const wedding = {
 
   /**
    * 當日流程的時刻，與 copy.ts 的 timeline.items **依序一一對應**（目前 6 項）。
-   * 2026-09-15 更新；流程若再變，兩邊要一起改。
+   * 2026-09-15 更新；2026-10-14 披露宴開宴改 12:15（明神会館阿部小姐）。流程若再變，兩邊要一起改。
+   * ⚠️ 阿部小姐另指出：受付應在挙式後、披露宴前；她附的時程表（目安）尚未取得，第 1 項「報到 10:00–10:45」待依該表重排。
    */
-  scheduleTimes: ['10:00–10:45', '10:45–11:00', '11:00–11:45', '11:45–12:15', '12:30–15:00', '15:00'] as (string | null)[],
+  scheduleTimes: ['10:00–10:45', '10:45–11:00', '11:00–11:45', '11:45–12:15', '12:15–15:00', '15:00'] as (string | null)[],
 
   /**
    * 社殿參列人數。數字取自官網 myojin.tokyo/ceremony/「対応人数 最大84名（48名／36名）」；
@@ -274,7 +275,7 @@ export const wedding = {
   /**
    * 披露宴（2026-08-31 改為舉辦）。會場在神田明神境內的明神会館。
    * 宴會廳「彩の間」的名稱、人數與特色逐字取自官網 myojin.tokyo/banquet/；
-   * 料理描述取自 myojin.tokyo/cuisine/。開宴 12:30、約 15:00 散會（2026-09-04 定案）。
+   * 料理描述取自 myojin.tokyo/cuisine/。開宴 12:15（2026-10-14 明神会館阿部小姐告知，原 12:30）、約 15:00 散會（2026-09-04 定案）。
    */
   reception: {
     happening: true,
@@ -296,7 +297,7 @@ export const wedding = {
         en: 'Bright, filled with natural light, finished in pale wood and open in feel',
       } as Localized,
     },
-    startTime: '12:30' as string | null,
+    startTime: '12:15' as string | null,
     cuisine: {
       zh: '會場稱之為「明神ガストロノミー」——從「溫故知新」出發，融合和食與法式料理人的知識、技術與經驗，以生產者細心栽培的江戶食材為主，並在賓客面前完成最後一道手續。',
       ja: '「明神ガストロノミー」。温故知新の概念から生まれ、和食とフレンチの料理人の知識・技術・経験を融合した新しい料理。江戸食材を中心に、サービスがお客様の目の前で仕上げます。',
@@ -398,8 +399,9 @@ export const wedding = {
    */
   photos: {
     hero: {
-      /** 新人自備的浮世繪風畫像（2026-09-04 更新版），自有圖片、無需出處標示 */
-      src: asset('images/hero-ukiyoe-couple-v2.jpg'),
+      /** 新人自備的浮世繪風畫像（2026-09-04 版），自有圖片、無需出處標示。
+       *  v3（2026-10-14）：左側直書日期依明神会館指正由「令和六年八月」改為「令和九年三月」，只重畫九、三兩字（jpegtran -drop 無損嵌入） */
+      src: asset('images/hero-ukiyoe-couple-v3.jpg'),
       credit: null as string | null,
       creditUrl: null as string | null,
     },
