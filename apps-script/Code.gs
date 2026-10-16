@@ -9,7 +9,7 @@
  * 同一個人的定義：姓名＋關係都相同（2026-09-04 新人裁定）。生日只用來驗證身分，不可修改。
  */
 const SHEET_NAME = 'RSVP'
-const HEADERS = ['ID', '送出時間', '姓名', '關係', '生日', '神前式 11:00', '披露宴 12:30', '飲食', '語言', '群組', '關係代碼', '飲食代碼', '更新時間']
+const HEADERS = ['ID', '送出時間', '姓名', '關係', '生日', '神前式 11:00', '披露宴 12:15', '飲食', '語言', '群組', '關係代碼', '飲食代碼', '更新時間']
 const C = { id: 0, submitted: 1, name: 2, relation: 3, birthday: 4, ceremony: 5, reception: 6, diet: 7, lang: 8, group: 9, relCode: 10, dietCode: 11, updated: 12 }
 const RELATION_LABEL = {
   'groom-family': '新郎親人',
